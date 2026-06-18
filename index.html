@@ -574,13 +574,16 @@
                             <form action="php/ajax-contact-form.php" class="nk-form nk-form-ajax nk-form-style-1">
                                 <div class="row vertical-gap sm-gap">
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control required" name="name" placeholder="" data-i18n-placeholder="contact.form.namePlaceholder">
+                                        <input type="text" class="form-control required" name="name" placeholder="" autocomplete="name" data-i18n-placeholder="contact.form.namePlaceholder">
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="company" placeholder="" data-i18n-placeholder="contact.form.companyPlaceholder">
+                                        <input type="email" class="form-control required email" name="email" placeholder="Email" autocomplete="email" data-i18n-placeholder="contact.form.emailPlaceholder">
                                     </div>
-                                   <div class="col-md-6">
-                                        <input type="text" class="form-control" name="phone" placeholder="" data-i18n-placeholder="contact.form.phonePlaceholder">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="company" placeholder="" autocomplete="organization" data-i18n-placeholder="contact.form.companyPlaceholder">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="phone" placeholder="" autocomplete="tel" data-i18n-placeholder="contact.form.phonePlaceholder">
                                     </div>
 
                                     <div class="col-12">

@@ -198,6 +198,7 @@
         "form": {
             "title": "Contact form",
             "namePlaceholder": "Full name *",
+            "emailPlaceholder": "Email *",
             "companyPlaceholder": "Company name",
             "phonePlaceholder": "Phone number",
             "packagePlaceholder": "Choose cooperation type *",

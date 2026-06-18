@@ -198,6 +198,7 @@
         "form": {
             "title": "Kontaktný formulár",
             "namePlaceholder": "Meno a priezvisko *",
+            "emailPlaceholder": "Email *",
             "companyPlaceholder": "Názov firmy",
             "phonePlaceholder": "Telefónne číslo",
             "packagePlaceholder": "Vyberte typ spolupráce *",
