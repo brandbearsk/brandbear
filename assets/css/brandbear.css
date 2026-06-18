@@ -653,6 +653,18 @@ select.form-control option {
     .bb-logo-marquee::after {
         width: 55px;
     }
+
+    #nk-nav-mobile .brandbear-wordmark {
+        display: block;
+        line-height: 1.15;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    #nk-nav-mobile .brandbear-wordmark span {
+        display: block;
+    }
 }
 
 .nk-footer {
@@ -671,4 +683,10 @@ select.form-control option {
     -webkit-transform: translate3d(0, 0, 0) !important;
         -ms-transform: translate(0, 0) !important;
             transform: translate3d(0, 0, 0) !important;
+}
+
+@media (max-width: 420px) {
+    .nk-navbar.nk-navbar-top.bb-main-nav .nk-nav-logo {
+        display: table-cell;
+    }
 }

@@ -4562,7 +4562,7 @@ img.rounded {
     right: 0;
     bottom: 0;
     left: 0;
-    cursor: url("../images/cursor-nav-close.svg") 24 24, pointer;
+    cursor: pointer;
     background-color: #0e0e0e;
     opacity: 0;
     z-index: 1001;
@@ -8740,7 +8740,7 @@ body.nk-body-overflow .nk-share-buttons {
     padding: 40px;
     color: #fff;
     text-align: right;
-    cursor: url("../images/cursor-nav-close.svg") 24 24, pointer;
+    cursor: pointer;
     z-index: -1;
 }
 
