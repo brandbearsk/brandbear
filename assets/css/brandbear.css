@@ -1,0 +1,674 @@
+/* ==========================================================
+   BrandBear CSS
+   Vlastné štýly webu. Načítaj až po godlike.css.
+   ========================================================== */
+
+/* ==============================
+   BrandBear palette
+   ============================== */
+
+:root {
+    --bb-black: #050505;
+    --bb-body: #0A0A0B;
+    --bb-dark-1: #0F1013;
+    --bb-dark-2: #16161A;
+    --bb-dark-3: #101824;
+    --bb-field: #0D0E11;
+    --bb-cream: #F4F0E8;
+    --bb-gold: #B8862B;
+    --bb-gold-light: #D3A84F;
+    --bb-gold-hover: #E8C878;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bb-body);
+    color: var(--bb-cream);
+}
+
+::-moz-selection {
+    background: var(--bb-gold);
+    color: var(--bb-black);
+}
+
+::selection {
+    background: var(--bb-gold);
+    color: var(--bb-black);
+}
+
+/* ==============================
+   Global color overrides
+   ============================== */
+
+a {
+    color: var(--bb-gold-light);
+}
+
+a:hover,
+a:focus {
+    color: var(--bb-gold-hover);
+}
+
+.nk-page-background {
+    background-color: var(--bb-black) !important;
+}
+
+.nk-navbar-top {
+    background-color: rgba(5, 5, 5, 0.94) !important;
+}
+
+.bg-dark-1 {
+    background-color: var(--bb-dark-1) !important;
+}
+
+.bg-dark-2,
+.nk-box-3 {
+    background-color: var(--bb-dark-2) !important;
+}
+
+.text-main-1,
+.nk-sub-title,
+.brandbear-wordmark span,
+.bb-hero-label,
+.bb-contact-list strong,
+.bb-footer-brand .text-main-1 {
+    color: var(--bb-gold) !important;
+}
+
+/* ==============================
+   Buttons
+   ============================== */
+
+.nk-btn {
+    border-color: rgba(184, 134, 43, 0.75);
+}
+
+.nk-btn:hover,
+.nk-btn:focus {
+    border-color: var(--bb-gold-light);
+    color: var(--bb-gold-hover);
+}
+
+.nk-btn-color-main-1 {
+    background-color: transparent !important;
+    border-color: var(--bb-gold) !important;
+    color: var(--bb-gold-light) !important;
+}
+
+.nk-btn-color-main-1:hover,
+.nk-btn-color-main-1:focus {
+    background-color: var(--bb-gold) !important;
+    border-color: var(--bb-gold-light) !important;
+    color: var(--bb-black) !important;
+}
+
+/* ==============================
+   Header / logo / wordmark
+   ============================== */
+
+.bb-header-logo {
+    width: 160px;
+    height: auto;
+    max-height: 42px;
+    vertical-align: middle;
+}
+
+.brandbear-wordmark {
+    display: inline-block;
+    font-family: "Marcellus SC", serif;
+    font-size: 1.65rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    color: var(--bb-cream);
+    text-transform: uppercase;
+}
+
+.brandbear-wordmark:hover,
+.brandbear-wordmark:focus {
+    color: var(--bb-cream);
+    text-decoration: none;
+}
+
+/* ==============================
+   Navigation
+   čiara pod textom namiesto Godlike efektu cez text
+   ============================== */
+
+.bb-nav-link,
+.nk-nav a {
+    color: var(--bb-cream) !important;
+}
+
+.bb-nav-link:hover,
+.bb-nav-link:focus,
+.nk-nav a:hover,
+.nk-nav a:focus,
+.nk-nav .active > a {
+    color: var(--bb-gold-light) !important;
+}
+
+.bb-main-nav .nk-nav > li > a {
+    position: relative;
+    overflow: visible !important;
+    text-decoration: none !important;
+}
+
+.bb-main-nav .nk-nav > li > a.link-effect-4 .link-effect-inner::after,
+.bb-main-nav .nk-nav > li > a.link-effect-4:hover .link-effect-inner::after,
+.bb-main-nav .nk-nav > li > a.link-effect-4.hover .link-effect-inner::after,
+#nk-nav-mobile .link-effect-4 .link-effect-inner::after {
+    display: none !important;
+    content: none !important;
+}
+
+.bb-main-nav .nk-nav > li > a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 0;
+    height: 2px;
+    background-color: var(--bb-gold-light);
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
+}
+
+.bb-main-nav .nk-nav > li > a:hover::after,
+.bb-main-nav .nk-nav > li > a:focus::after,
+.bb-main-nav .nk-nav > li.active > a::after {
+    width: calc(100% - 40px);
+}
+
+.bb-main-nav .nk-nav > li > a:hover,
+.bb-main-nav .nk-nav > li > a:focus,
+.bb-main-nav .nk-nav > li.active > a {
+    color: var(--bb-gold-light) !important;
+}
+
+/* ==============================
+   Hero
+   ============================== */
+
+.bb-hero-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--bb-gold) !important;
+    text-transform: uppercase;
+}
+
+.bb-hero-title {
+    max-width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.bb-hero-text {
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1.25rem;
+}
+
+.bb-announcer {
+    font-size: 1.65rem;
+    line-height: 1.5;
+}
+
+.bb-announcer,
+.bb-announcer .nk-typed {
+    font-family: "Marcellus SC", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.bb-mini-note {
+    max-width: 820px;
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 0.82;
+}
+
+/* ==============================
+   Product cards
+   ============================== */
+
+.bb-product-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: var(--bb-dark-3);
+}
+
+.bb-product-card img {
+    width: 100%;
+    opacity: 0.72;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.bb-product-card:hover img,
+.bb-product-card:focus img {
+    opacity: 0.95;
+    transform: scale(1.035);
+}
+
+.bb-product-card span {
+    position: absolute;
+    left: 24px;
+    bottom: 20px;
+    z-index: 2;
+    font-family: "Marcellus SC", serif;
+    font-size: 1.55rem;
+    color: var(--bb-cream);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+}
+
+/* ==============================
+   Features
+   ============================== */
+
+#preco-my .nk-box-3 {
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#preco-my .nk-box-3:hover {
+    background-color: var(--bb-black) !important;
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+#preco-my .nk-box-3:hover .nk-ibox-icon {
+    color: var(--bb-gold-light);
+}
+
+/* ==============================
+   Pricing
+   ============================== */
+
+.bb-pricing-price {
+    font-family: "Marcellus SC", serif;
+    font-size: 2.8rem;
+    line-height: 1.1;
+}
+
+#baliky .nk-pricing {
+    background-color: var(--bb-dark-2);
+    color: var(--bb-cream);
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* hover iba na karte, ale NIE keď je kurzor priamo na tlačidle */
+#baliky .nk-pricing:hover:not(:has(.nk-btn:hover)) {
+    background-color: var(--bb-gold);
+    color: var(--bb-black);
+    transform: translateY(-8px);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.4);
+}
+
+#baliky .nk-pricing:hover:not(:has(.nk-btn:hover)) .nk-pricing-title,
+#baliky .nk-pricing:hover:not(:has(.nk-btn:hover)) .nk-pricing-price,
+#baliky .nk-pricing:hover:not(:has(.nk-btn:hover)) .bb-pricing-price,
+#baliky .nk-pricing:hover:not(:has(.nk-btn:hover)) .nk-pricing-features,
+#baliky .nk-pricing:hover:not(:has(.nk-btn:hover)) .nk-pricing-features li {
+    color: var(--bb-black);
+}
+
+#baliky .nk-pricing:hover:not(:has(.nk-btn:hover)) .nk-pricing-title,
+#baliky .nk-pricing:hover:not(:has(.nk-btn:hover)) .nk-pricing-price,
+#baliky .nk-pricing:hover:not(:has(.nk-btn:hover)) .nk-pricing-features,
+#baliky .nk-pricing:hover:not(:has(.nk-btn:hover)) .nk-pricing-button {
+    border-color: rgba(5, 5, 5, 0.22);
+}
+
+/* tlačidlo v normálnom stave */
+#baliky .nk-pricing .nk-btn {
+    background-color: transparent;
+    border-color: var(--bb-cream);
+    color: var(--bb-cream);
+}
+
+/* hover iba na tlačidle */
+#baliky .nk-pricing .nk-btn:hover,
+#baliky .nk-pricing .nk-btn:focus {
+    background-color: var(--bb-gold);
+    border-color: var(--bb-gold-light);
+    color: var(--bb-black);
+}
+
+/* ==============================
+   Contact list
+   ============================== */
+
+.bb-contact-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.bb-contact-list li + li {
+    margin-top: 18px;
+}
+
+.bb-contact-list strong {
+    display: block;
+    font-family: "Marcellus SC", serif;
+    font-size: 1.1rem;
+    color: var(--bb-gold) !important;
+}
+
+.bb-contact-list a {
+    color: inherit;
+}
+
+.bb-contact-list a:hover,
+.bb-contact-list a:focus {
+    color: var(--bb-gold-hover);
+}
+
+/* ==============================
+   Forms
+   ============================== */
+
+.form-control {
+    background-color: var(--bb-field) !important;
+    border-color: rgba(184, 134, 43, 0.35) !important;
+    color: var(--bb-cream) !important;
+}
+
+.form-control:focus {
+    border-color: var(--bb-gold) !important;
+    box-shadow: 0 0 0 2px rgba(184, 134, 43, 0.18) !important;
+}
+
+.form-control::placeholder {
+    color: rgba(244, 240, 232, 0.62);
+}
+
+.nk-form-style-1 input:-webkit-autofill,
+.nk-form-style-1 input:-webkit-autofill:hover,
+.nk-form-style-1 input:-webkit-autofill:focus,
+.nk-form-style-1 textarea:-webkit-autofill,
+.nk-form-style-1 textarea:-webkit-autofill:hover,
+.nk-form-style-1 textarea:-webkit-autofill:focus,
+.nk-form-style-1 select:-webkit-autofill,
+.nk-form-style-1 select:-webkit-autofill:hover,
+.nk-form-style-1 select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--bb-cream) !important;
+    caret-color: var(--bb-cream);
+    border-color: rgba(184, 134, 43, 0.35) !important;
+    box-shadow: 0 0 0 1000px var(--bb-field) inset !important;
+    -webkit-box-shadow: 0 0 0 1000px var(--bb-field) inset !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ==============================
+   Map section
+   ============================== */
+
+.bb-map-section {
+    position: relative;
+    background-color: var(--bb-dark-1);
+}
+
+.bb-map-wrap {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+    background-color: var(--bb-dark-2);
+}
+
+.bb-map-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(to bottom, rgba(10, 10, 11, 0.25), rgba(10, 10, 11, 0.1)),
+        rgba(0, 0, 0, 0.18);
+    z-index: 2;
+}
+
+.bb-map-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(100%) invert(92%) contrast(90%);
+}
+
+/* ==============================
+   Partners logo marquee
+   ============================== */
+
+.bb-partners-marquee {
+    padding-bottom: 45px;
+}
+
+.bb-logo-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 24px 0;
+}
+
+.bb-logo-marquee::before,
+.bb-logo-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.bb-logo-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bb-dark-1), rgba(15, 16, 19, 0));
+}
+
+.bb-logo-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bb-dark-1), rgba(15, 16, 19, 0));
+}
+
+.bb-logo-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: bb-logo-marquee 32s linear infinite;
+}
+
+.bb-logo-marquee:hover .bb-logo-marquee-track {
+    animation-play-state: paused;
+}
+
+.bb-logo-marquee-row {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding-right: 70px;
+}
+
+.bb-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    height: 90px;
+    opacity: 0.72;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.bb-logo-item:hover {
+    opacity: 1;
+    transform: translateY(-4px);
+}
+
+.bb-logo-item img {
+    display: block;
+    max-width: 150px;
+    max-height: 70px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+@keyframes bb-logo-marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.bb-package-btn-active {
+    background-color: #B8862B !important;
+    border-color: #D3A84F !important;
+    color: #050505 !important;
+}
+
+select.form-control {
+    background-color: #0D0E11 !important;
+    border-color: rgba(184, 134, 43, 0.35) !important;
+    color: #F4F0E8 !important;
+}
+
+select.form-control option {
+    background-color: #0D0E11;
+    color: #F4F0E8;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+
+.bb-footer-brand {
+    font-family: "Marcellus SC", serif;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.bb-footer-links a,
+.bb-footer-links .bb-footer-link,
+.bb-footer-contact-link {
+    position: relative;
+    display: inline-block;
+    color: var(--bb-gold-light);
+    text-decoration: none !important;
+    overflow: visible;
+    padding-bottom: 4px;
+}
+
+.bb-footer-links a .link-effect-inner::after,
+.bb-footer-links .link-effect-inner::after {
+    display: none !important;
+    content: none !important;
+}
+
+.bb-footer-links a::after,
+.bb-footer-links .bb-footer-link::after,
+.bb-footer-contact-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--bb-gold-light);
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
+}
+
+.bb-footer-links a:hover::after,
+.bb-footer-links .bb-footer-link:hover::after,
+.bb-footer-contact-link:hover::after,
+.bb-footer-contact-link:focus::after {
+    width: 100%;
+}
+
+.bb-footer-links a:hover,
+.bb-footer-links a:focus,
+.bb-footer-links .bb-footer-link:hover,
+.bb-footer-links .bb-footer-link:focus,
+.bb-footer-contact-link:hover,
+.bb-footer-contact-link:focus {
+    color: var(--bb-gold-hover);
+}
+
+.bb-footer-contact-links {
+    margin-top: 8px;
+}
+
+.bb-footer-contact-links span {
+    color: var(--bb-cream);
+    opacity: 0.7;
+    margin: 0 8px;
+}
+
+/* ==============================
+   Responsive
+   ============================== */
+
+@media (max-width: 767px) {
+    .bb-hero-title {
+        font-size: 2.65rem;
+    }
+
+    .bb-announcer {
+        font-size: 1.25rem;
+    }
+
+    .bb-map-wrap {
+        height: 320px;
+    }
+
+    .bb-partners-marquee {
+        margin-top: 45px;
+    }
+
+    .bb-logo-marquee-row {
+        gap: 35px;
+        padding-right: 35px;
+    }
+
+    .bb-logo-item {
+        min-width: 130px;
+        height: 70px;
+    }
+
+    .bb-logo-item img {
+        max-width: 115px;
+        max-height: 55px;
+    }
+
+    .bb-logo-marquee::before,
+    .bb-logo-marquee::after {
+        width: 55px;
+    }
+}
+
+.nk-footer {
+    background-color: var(--bb-body);
+}
+
+/* Fix: BrandBear bottom side buttons must not slide outside the viewport */
+.nk-side-buttons,
+.nk-side-buttons.nk-side-buttons-visible,
+.nk-side-buttons:hover,
+.nk-side-buttons.hover,
+.nk-side-buttons.nk-side-buttons-show-scroll-top,
+.nk-side-buttons.nk-side-buttons-show-scroll-top.nk-side-buttons-visible,
+.nk-side-buttons.nk-side-buttons-show-scroll-top:hover,
+.nk-side-buttons.nk-side-buttons-show-scroll-top.hover {
+    -webkit-transform: translate3d(0, 0, 0) !important;
+        -ms-transform: translate(0, 0) !important;
+            transform: translate3d(0, 0, 0) !important;
+}

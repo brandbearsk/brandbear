@@ -1,0 +1,222 @@
+{
+    "meta": {
+        "description": "BrandBear vyrába reklamné a firemné oblečenie s potlačou a výšivkou pre firmy, eventy a športové tímy.",
+        "title": "BrandBear | Potlač a výšivka reklamného textilu"
+    },
+    "brand": {
+        "logoAlt": "BrandBear"
+    },
+    "nav": {
+        "home": "Home",
+        "whyUs": "Prečo my",
+        "portfolio": "Portfólio",
+        "process": "Proces výroby",
+        "references": "Referencie",
+        "about": "O nás",
+        "quote": "Cenová ponuka"
+    },
+    "hero": {
+        "imageAlt": "BrandBear reklamný textil",
+        "label": "Potlač a výšivka",
+        "title": "Oblečenie pre firmy, eventy a športové tímy",
+        "text": "Vyrobíme oblečenie, ktoré reprezentuje vašu značku na eventoch, v práci aj v teréne.",
+        "primaryButton": "Vyžiadať cenovú ponuku",
+        "secondaryButton": "Pozrieť portfólio"
+    },
+    "features": {
+        "title": "Výhody spolupráce s nami",
+        "subtitle": "Prečo spolupracovať s BrandBear",
+        "quality": {
+            "title": "Kvalitné spracovanie",
+            "text": "Používame moderné technológie potlače a výšivky pre profesionálny vzhľad a dlhú životnosť."
+        },
+        "quote": {
+            "title": "Rýchla cenová ponuka",
+            "text": "Pripravíme vám nezáväznú cenovú ponuku rýchlo a bez zbytočných komplikácií."
+        },
+        "orders": {
+            "title": "Malé aj veľké objednávky",
+            "text": "Zabezpečíme výrobu od menších firemných objednávok až po veľké série pre eventy a tímy."
+        }
+    },
+    "announcer": {
+        "title": "BrandBear vyrába",
+        "items": [
+            "firemné tričká s potlačou.",
+            "vyšívané mikiny a bundy.",
+            "oblečenie pre eventy.",
+            "textil pre športové tímy.",
+            "reklamný textil na mieru."
+        ]
+    },
+    "portfolio": {
+        "title": "Široký výber reklamného textilu",
+        "subtitle": "Portfólio",
+        "note": "Bundy, kraťasy, nohavice, šiltovky, mikiny a tričká. Fotky nižšie sú zatiaľ pripravené ako vizuálne miesta, neskôr ich vymeníme za tvoje reálne BrandBear produkty.",
+        "products": {
+            "jackets": "Bundy",
+            "shorts": "Kraťasy",
+            "pants": "Nohavice",
+            "caps": "Šiltovky",
+            "hoodies": "Mikiny",
+            "tshirts": "Tričká"
+        }
+    },
+    "cta": {
+        "title": "Od návrhu po hotový textil",
+        "text": "Pomáhame firmám, eventom a športovým tímom vytvoriť kvalitné oblečenie s vlastnou potlačou alebo výšivkou. Od prvého návrhu až po finálnu výrobu dbáme na kvalitné spracovanie, profesionálny vzhľad a jednoduchú komunikáciu.",
+        "button": "Začať objednávku"
+    },
+    "process": {
+        "title": "Ako prebieha proces výroby",
+        "subtitle": "Výroba bez zbytočných komplikácií",
+        "steps": {
+            "form": {
+                "imageAlt": "Vyplnenie formulára",
+                "title": "1. Formulár",
+                "text": "Pošlete typ oblečenia, počet kusov, predstavu o potlači alebo výšivke a kontaktné údaje."
+            },
+            "design": {
+                "imageAlt": "Grafika a cenová ponuka",
+                "title": "2. Návrh a cena",
+                "text": "Pripravíme vizuálny návrh na vzorke textilu spolu s cenovou ponukou."
+            },
+            "approval": {
+                "imageAlt": "Schválenie objednávky",
+                "title": "3. Schválenie",
+                "text": "Výrobu spúšťame až po potvrdení finálneho návrhu a prijatí platby."
+            },
+            "production": {
+                "imageAlt": "Výroba a dodanie",
+                "title": "4. Výroba",
+                "text": "Dbáme na kvalitné spracovanie, presnosť detailov a dodržanie dohodnutého termínu dodania."
+            }
+        }
+    },
+    "references": {
+        "title": "Pozrite si niektoré naše zákazky",
+        "subtitle": "Niečo z dielne BrandBear",
+        "items": [
+            {
+                "body": "Výroba tričiek pre firmu XYZ",
+                "name": "Firemné tričká",
+                "year": "2023"
+            },
+            {
+                "body": "Výroba kompletného oblečenia pre XYZ",
+                "name": "Kompletné firemné oblečenie",
+                "year": "2023"
+            },
+            {
+                "body": "Výroba nohavíc pre XYZ",
+                "name": "Pracovné nohavice",
+                "year": "2023"
+            },
+            {
+                "body": "Výroba búnd pre firmu XYZ",
+                "name": "Firemné bundy",
+                "year": "2023"
+            }
+        ]
+    },
+    "partners": {
+        "logoAlt": "BrandBear partner"
+    },
+    "about": {
+        "title": "Partner pre reklamné oblečenie",
+        "subtitle": "O BrandBear",
+        "text": "Pomáhame firmám, eventom a športovým tímom vytvoriť kvalitné oblečenie s vlastnou potlačou alebo výšivkou. Od prvého návrhu až po finálnu výrobu dbáme na kvalitné spracovanie, profesionálny vzhľad a jednoduchú komunikáciu.",
+        "button": "Cenová ponuka",
+        "counters": {
+            "experience": {
+                "value": "05+",
+                "title": "Rokov skúsenosti",
+                "text": "Výroba reklamného a firemného oblečenia."
+            },
+            "orders": {
+                "value": "50+",
+                "title": "Počet zákazok",
+                "text": "Od menších sérií až po väčšie firemné zákazky."
+            },
+            "satisfaction": {
+                "value": "98%",
+                "title": "Spokojnosť zákazníkov",
+                "text": "Kvalita, spoľahlivá komunikácia a spokojnosť."
+            }
+        }
+    },
+    "pricing": {
+        "title": "Balíky spolupráce",
+        "subtitle": "Cenu pripravíme podľa konkrétnej objednávky",
+        "choose": "Vybrať",
+        "packages": {
+            "small": {
+                "title": "Malá objednávka",
+                "price": "Na mieru",
+                "features": [
+                    "Menšie firemné objednávky",
+                    "Potlač alebo výšivka",
+                    "Vizuálny návrh na vzorke textilu"
+                ]
+            },
+            "company": {
+                "title": "Firemná séria",
+                "price": "Najčastejšie",
+                "features": [
+                    "Oblečenie pre tímy a zamestnancov",
+                    "Jednotný profesionálny vzhľad",
+                    "Komunikácia jednoducho cez email"
+                ]
+            },
+            "event": {
+                "title": "Event / tím",
+                "price": "Individuálne",
+                "features": [
+                    "Väčšie série pre eventy a kluby",
+                    "Možnosť fyzickej vzorky po dohode",
+                    "Riešenie expresných objednávok"
+                ]
+            }
+        }
+    },
+    "contact": {
+        "title": "Vyžiadať cenovú ponuku",
+        "subtitle": "Napíšte nám, čo potrebujete vyrobiť",
+        "text": "Pošlite nám typ oblečenia, počet kusov, predstavu o potlači alebo výšivke a kontaktné údaje. Do formulára môžete dopísať aj informáciu, či máte grafický návrh zabezpečený.",
+        "address": {
+            "label": "Adresa",
+            "value": "Jamník 69, 053 22 Jamník, Slovensko"
+        },
+        "email": {
+            "label": "Email",
+            "value": "brandbearsk@gmail.com"
+        },
+        "phone": {
+            "label": "Telefónne číslo",
+            "value": "+420 602 750 173"
+        },
+        "form": {
+            "title": "Kontaktný formulár",
+            "namePlaceholder": "Meno a priezvisko *",
+            "companyPlaceholder": "Názov firmy",
+            "phonePlaceholder": "Telefónne číslo",
+            "packagePlaceholder": "Vyberte typ spolupráce *",
+            "messagePlaceholder": "Čo potrebujete vyrobiť? Prosíme o informáciu koľko kusov a či máte grafický návrh zabezpečený. *",
+            "submit": "Odoslať dopyt"
+        }
+    },
+    "footer": {
+        "text": "Potlač a výšivka reklamného textilu pre firmy, eventy a športové tímy.",
+        "email": "info@brandbear.sk",
+        "phone": "+420 602 750 173",
+        "copyright": "&copy; 2026 BrandBear. Všetky práva vyhradené."
+    },
+    "share": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "email": "Email"
+    },
+    "language": {
+        "toggleTitle": "Vybrať jazyk"
+    }
+}

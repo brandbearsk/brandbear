@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" data-i18n-content="meta.description">
+    <meta name="author" content="BrandBear">
+    <title data-i18n="meta.title"></title>
+
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,400i,700%7cMarcellus+SC" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- FontAwesome -->
+    <script defer src="assets/vendor/fontawesome-free/js/all.js"></script>
+    <script defer src="assets/vendor/fontawesome-free/js/v4-shims.js"></script>
+
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="assets/vendor/ionicons/css/ionicons.min.css">
+
+    <!-- Flickity -->
+    <link rel="stylesheet" href="assets/vendor/flickity/dist/flickity.min.css">
+
+    <!-- Photoswipe -->
+    <link rel="stylesheet" href="assets/vendor/photoswipe/dist/photoswipe.css">
+    <link rel="stylesheet" href="assets/vendor/photoswipe/dist/default-skin/default-skin.css">
+
+    <!-- GODLIKE -->
+    <link rel="stylesheet" href="assets/css/godlike.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/brandbear.css">
+
+    <style>
+        .bb-language-switcher {
+            position: relative;
+        }
+
+        .bb-language-current {
+            display: inline-block;
+            min-width: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .bb-language-menu {
+            position: absolute;
+            right: 0;
+            bottom: calc(100% + 8px);
+            min-width: 70px;
+            padding: 6px;
+            background: #09090b;
+            border: 1px solid rgba(201, 151, 45, .9);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
+            z-index: 20;
+        }
+
+        .bb-language-switcher.is-open .bb-language-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .bb-language-option {
+            display: block;
+            width: 100%;
+            padding: 7px 10px;
+            border: 0;
+            background: transparent;
+            color: #fff;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .bb-language-option:hover,
+        .bb-language-option.is-active {
+            color: #c9972d;
+        }
+    </style>
+
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+
+    <!-- START: Header -->
+    <header class="nk-header nk-header-opaque">
+        <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-autohide nk-navbar-no-link-effect bb-main-nav">
+            <div class="container">
+                <div class="nk-nav-table">
+                    <a href="#home" class="nk-nav-logo no-link-effect">
+                        <img src="assets/images/brandbear_text.png" alt="" data-i18n-alt="brand.logoAlt" class="bb-header-logo">
+                    </a>
+
+                    <ul class="nk-nav nk-nav-right d-none d-lg-block" data-nav-mobile="#nk-nav-mobile">
+                        <li><a href="#home" class="bb-nav-link" data-i18n="nav.home"></a></li>
+                        <li><a href="#preco-my" class="bb-nav-link" data-i18n="nav.whyUs"></a></li>
+                        <li><a href="#portfolio" class="bb-nav-link" data-i18n="nav.portfolio"></a></li>
+                        <li><a href="#proces" class="bb-nav-link" data-i18n="nav.process"></a></li>
+                        <li><a href="#referencie" class="bb-nav-link" data-i18n="nav.references"></a></li>
+                        <li><a href="#onas" class="bb-nav-link" data-i18n="nav.about"></a></li>
+                        <li><a href="#kontakt" class="bb-nav-link" data-i18n="nav.quote"></a></li>
+                    </ul>
+
+                    <ul class="nk-nav nk-nav-right nk-nav-icons">
+                        <li class="single-icon d-lg-none">
+                            <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
+                                <span class="nk-icon-burger">
+                                    <span class="nk-t-1"></span>
+                                    <span class="nk-t-2"></span>
+                                    <span class="nk-t-3"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="single-icon d-none d-lg-block">
+                            <a href="#kontakt" class="no-link-effect" title="" data-i18n-title="nav.quote">
+                                <span class="fa fa-envelope"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- END: Header -->
+
+    <!-- START: Navbar Mobile -->
+    <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-left-side nk-navbar-overlay-content nk-navbar-no-link-effect d-lg-none">
+        <div class="nano">
+            <div class="nano-content">
+                <a href="#home" class="nk-nav-logo no-link-effect">
+                    <span class="brandbear-wordmark">Brand<span>Bear</span></span>
+                </a>
+                <div class="nk-navbar-mobile-content">
+                    <ul class="nk-nav">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: Navbar Mobile -->
+
+    <main class="nk-main">
+        <!-- START: Home / Main Promo -->
+        <section id="home" class="nk-header-title nk-header-title-full nk-header-title-parallax nk-header-title-parallax-opacity">
+            <div class="bg-image">
+                <img src="assets/images/intro_image.png" alt="" data-i18n-alt="hero.imageAlt" class="jarallax-img">
+            </div>
+            <div class="nk-header-table">
+                <div class="nk-header-table-cell">
+                    <div class="container text-center">
+                        <div class="bb-hero-label" data-i18n="hero.label"></div>
+                        <h1 class="nk-title display-2 bb-hero-title" data-i18n="hero.title"></h1>
+                        <div class="nk-gap"></div>
+                        <p class="bb-hero-text" data-i18n="hero.text"></p>
+                        <div class="nk-gap-2"></div>
+                        <a href="#kontakt" class="nk-btn nk-btn-lg nk-btn-color-main-1" data-i18n="hero.primaryButton"></a>
+                        <span class="d-none d-sm-inline-block ml-10 mr-10"></span>
+                        <a href="#portfolio" class="nk-btn nk-btn-lg" data-i18n="hero.secondaryButton"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: Home / Main Promo -->
+
+        <!-- START: Features -->
+        <section id="preco-my" class="nk-box bg-dark-1">
+
+            <div class="nk-gap-5"></div>
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="nk-title h1" data-i18n="features.title"></h2>
+                    <h3 class="nk-sub-title" data-i18n="features.subtitle"></h3>
+                </div>
+                <div class="nk-gap-3"></div>
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <div class="nk-box-3 bg-dark-2 h-100">
+                            <div class="nk-ibox">
+                                <div class="nk-ibox-icon nk-ibox-icon-circle">
+                                    <span class="ion-ribbon-a"></span>
+                                </div>
+                                <div class="nk-ibox-cont">
+                                    <h3 class="nk-ibox-title" data-i18n="features.quality.title"></h3>
+                                    <span data-i18n="features.quality.text"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="nk-box-3 bg-dark-1 h-100">
+                            <div class="nk-ibox">
+                                <div class="nk-ibox-icon nk-ibox-icon-circle">
+                                    <span class="ion-ios-timer-outline"></span>
+                                </div>
+                                <div class="nk-ibox-cont">
+                                    <h3 class="nk-ibox-title" data-i18n="features.quote.title"></h3>
+                                    <span data-i18n="features.quote.text"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="nk-box-3 bg-dark-2 h-100">
+                            <div class="nk-ibox">
+                                <div class="nk-ibox-icon nk-ibox-icon-circle">
+                                    <span class="ion-ios-people"></span>
+                                </div>
+                                <div class="nk-ibox-cont">
+                                    <h3 class="nk-ibox-title" data-i18n="features.orders.title"></h3>
+                                    <span data-i18n="features.orders.text"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-gap-5"></div>
+        </section>
+        <!-- END: Features -->
+
+        <!-- START: Typed Text Announcer -->
+        <section id="announcer" class="nk-box text-center">
+            <div class="bg-image op-3">
+                <div style="background-image: url('assets/images/intro_image.png');"></div>
+            </div>
+            <div class="nk-gap-4"></div>
+            <div class="container">
+                <h2 class="nk-title h1" data-i18n="announcer.title"></h2>
+                <div class="nk-gap"></div>
+                <div class="bb-announcer">
+                    <span class="nk-typed text-main-1" data-loop="true" data-shuffle="false" data-type-speed="55" data-start-delay="0" data-back-speed="30" data-back-delay="1400">
+                        <span data-i18n="announcer.items.0"></span>
+                        <span data-i18n="announcer.items.1"></span>
+                        <span data-i18n="announcer.items.2"></span>
+                        <span data-i18n="announcer.items.3"></span>
+                        <span data-i18n="announcer.items.4"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="nk-gap-4"></div>
+        </section>
+        <!-- END: Typed Text Announcer -->
+
+        <!-- START: Portfolio Carousel -->
+        <section id="portfolio" class="nk-box bg-dark-1">
+            <div class="nk-gap-5"></div>
+            <div class="container text-center">
+                <h2 class="nk-title h1" data-i18n="portfolio.title"></h2>
+                <h3 class="nk-sub-title" data-i18n="portfolio.subtitle"></h3>
+                <div class="nk-gap"></div>
+                <p class="bb-mini-note" data-i18n="portfolio.note"></p>
+            </div>
+            <div class="nk-gap-3"></div>
+            <div class="container-fluid pl-30 pr-30">
+                <div class="nk-carousel-2 nk-carousel-x3 nk-carousel-no-margin nk-carousel-all-visible" data-autoplay="5000" data-dots="true">
+                    <div class="nk-carousel-inner">
+                        <div><a href="#kontakt" class="bb-product-card"><img src="assets/images/intro_image.png" alt="" data-i18n-alt="portfolio.products.jackets"><span data-i18n="portfolio.products.jackets"></span></a></div>
+                        <div><a href="#kontakt" class="bb-product-card"><img src="assets/images/intro_image.png" alt="" data-i18n-alt="portfolio.products.shorts"><span data-i18n="portfolio.products.shorts"></span></a></div>
+                        <div><a href="#kontakt" class="bb-product-card"><img src="assets/images/intro_image.png" alt="" data-i18n-alt="portfolio.products.pants"><span data-i18n="portfolio.products.pants"></span></a></div>
+                        <div><a href="#kontakt" class="bb-product-card"><img src="assets/images/intro_image.png" alt="" data-i18n-alt="portfolio.products.caps"><span data-i18n="portfolio.products.caps"></span></a></div>
+                        <div><a href="#kontakt" class="bb-product-card"><img src="assets/images/intro_image.png" alt="" data-i18n-alt="portfolio.products.hoodies"><span data-i18n="portfolio.products.hoodies"></span></a></div>
+                        <div><a href="#kontakt" class="bb-product-card"><img src="assets/images/intro_image.png" alt="" data-i18n-alt="portfolio.products.tshirts"><span data-i18n="portfolio.products.tshirts"></span></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-gap-5"></div>
+        </section>
+        <!-- END: Portfolio Carousel -->
+
+        <!-- START: Background Parallax Video -->
+        <section class="nk-box text-center text-white bg-dark-1">
+            <div class="bg-image op-3">
+                <div style="background-image: url('assets/images/intro_image.png');"></div>
+            </div>
+            <div class="nk-gap-5"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                        <h2 class="h1 nk-title" data-i18n="cta.title"></h2>
+                        <div class="nk-gap"></div>
+                        <p data-i18n="cta.text"></p>
+                        <div class="nk-gap-1"></div>
+                        <a href="#kontakt" class="nk-btn nk-btn-lg nk-btn-color-main-1" data-i18n="cta.button"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-gap-5"></div>
+        </section>
+        <!-- END: Background Parallax Video -->
+
+        <!-- START: Process / Team Members -->
+        <section id="proces" class="nk-box">
+            <div class="nk-gap-5"></div>
+            <div class="container text-center">
+                <h2 class="nk-title h1" data-i18n="process.title"></h2>
+                <h3 class="nk-sub-title" data-i18n="process.subtitle"></h3>
+            </div>
+            <div class="nk-gap-3"></div>
+            <div class="container">
+                <div class="row lg-gap vertical-gap">
+                    <div class="col-lg-6">
+                        <div class="nk-team-member" data-mouse-parallax-z="5">
+                            <div class="nk-team-member-photo">
+                                <a href="#kontakt"><img src="assets/images/intro_image.png" alt="" data-i18n-alt="process.steps.form.imageAlt"></a>
+                            </div>
+                            <div class="nk-team-member-info">
+                                <div data-mouse-parallax-z="2">
+                                    <h3 class="nk-title h2"><a href="#kontakt" data-i18n="process.steps.form.title"></a></h3>
+                                    <div data-i18n="process.steps.form.text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="nk-team-member nk-team-member-revert" data-mouse-parallax-z="5">
+                            <div class="nk-team-member-photo">
+                                <a href="#kontakt"><img src="assets/images/intro_image.png" alt="" data-i18n-alt="process.steps.design.imageAlt"></a>
+                            </div>
+                            <div class="nk-team-member-info nk-team-member-info-bottom">
+                                <div data-mouse-parallax-z="2">
+                                    <h3 class="nk-title h2"><a href="#kontakt" data-i18n="process.steps.design.title"></a></h3>
+                                    <div data-i18n="process.steps.design.text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="nk-team-member" data-mouse-parallax-z="5">
+                            <div class="nk-team-member-photo">
+                                <a href="#kontakt"><img src="assets/images/intro_image.png" alt="" data-i18n-alt="process.steps.approval.imageAlt"></a>
+                            </div>
+                            <div class="nk-team-member-info">
+                                <div data-mouse-parallax-z="2">
+                                    <h3 class="nk-title h2"><a href="#kontakt" data-i18n="process.steps.approval.title"></a></h3>
+                                    <div data-i18n="process.steps.approval.text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="nk-team-member nk-team-member-revert" data-mouse-parallax-z="5">
+                            <div class="nk-team-member-photo">
+                                <a href="#kontakt"><img src="assets/images/intro_image.png" alt="" data-i18n-alt="process.steps.production.imageAlt"></a>
+                            </div>
+                            <div class="nk-team-member-info nk-team-member-info-bottom">
+                                <div data-mouse-parallax-z="2">
+                                    <h3 class="nk-title h2"><a href="#kontakt" data-i18n="process.steps.production.title"></a></h3>
+                                    <div data-i18n="process.steps.production.text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-gap-5"></div>
+        </section>
+        <!-- END: Process / Team Members -->
+
+        <!-- START: References Carousel -->
+        <section id="referencie" class="nk-box bg-dark-1">
+            <div class="nk-gap-5"></div>
+            <div class="container text-center">
+                <h2 class="nk-title h1" data-i18n="references.title"></h2>
+                <h3 class="nk-sub-title" data-i18n="references.subtitle"></h3>
+            </div>
+            <div class="nk-gap-3"></div>
+            <div class="container">
+                <div class="nk-carousel-2 nk-carousel-x1" data-autoplay="9000" data-dots="true">
+                    <div class="nk-carousel-inner">
+                        <div>
+                            <blockquote class="nk-testimonial">
+                                <div class="nk-testimonial-body"><em data-i18n="references.items.0.body"></em></div>
+                                <div class="nk-testimonial-name h4" data-i18n="references.items.0.name"></div>
+                                <div class="nk-testimonial-source" data-i18n="references.items.0.year"></div>
+                            </blockquote>
+                        </div>
+                        <div>
+                            <blockquote class="nk-testimonial">
+                                <div class="nk-testimonial-body"><em data-i18n="references.items.1.body"></em></div>
+                                <div class="nk-testimonial-name h4" data-i18n="references.items.1.name"></div>
+                                <div class="nk-testimonial-source" data-i18n="references.items.1.year"></div>
+                            </blockquote>
+                        </div>
+                        <div>
+                            <blockquote class="nk-testimonial">
+                                <div class="nk-testimonial-body"><em data-i18n="references.items.2.body"></em></div>
+                                <div class="nk-testimonial-name h4" data-i18n="references.items.2.name"></div>
+                                <div class="nk-testimonial-source" data-i18n="references.items.2.year"></div>
+                            </blockquote>
+                        </div>
+                        <div>
+                            <blockquote class="nk-testimonial">
+                                <div class="nk-testimonial-body"><em data-i18n="references.items.3.body"></em></div>
+                                <div class="nk-testimonial-name h4" data-i18n="references.items.3.name"></div>
+                                <div class="nk-testimonial-source" data-i18n="references.items.3.year"></div>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-gap-5"></div>
+
+            <!-- START: BrandBear Partners Marquee -->
+            <div class="bb-partners-marquee">
+                <div class="bb-logo-marquee">
+                    <div class="bb-logo-marquee-track">
+
+                        <div class="bb-logo-marquee-row">
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                        </div>
+
+                        <div class="bb-logo-marquee-row" aria-hidden="true">
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END: BrandBear Partners Marquee -->
+        </section>
+        <!-- END: References Carousel -->
+
+        <!-- START: About -->
+        <section id="onas" class="nk-box">
+            <div class="nk-gap-5"></div>
+            <div class="container">
+                <div class="row vertical-gap align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="nk-title h1" data-i18n="about.title"></h2>
+                        <h3 class="nk-sub-title" data-i18n="about.subtitle"></h3>
+                        <div class="nk-gap"></div>
+                        <p data-i18n="about.text"></p>
+                        <a href="#kontakt" class="nk-btn nk-btn-lg" data-i18n="about.button"></a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row text-center vertical-gap">
+                            <div class="col-md-4">
+                                <div class="nk-counter">
+                                    <div class="nk-count h2" data-i18n="about.counters.experience.value"></div>
+                                    <h3 class="nk-counter-title h5" data-i18n="about.counters.experience.title"></h3>
+                                    <p data-i18n="about.counters.experience.text"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="nk-counter">
+                                    <div class="nk-count h2" data-i18n="about.counters.orders.value"></div>
+                                    <h3 class="nk-counter-title h5" data-i18n="about.counters.orders.title"></h3>
+                                    <p data-i18n="about.counters.orders.text"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="nk-counter">
+                                    <div class="nk-count h2" data-i18n="about.counters.satisfaction.value"></div>
+                                    <h3 class="nk-counter-title h5" data-i18n="about.counters.satisfaction.title"></h3>
+                                    <p data-i18n="about.counters.satisfaction.text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-gap-5"></div>
+        </section>
+        <!-- END: About -->
+
+        <!-- START: Pricing Tables -->
+        <section id="baliky" class="nk-box bg-dark-1">
+            <div class="nk-gap-5"></div>
+            <div class="container text-center">
+                <h2 class="nk-title h1" data-i18n="pricing.title"></h2>
+                <h3 class="nk-sub-title" data-i18n="pricing.subtitle"></h3>
+            </div>
+            <div class="nk-gap-3"></div>
+            <div class="container">
+                <div class="row vertical-gap align-items-center">
+                    <div class="col-md-4">
+                        <div class="nk-pricing">
+                            <h3 class="nk-pricing-title" data-i18n="pricing.packages.small.title"></h3>
+                            <div class="nk-pricing-price"><span class="bb-pricing-price" data-i18n="pricing.packages.small.price"></span></div>
+                            <ul class="nk-pricing-features">
+                                <li data-i18n="pricing.packages.small.features.0"></li>
+                                <li data-i18n="pricing.packages.small.features.1"></li>
+                                <li data-i18n="pricing.packages.small.features.2"></li>
+                            </ul>
+                            <div class="nk-pricing-button">
+                                <a href="#kontakt" class="nk-btn nk-btn-block nk-btn-lg text-white bb-package-btn" data-package="small" data-i18n="pricing.choose"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="nk-pricing">
+                            <h3 class="nk-pricing-title" data-i18n="pricing.packages.company.title"></h3>
+                            <div class="nk-pricing-price"><span class="bb-pricing-price" data-i18n="pricing.packages.company.price"></span></div>
+                            <ul class="nk-pricing-features">
+                                <li data-i18n="pricing.packages.company.features.0"></li>
+                                <li data-i18n="pricing.packages.company.features.1"></li>
+                                <li data-i18n="pricing.packages.company.features.2"></li>
+                            </ul>
+                            <div class="nk-pricing-button">
+                                <a href="#kontakt" class="nk-btn nk-btn-block nk-btn-lg text-white bb-package-btn" data-package="company" data-i18n="pricing.choose"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="nk-pricing">
+                            <h3 class="nk-pricing-title" data-i18n="pricing.packages.event.title"></h3>
+                            <div class="nk-pricing-price"><span class="bb-pricing-price" data-i18n="pricing.packages.event.price"></span></div>
+                            <ul class="nk-pricing-features">
+                                <li data-i18n="pricing.packages.event.features.0"></li>
+                                <li data-i18n="pricing.packages.event.features.1"></li>
+                                <li data-i18n="pricing.packages.event.features.2"></li>
+                            </ul>
+                            <div class="nk-pricing-button">
+                                <a href="#kontakt" class="nk-btn nk-btn-block nk-btn-lg text-white bb-package-btn" data-package="event" data-i18n="pricing.choose"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-gap-5"></div>
+        </section>
+        <!-- END: Pricing Tables -->
+
+        <!-- START: Contact Form -->
+        <section id="kontakt" class="nk-box">
+            <div class="nk-gap-5"></div>
+            <div class="container">
+                <div class="row vertical-gap">
+                    <div class="col-lg-5">
+                        <h2 class="nk-title h1" data-i18n="contact.title"></h2>
+                        <h3 class="nk-sub-title" data-i18n="contact.subtitle"></h3>
+                        <div class="nk-gap"></div>
+                        <p data-i18n="contact.text"></p>
+                        <div class="nk-gap-1"></div>
+                        <ul class="bb-contact-list">
+                            <li><strong data-i18n="contact.address.label"></strong> <span data-i18n="contact.address.value"></span></li>
+                            <li><strong data-i18n="contact.email.label"></strong> <a href="mailto:info@brandbear.sk" data-i18n="contact.email.value"></a></li>
+                            <li><strong data-i18n="contact.phone.label"></strong> <a href="tel:+420602750173" data-i18n="contact.phone.value"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="nk-box-3 bg-dark-1">
+                            <h3 class="nk-title h2 text-center" data-i18n="contact.form.title"></h3>
+                            <div class="nk-gap-1"></div>
+                            <form action="php/ajax-contact-form.php" class="nk-form nk-form-ajax nk-form-style-1">
+                                <div class="row vertical-gap sm-gap">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control required" name="name" placeholder="" data-i18n-placeholder="contact.form.namePlaceholder">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="company" placeholder="" data-i18n-placeholder="contact.form.companyPlaceholder">
+                                    </div>
+                                   <div class="col-md-6">
+                                        <input type="text" class="form-control" name="phone" placeholder="" data-i18n-placeholder="contact.form.phonePlaceholder">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <select class="form-control required" name="package" id="bb-package-select">
+                                            <option value="" data-i18n="contact.form.packagePlaceholder"></option>
+                                            <option value="small" data-i18n="pricing.packages.small.title"></option>
+                                            <option value="company" data-i18n="pricing.packages.company.title"></option>
+                                            <option value="event" data-i18n="pricing.packages.event.title"></option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control required" name="message" rows="6" placeholder="" data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
+                                    </div>
+                                </div>
+                                <div class="nk-gap"></div>
+                                <div class="nk-form-response-success"></div>
+                                <div class="nk-form-response-error"></div>
+                                <button class="nk-btn nk-btn-lg nk-btn-color-main-1" data-i18n="contact.form.submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-gap-5"></div>
+        </section>
+        <!-- END: Contact Form -->
+
+        <!-- START: BrandBear Map -->
+        <section id="mapa" class="bb-map-section">
+            <div class="bb-map-wrap">
+                <iframe
+                    class="bb-map-iframe"
+                    src="https://www.google.com/maps?q=Jammn%C3%ADk%2069%2C%20053%2022%20Jammn%C3%ADk%2C%20Slovensko&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+        <!-- END: BrandBear Map -->
+
+        <!-- START: Footer -->
+        <footer class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
+            <div class="container text-center">
+                <div class="nk-gap-2"></div>
+                <div class="bb-footer-brand">Brand<span class="text-main-1">Bear</span></div>
+                <div class="nk-gap"></div>
+                <p data-i18n="footer.text"></p>
+                <div class="bb-footer-contact-links">
+                    <a href="mailto:info@brandbear.sk" class="bb-footer-contact-link" data-i18n="footer.email"></a>
+                    <span>|</span>
+                    <a href="tel:+420602750173" class="bb-footer-contact-link" data-i18n="footer.phone"></a>
+                </div>
+                <div class="nk-footer-links bb-footer-links">
+                    <a href="#preco-my" class="bb-footer-link" data-i18n="nav.whyUs"></a>
+                    <span>|</span>
+                    <a href="#proces" class="bb-footer-link" data-i18n="nav.process"></a>
+                    <span>|</span>
+                    <a href="#referencie" class="bb-footer-link" data-i18n="nav.references"></a>
+                    <span>|</span>
+                    <a href="#kontakt" class="bb-footer-link" data-i18n="nav.quote"></a>
+                </div>
+                <div class="nk-gap-2"></div>
+                <p class="mb-0" data-i18n-html="footer.copyright"></p>
+                <div class="nk-gap-4"></div>
+            </div>
+        </footer>
+        <!-- END: Footer -->
+    </main>
+
+    <!-- START: Share Buttons -->
+    <div class="nk-share-buttons nk-share-buttons-left d-none d-md-flex">
+        <ul>
+            <li>
+                <a class="nk-share-icon" title="" data-i18n-title="share.facebook" href="#" target="_blank" rel="noopener">
+                    <span class="icon fa fa-facebook"></span>
+                </a>
+                <span class="nk-share-name" data-i18n="share.facebook"></span>
+            </li>
+            <li>
+                <a class="nk-share-icon" title="" data-i18n-title="share.instagram" href="#" target="_blank" rel="noopener">
+                    <span class="icon ion-social-instagram-outline"></span>
+                </a>
+                <span class="nk-share-name" data-i18n="share.instagram"></span>
+            </li>
+            <li>
+                <a class="nk-share-icon" title="" data-i18n-title="share.email" href="mailto:info@brandbear.sk">
+                    <span class="icon fa fa-envelope"></span>
+                </a>
+                <span class="nk-share-name" data-i18n="share.email"></span>
+            </li>
+        </ul>
+    </div>
+    <!-- END: Share Buttons -->
+
+    <!-- START: Side Buttons -->
+    <div class="nk-side-buttons nk-side-buttons-visible">
+        <ul>
+            <li>
+                <a href="#kontakt" class="nk-btn nk-btn-lg" data-i18n="nav.quote"></a>
+            </li>
+            <li>
+                <div class="bb-language-switcher" data-bb-language-switcher>
+                    <button type="button" class="nk-btn nk-btn-lg nk-btn-icon bb-language-toggle" title="" aria-label="" data-i18n-title="language.toggleTitle" data-i18n-aria-label="language.toggleTitle" data-bb-language-toggle>
+                        <span class="bb-language-current" data-bb-language-current></span>
+                    </button>
+                    <div class="bb-language-menu" data-bb-language-menu>
+                        <button type="button" class="bb-language-option" data-bb-set-language="sk"></button>
+                        <button type="button" class="bb-language-option" data-bb-set-language="en"></button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- END: Side Buttons -->
+
+    <!-- START: Scripts -->
+    <!-- Object Fit Polyfill -->
+    <script src="assets/vendor/object-fit-images/dist/ofi.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="assets/vendor/gsap/dist/gsap.min.js"></script>
+    <script src="assets/vendor/gsap/dist/ScrollToPlugin.min.js"></script>
+
+    <!-- Popper -->
+    <script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Sticky Kit -->
+    <script src="assets/vendor/sticky-kit/dist/sticky-kit.min.js"></script>
+
+    <!-- Jarallax -->
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/jarallax/dist/jarallax-video.min.js"></script>
+
+    <!-- imagesLoaded -->
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
+    <!-- Flickity -->
+    <script src="assets/vendor/flickity/dist/flickity.pkgd.min.js"></script>
+
+    <!-- Isotope -->
+    <script src="assets/vendor/isotope-layout/dist/isotope.pkgd.min.js"></script>
+
+    <!-- Photoswipe -->
+    <script src="assets/vendor/photoswipe/dist/photoswipe.min.js"></script>
+    <script src="assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+
+    <!-- Typed.js -->
+    <script src="assets/vendor/typed.js/lib/typed.min.js"></script>
+
+    <!-- Jquery Validation -->
+    <script src="assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <!-- Hammer.js -->
+    <script src="assets/vendor/hammerjs/hammer.min.js"></script>
+
+    <!-- NanoScroller -->
+    <script src="assets/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js"></script>
+
+    <!-- Keymaster -->
+    <script src="assets/vendor/keymaster/keymaster.js"></script>
+
+    <!-- BrandBear Translations -->
+    <script>
+        (function () {
+            var defaultLanguage = 'sk';
+            var availableLanguages = ['sk', 'en'];
+            var storageKey = 'brandbear_language';
+            var jsonBasePath = 'assets/json/';
+            var currentLanguage = defaultLanguage;
+
+            function hasLanguage(language) {
+                return availableLanguages.indexOf(language) !== -1;
+            }
+
+            function getSavedLanguage() {
+                var savedLanguage = localStorage.getItem(storageKey);
+                return hasLanguage(savedLanguage) ? savedLanguage : defaultLanguage;
+            }
+
+            function getValue(translations, key) {
+                return key.split('.').reduce(function (value, part) {
+                    return value && Object.prototype.hasOwnProperty.call(value, part) ? value[part] : null;
+                }, translations);
+            }
+
+            function loadTranslations(language) {
+                var request = new XMLHttpRequest();
+                request.open('GET', jsonBasePath + language + '.json', false);
+                request.overrideMimeType('application/json');
+                request.send(null);
+
+                if ((request.status >= 200 && request.status < 300 || request.status === 0) && request.responseText) {
+                    return JSON.parse(request.responseText);
+                }
+
+                return null;
+            }
+
+            function setTranslatedAttribute(translations, attributeName, dataAttributeName) {
+                document.querySelectorAll('[' + dataAttributeName + ']').forEach(function (element) {
+                    var value = getValue(translations, element.getAttribute(dataAttributeName));
+
+                    if (value !== null && value !== undefined) {
+                        element.setAttribute(attributeName, value);
+                    }
+                });
+            }
+
+            function applyTranslations(translations, language) {
+                if (!translations) {
+                    return;
+                }
+
+                currentLanguage = language;
+                document.documentElement.setAttribute('lang', language);
+
+                document.querySelectorAll('[data-i18n]').forEach(function (element) {
+                    var value = getValue(translations, element.getAttribute('data-i18n'));
+
+                    if (value !== null && value !== undefined) {
+                        element.textContent = value;
+                    }
+                });
+
+                document.querySelectorAll('[data-i18n-html]').forEach(function (element) {
+                    var value = getValue(translations, element.getAttribute('data-i18n-html'));
+
+                    if (value !== null && value !== undefined) {
+                        element.innerHTML = value;
+                    }
+                });
+
+                setTranslatedAttribute(translations, 'placeholder', 'data-i18n-placeholder');
+                setTranslatedAttribute(translations, 'title', 'data-i18n-title');
+                setTranslatedAttribute(translations, 'alt', 'data-i18n-alt');
+                setTranslatedAttribute(translations, 'content', 'data-i18n-content');
+                setTranslatedAttribute(translations, 'aria-label', 'data-i18n-aria-label');
+
+                document.querySelectorAll('[data-bb-language-current]').forEach(function (element) {
+                    element.textContent = language.toUpperCase();
+                });
+
+                document.querySelectorAll('[data-bb-set-language]').forEach(function (element) {
+                    var optionLanguage = element.getAttribute('data-bb-set-language');
+                    element.textContent = optionLanguage.toUpperCase();
+                    element.classList.toggle('is-active', optionLanguage === language);
+                });
+            }
+
+            function setLanguage(language) {
+                if (!hasLanguage(language)) {
+                    language = defaultLanguage;
+                }
+
+                localStorage.setItem(storageKey, language);
+                applyTranslations(loadTranslations(language), language);
+            }
+
+            window.BrandBearI18n = {
+                setLanguage: setLanguage,
+                getLanguage: function () {
+                    return currentLanguage;
+                }
+            };
+
+            setLanguage(getSavedLanguage());
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var switcher = document.querySelector('[data-bb-language-switcher]');
+                var toggle = document.querySelector('[data-bb-language-toggle]');
+
+                if (!switcher || !toggle) {
+                    return;
+                }
+
+                toggle.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    switcher.classList.toggle('is-open');
+                });
+
+                document.querySelectorAll('[data-bb-set-language]').forEach(function (button) {
+                    button.addEventListener('click', function (event) {
+                        event.preventDefault();
+
+                        var selectedLanguage = button.getAttribute('data-bb-set-language');
+
+                        if (selectedLanguage !== currentLanguage) {
+                            localStorage.setItem(storageKey, selectedLanguage);
+                            window.location.reload();
+                            return;
+                        }
+
+                        switcher.classList.remove('is-open');
+                    });
+                });
+
+                document.addEventListener('click', function (event) {
+                    if (!switcher.contains(event.target)) {
+                        switcher.classList.remove('is-open');
+                    }
+                });
+            });
+        })();
+    </script>
+
+    <!-- GODLIKE -->
+    <script src="assets/js/godlike.min.js"></script>
+    
+    <script src="assets/js/brandbear.js"></script>
+    <!-- END: Scripts -->
+</body>
+</html>

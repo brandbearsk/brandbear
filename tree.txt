@@ -1,0 +1,135 @@
+tree /f /a > tree.txt
+
+Folder PATH listing for volume Novì svazek
+Volume serial number is 021A-6DEE
+D:.
+|   index.html
+|   tree.txt
+|   
+\---assets
+    +---css
+    |       brandbear.css
+    |       godlike.css
+    |       godlike.min.css
+    |       
+    +---images
+    |       brandbear.png
+    |       brandbear_text.png
+    |       cursor.png
+    |       intro_image.png
+    |       logo.png
+    |       
+    +---js
+    |       brandbear.js
+    |       godlike-init.js
+    |       godlike.js
+    |       godlike.min.js
+    |       
+    +---json
+    |       en.json
+    |       sk.json
+    |       
+    \---vendor
+        +---bootstrap
+        |   \---dist
+        |       +---css
+        |       |       bootstrap.min.css
+        |       |       bootstrap.min.css.map
+        |       |       
+        |       \---js
+        |               bootstrap.min.js
+        |               bootstrap.min.js.map
+        |               
+        +---flickity
+        |   \---dist
+        |           flickity.min.css
+        |           flickity.pkgd.min.js
+        |           
+        +---fontawesome-free
+        |   \---js
+        |           all.js
+        |           v4-shims.js
+        |           
+        +---gsap
+        |   \---dist
+        |           gsap.min.js
+        |           gsap.min.js.map
+        |           ScrollToPlugin.min.js
+        |           ScrollToPlugin.min.js.map
+        |           
+        +---hammerjs
+        |       hammer.min.js
+        |       hammer.min.js.map
+        |       
+        +---imagesloaded
+        |       imagesloaded.pkgd.min.js
+        |       
+        +---ionicons
+        |   +---css
+        |   |       ionicons.min.css
+        |   |       
+        |   \---fonts
+        |           ionicons.eot
+        |           ionicons.svg
+        |           ionicons.ttf
+        |           ionicons.woff
+        |           
+        +---isotope-layout
+        |   \---dist
+        |           isotope.pkgd.min.js
+        |           
+        +---jarallax
+        |   \---dist
+        |           jarallax-video.min.js
+        |           jarallax-video.min.js.map
+        |           jarallax.min.js
+        |           jarallax.min.js.map
+        |           
+        +---jquery
+        |   \---dist
+        |           jquery.min.js
+        |           jquery.min.map
+        |           
+        +---jquery-validation
+        |   \---dist
+        |           jquery.validate.min.js
+        |           
+        +---keymaster
+        |       keymaster.js
+        |       
+        +---nanoscroller
+        |   \---bin
+        |       \---javascripts
+        |               jquery.nanoscroller.js
+        |               
+        +---object-fit-images
+        |   \---dist
+        |           ofi.min.js
+        |           
+        +---photoswipe
+        |   \---dist
+        |       |   photoswipe-ui-default.min.js
+        |       |   photoswipe.css
+        |       |   photoswipe.min.js
+        |       |   
+        |       \---default-skin
+        |               default-skin.css
+        |               default-skin.png
+        |               default-skin.svg
+        |               preloader.gif
+        |               
+        +---popper.js
+        |   \---dist
+        |       \---umd
+        |               popper.min.js
+        |               popper.min.js.map
+        |               
+        +---sticky-kit
+        |   \---dist
+        |           sticky-kit.min.js
+        |           
+        \---typed.js
+            \---lib
+                    typed.min.js
+                    typed.min.js.map
+                    
