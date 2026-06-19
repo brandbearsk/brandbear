@@ -442,6 +442,60 @@ a:focus {
 }
 
 /* ==============================
+   Language
+   ============================== */
+
+.bb-language-switcher {
+    position: relative;
+}
+
+.bb-language-current {
+    display: inline-block;
+    min-width: 24px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.bb-language-menu {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 8px);
+    min-width: 70px;
+    padding: 6px;
+    background: #09090b;
+    border: 1px solid rgba(201, 151, 45, .9);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
+    z-index: 20;
+}
+
+.bb-language-switcher.is-open .bb-language-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.bb-language-option {
+    display: block;
+    width: 100%;
+    padding: 7px 10px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+}
+
+.bb-language-option:hover,
+.bb-language-option.is-active {
+    color: #c9972d;
+}
+
+/* ==============================
    Partners logo marquee
    ============================== */
 

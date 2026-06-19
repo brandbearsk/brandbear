@@ -129,17 +129,17 @@
         "button": "Price quote",
         "counters": {
             "experience": {
-                "value": "05+",
+                "value": "5",
                 "title": "Years of experience",
                 "text": "Production of promotional and corporate clothing."
             },
             "orders": {
-                "value": "50+",
+                "value": "50",
                 "title": "Completed orders",
                 "text": "From smaller series to larger corporate orders."
             },
             "satisfaction": {
-                "value": "98%",
+                "value": "98",
                 "title": "Customer satisfaction",
                 "text": "Quality, reliable communication and satisfaction."
             }

@@ -36,58 +36,6 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/brandbear.css">
 
-    <style>
-        .bb-language-switcher {
-            position: relative;
-        }
-
-        .bb-language-current {
-            display: inline-block;
-            min-width: 24px;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .bb-language-menu {
-            position: absolute;
-            right: 0;
-            bottom: calc(100% + 8px);
-            min-width: 70px;
-            padding: 6px;
-            background: #09090b;
-            border: 1px solid rgba(201, 151, 45, .9);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(8px);
-            transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
-            z-index: 20;
-        }
-
-        .bb-language-switcher.is-open .bb-language-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .bb-language-option {
-            display: block;
-            width: 100%;
-            padding: 7px 10px;
-            border: 0;
-            background: transparent;
-            color: #fff;
-            font-weight: 700;
-            line-height: 1;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .bb-language-option:hover,
-        .bb-language-option.is-active {
-            color: #c9972d;
-        }
-    </style>
-
     <!-- jQuery -->
     <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
 </head>
@@ -571,7 +519,7 @@
                         <div class="nk-box-3 bg-dark-1">
                             <h3 class="nk-title h2 text-center" data-i18n="contact.form.title"></h3>
                             <div class="nk-gap-1"></div>
-                            <form action="php/ajax-contact-form.php" class="nk-form nk-form-ajax nk-form-style-1">
+                            <form id="bb-contact-form" class="nk-form nk-form-style-1">
                                 <div class="row vertical-gap sm-gap">
                                     <div class="col-md-6">
                                         <input type="text" class="form-control required" name="name" placeholder="" autocomplete="name" data-i18n-placeholder="contact.form.namePlaceholder">
@@ -748,150 +696,6 @@
 
     <!-- Keymaster -->
     <script src="assets/vendor/keymaster/keymaster.js"></script>
-
-    <!-- BrandBear Translations -->
-    <script>
-        (function () {
-            var defaultLanguage = 'sk';
-            var availableLanguages = ['sk', 'en'];
-            var storageKey = 'brandbear_language';
-            var jsonBasePath = 'assets/json/';
-            var currentLanguage = defaultLanguage;
-
-            function hasLanguage(language) {
-                return availableLanguages.indexOf(language) !== -1;
-            }
-
-            function getSavedLanguage() {
-                var savedLanguage = localStorage.getItem(storageKey);
-                return hasLanguage(savedLanguage) ? savedLanguage : defaultLanguage;
-            }
-
-            function getValue(translations, key) {
-                return key.split('.').reduce(function (value, part) {
-                    return value && Object.prototype.hasOwnProperty.call(value, part) ? value[part] : null;
-                }, translations);
-            }
-
-            function loadTranslations(language) {
-                var request = new XMLHttpRequest();
-                request.open('GET', jsonBasePath + language + '.json', false);
-                request.overrideMimeType('application/json');
-                request.send(null);
-
-                if ((request.status >= 200 && request.status < 300 || request.status === 0) && request.responseText) {
-                    return JSON.parse(request.responseText);
-                }
-
-                return null;
-            }
-
-            function setTranslatedAttribute(translations, attributeName, dataAttributeName) {
-                document.querySelectorAll('[' + dataAttributeName + ']').forEach(function (element) {
-                    var value = getValue(translations, element.getAttribute(dataAttributeName));
-
-                    if (value !== null && value !== undefined) {
-                        element.setAttribute(attributeName, value);
-                    }
-                });
-            }
-
-            function applyTranslations(translations, language) {
-                if (!translations) {
-                    return;
-                }
-
-                currentLanguage = language;
-                document.documentElement.setAttribute('lang', language);
-
-                document.querySelectorAll('[data-i18n]').forEach(function (element) {
-                    var value = getValue(translations, element.getAttribute('data-i18n'));
-
-                    if (value !== null && value !== undefined) {
-                        element.textContent = value;
-                    }
-                });
-
-                document.querySelectorAll('[data-i18n-html]').forEach(function (element) {
-                    var value = getValue(translations, element.getAttribute('data-i18n-html'));
-
-                    if (value !== null && value !== undefined) {
-                        element.innerHTML = value;
-                    }
-                });
-
-                setTranslatedAttribute(translations, 'placeholder', 'data-i18n-placeholder');
-                setTranslatedAttribute(translations, 'title', 'data-i18n-title');
-                setTranslatedAttribute(translations, 'alt', 'data-i18n-alt');
-                setTranslatedAttribute(translations, 'content', 'data-i18n-content');
-                setTranslatedAttribute(translations, 'aria-label', 'data-i18n-aria-label');
-
-                document.querySelectorAll('[data-bb-language-current]').forEach(function (element) {
-                    element.textContent = language.toUpperCase();
-                });
-
-                document.querySelectorAll('[data-bb-set-language]').forEach(function (element) {
-                    var optionLanguage = element.getAttribute('data-bb-set-language');
-                    element.textContent = optionLanguage.toUpperCase();
-                    element.classList.toggle('is-active', optionLanguage === language);
-                });
-            }
-
-            function setLanguage(language) {
-                if (!hasLanguage(language)) {
-                    language = defaultLanguage;
-                }
-
-                localStorage.setItem(storageKey, language);
-                applyTranslations(loadTranslations(language), language);
-            }
-
-            window.BrandBearI18n = {
-                setLanguage: setLanguage,
-                getLanguage: function () {
-                    return currentLanguage;
-                }
-            };
-
-            setLanguage(getSavedLanguage());
-
-            document.addEventListener('DOMContentLoaded', function () {
-                var switcher = document.querySelector('[data-bb-language-switcher]');
-                var toggle = document.querySelector('[data-bb-language-toggle]');
-
-                if (!switcher || !toggle) {
-                    return;
-                }
-
-                toggle.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    switcher.classList.toggle('is-open');
-                });
-
-                document.querySelectorAll('[data-bb-set-language]').forEach(function (button) {
-                    button.addEventListener('click', function (event) {
-                        event.preventDefault();
-
-                        var selectedLanguage = button.getAttribute('data-bb-set-language');
-
-                        if (selectedLanguage !== currentLanguage) {
-                            localStorage.setItem(storageKey, selectedLanguage);
-                            window.location.reload();
-                            return;
-                        }
-
-                        switcher.classList.remove('is-open');
-                    });
-                });
-
-                document.addEventListener('click', function (event) {
-                    if (!switcher.contains(event.target)) {
-                        switcher.classList.remove('is-open');
-                    }
-                });
-            });
-        })();
-    </script>
 
     <!-- GODLIKE -->
     <script src="assets/js/godlike.min.js"></script>

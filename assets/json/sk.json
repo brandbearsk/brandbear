@@ -129,17 +129,17 @@
         "button": "Cenová ponuka",
         "counters": {
             "experience": {
-                "value": "05+",
+                "value": "5",
                 "title": "Rokov skúsenosti",
                 "text": "Výroba reklamného a firemného oblečenia."
             },
             "orders": {
-                "value": "50+",
+                "value": "50",
                 "title": "Počet zákazok",
                 "text": "Od menších sérií až po väčšie firemné zákazky."
             },
             "satisfaction": {
-                "value": "98%",
+                "value": "98",
                 "title": "Spokojnosť zákazníkov",
                 "text": "Kvalita, spoľahlivá komunikácia a spokojnosť."
             }
