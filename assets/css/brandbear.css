@@ -370,6 +370,26 @@ a:focus {
     color: var(--bb-gold-hover);
 }
 
+.bb-file-input {
+    display: none;
+}
+
+.bb-file-note {
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+.bb-file-list {
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.bb-file-list div {
+    margin-top: 4px;
+}
+
 /* ==============================
    Forms
    ============================== */

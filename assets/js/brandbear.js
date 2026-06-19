@@ -323,6 +323,17 @@ document.addEventListener("DOMContentLoaded", function () {
     var errorBox = form.querySelector(".nk-form-response-error");
     var submitButton = form.querySelector("button[type='submit'], button:not([type])");
 
+    var companyName = document.getElementById("bb-company-name");
+    var companyIco = document.getElementById("bb-company-ico");
+    var companyCombined = document.getElementById("bb-company-combined");
+
+    var imageInput = document.getElementById("bb-images");
+    var fileList = document.getElementById("bb-file-list");
+
+    var maxFiles = 5;
+    var maxFileSize = 5 * 1024 * 1024;
+    var allowedImageTypes = ["image/jpeg", "image/png", "image/webp"];
+
     function setMessage(type, message) {
         if (successBox) {
             successBox.textContent = type === "success" ? message : "";
@@ -338,24 +349,108 @@ document.addEventListener("DOMContentLoaded", function () {
         return field ? field.value.trim() : "";
     }
 
+    function updateCompanyValue() {
+        if (!companyCombined) {
+            return;
+        }
+
+        var name = companyName ? companyName.value.trim() : "";
+        var ico = companyIco ? companyIco.value.trim() : "";
+
+        companyCombined.value = [name, ico].filter(Boolean).join(" / ");
+    }
+
+    function updateFileList() {
+        if (!imageInput || !fileList) {
+            return;
+        }
+
+        var files = Array.prototype.slice.call(imageInput.files || []);
+
+        if (!files.length) {
+            fileList.innerHTML = "";
+            return;
+        }
+
+        fileList.innerHTML = files.map(function (file) {
+            return "<div>• " + file.name + "</div>";
+        }).join("");
+    }
+
+    function validateImages() {
+        if (!imageInput) {
+            return true;
+        }
+
+        var files = Array.prototype.slice.call(imageInput.files || []);
+
+        if (files.length > maxFiles) {
+            setMessage("error", "Môžete priložiť maximálne 5 obrázkov.");
+            return false;
+        }
+
+        for (var i = 0; i < files.length; i++) {
+            if (allowedImageTypes.indexOf(files[i].type) === -1) {
+                setMessage("error", "Povolené sú iba obrázky JPG, PNG alebo WEBP.");
+                return false;
+            }
+
+            if (files[i].size > maxFileSize) {
+                setMessage("error", "Jeden obrázok môže mať maximálne 5 MB.");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    if (companyName) {
+        companyName.addEventListener("input", updateCompanyValue);
+    }
+
+    if (companyIco) {
+        companyIco.addEventListener("input", updateCompanyValue);
+    }
+
+    if (imageInput) {
+        imageInput.addEventListener("change", updateFileList);
+    }
+
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
         setMessage("", "");
+        updateCompanyValue();
 
-        var payload = {
-            name: getValue("name"),
-            email: getValue("email"),
-            company: getValue("company"),
-            phone: getValue("phone"),
-            package: getValue("package"),
-            message: getValue("message"),
-            page_url: window.location.href
-        };
+        var name = getValue("name");
+        var email = getValue("email");
+        var company = getValue("company");
+        var phone = getValue("phone");
+        var selectedPackage = getValue("package");
+        var message = getValue("message");
 
-        if (!payload.name || !payload.email || !payload.package || !payload.message) {
+        if (!name || !email || !selectedPackage || !message) {
             setMessage("error", "Prosím, vyplňte všetky povinné polia.");
             return;
+        }
+
+        if (!validateImages()) {
+            return;
+        }
+
+        var formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("company", company);
+        formData.append("phone", phone);
+        formData.append("package", selectedPackage);
+        formData.append("message", message);
+        formData.append("page_url", window.location.href);
+
+        if (imageInput && imageInput.files && imageInput.files.length) {
+            Array.prototype.forEach.call(imageInput.files, function (file) {
+                formData.append("images", file, file.name);
+            });
         }
 
         if (submitButton) {
@@ -364,10 +459,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         fetch(endpoint, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
+            body: formData
         })
             .then(function (response) {
                 if (!response.ok) {
@@ -378,6 +470,15 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(function () {
                 form.reset();
+
+                if (fileList) {
+                    fileList.innerHTML = "";
+                }
+
+                if (companyCombined) {
+                    companyCombined.value = "";
+                }
+
                 setMessage("success", "Ďakujeme, správa bola úspešne odoslaná.");
             })
             .catch(function () {

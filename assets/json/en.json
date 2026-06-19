@@ -199,9 +199,11 @@
             "title": "Contact form",
             "namePlaceholder": "Full name *",
             "emailPlaceholder": "Email *",
-            "companyPlaceholder": "Company name",
+            "companyPlaceholder": "Company name / Company ID",
             "phonePlaceholder": "Phone number",
             "packagePlaceholder": "Choose cooperation type *",
+            "imagesButton": "Attach images",
+            "imagesNote": "You can attach JPG, PNG or WEBP files. Maximum 5 images.",
             "messagePlaceholder": "What do you need produced? Please include the quantity and whether you already have a graphic design prepared. *",
             "submit": "Send inquiry"
         }

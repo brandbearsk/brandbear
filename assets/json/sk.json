@@ -199,9 +199,11 @@
             "title": "Kontaktný formulár",
             "namePlaceholder": "Meno a priezvisko *",
             "emailPlaceholder": "Email *",
-            "companyPlaceholder": "Názov firmy",
+            "companyPlaceholder": "Názov firmy / IČO",
             "phonePlaceholder": "Telefónne číslo",
             "packagePlaceholder": "Vyberte typ spolupráce *",
+            "imagesButton": "Priložiť obrázky",
+            "imagesNote": "Môžete priložiť JPG, PNG alebo WEBP. Maximálne 5 obrázkov.",
             "messagePlaceholder": "Čo potrebujete vyrobiť? Prosíme o informáciu koľko kusov a či máte grafický návrh zabezpečený. *",
             "submit": "Odoslať dopyt"
         }
