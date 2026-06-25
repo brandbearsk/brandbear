@@ -52,9 +52,9 @@
     "portfolio": {
         "title": "Široký výber reklamného textilu",
         "subtitle": "Portfólio",
-        "note": "Bundy, kraťasy, nohavice, šiltovky, mikiny a tričká. Fotky nižšie sú zatiaľ pripravené ako vizuálne miesta, neskôr ich vymeníme za tvoje reálne BrandBear produkty.",
+        "note": "Váš spoľahlivý výrobný partner – ponúkame sériovú výrobu oblečenia pre módne značky s nekompromisným dôrazom na kvalitu a detaily.",
         "products": {
-            "jackets": "Bundy",
+            "jackets": "Mikiny",
             "shorts": "Kraťasy",
             "pants": "Nohavice",
             "caps": "Šiltovky",
@@ -98,24 +98,29 @@
         "subtitle": "Niečo z dielne BrandBear",
         "items": [
             {
-                "body": "Výroba tričiek pre firmu XYZ",
-                "name": "Firemné tričká",
-                "year": "2023"
+                "body": "Maximálna spokojnosť – od prvých vzoriek až po finálnu dodávku prebehlo všetko hladko.",
+                "name": "Renovi",
+                "year": "2025"
             },
             {
-                "body": "Výroba kompletného oblečenia pre XYZ",
-                "name": "Kompletné firemné oblečenie",
-                "year": "2023"
+                "body": "Ideálny partner pre našu značku – zabezpečili všetko od A po Z na profesionálnej úrovni.",
+                "name": "Brunch Box",
+                "year": "2025"
             },
             {
-                "body": "Výroba nohavíc pre XYZ",
-                "name": "Pracovné nohavice",
-                "year": "2023"
+                "body": "Vynikajúca kvalita, rýchlosť a bezproblémové jednanie pri každej objednávke.“",
+                "name": "Hudobná skupina BASIX",
+                "year": "2025"
             },
             {
-                "body": "Výroba búnd pre firmu XYZ",
-                "name": "Firemné bundy",
-                "year": "2023"
+                "body": "Výborný pomer ceny, kvality a rýchlosti dodania veľkoobjemových zákaziek.",
+                "name": "Športový klub SEVERAN",
+                "year": "2025"
+            },
+            {
+                "body": "Kvalitné materiály, bezchybné šitie a skvelý prístup.",
+                "name": "HUBIO",
+                "year": "2025"
             }
         ]
     },

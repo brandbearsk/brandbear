@@ -1,7 +1,7 @@
 {
     "meta": {
-        "description": "BrandBear produces promotional and corporate clothing with printing and embroidery for companies, events and sports teams.",
-        "title": "BrandBear | Printing and embroidery for promotional textiles"
+        "description": "BrandBear produces promotional and corporate clothing with printing and embroidery for companies, events, and sports teams.",
+        "title": "BrandBear | Printing and embroidery of promotional textiles"
     },
     "brand": {
         "logoAlt": "BrandBear"
@@ -18,8 +18,8 @@
     "hero": {
         "imageAlt": "BrandBear promotional textiles",
         "label": "Printing and embroidery",
-        "title": "Clothing for companies, events and sports teams",
-        "text": "We create clothing that represents your brand at events, at work and in the field.",
+        "title": "Clothing for companies, events, and sports teams",
+        "text": "We produce clothing that represents your brand at events, at work, and in the field.",
         "primaryButton": "Request a price quote",
         "secondaryButton": "View portfolio"
     },
@@ -36,11 +36,11 @@
         },
         "orders": {
             "title": "Small and large orders",
-            "text": "We handle production from smaller corporate orders to large series for events and teams."
+            "text": "We handle production from smaller corporate orders to large batches for events and teams."
         }
     },
     "announcer": {
-        "title": "BrandBear makes",
+        "title": "BrandBear produces",
         "items": [
             "corporate T-shirts with printing.",
             "embroidered hoodies and jackets.",
@@ -50,13 +50,13 @@
         ]
     },
     "portfolio": {
-        "title": "A wide range of promotional textiles",
+        "title": "A wide selection of promotional textiles",
         "subtitle": "Portfolio",
-        "note": "Jackets, shorts, trousers, caps, hoodies and T-shirts. The photos below are currently prepared as visual placeholders, and later we will replace them with your real BrandBear products.",
+        "note": "Your reliable production partner – we offer batch clothing production for fashion brands with an uncompromising focus on quality and detail.",
         "products": {
-            "jackets": "Jackets",
+            "jackets": "Sweatshirts",
             "shorts": "Shorts",
-            "pants": "Trousers",
+            "pants": "Pants",
             "caps": "Caps",
             "hoodies": "Hoodies",
             "tshirts": "T-shirts"
@@ -64,7 +64,7 @@
     },
     "cta": {
         "title": "From design to finished textile",
-        "text": "We help companies, events and sports teams create high-quality clothing with custom printing or embroidery. From the first design to final production, we focus on quality workmanship, a professional look and simple communication.",
+        "text": "We help companies, events, and sports teams create high-quality clothing with custom printing or embroidery. From the first design to final production, we focus on quality workmanship, a professional look, and simple communication.",
         "button": "Start an order"
     },
     "process": {
@@ -72,9 +72,9 @@
         "subtitle": "Production without unnecessary complications",
         "steps": {
             "form": {
-                "imageAlt": "Form completion",
+                "imageAlt": "Filling out the form",
                 "title": "1. Form",
-                "text": "You send us the clothing type, quantity, printing or embroidery idea and contact details."
+                "text": "You send us the type of clothing, number of pieces, your idea for printing or embroidery, and your contact details."
             },
             "design": {
                 "imageAlt": "Design and price quote",
@@ -89,33 +89,38 @@
             "production": {
                 "imageAlt": "Production and delivery",
                 "title": "4. Production",
-                "text": "We focus on quality workmanship, precise details and meeting the agreed delivery date."
+                "text": "We focus on quality workmanship, precise details, and meeting the agreed delivery date."
             }
         }
     },
     "references": {
-        "title": "View some of our projects",
+        "title": "Take a look at some of our orders",
         "subtitle": "From the BrandBear workshop",
         "items": [
             {
-                "body": "Production of T-shirts for company XYZ",
-                "name": "Corporate T-shirts",
-                "year": "2023"
+                "body": "Maximum satisfaction – from the first samples to the final delivery, everything went smoothly.",
+                "name": "Renovi",
+                "year": "2025"
             },
             {
-                "body": "Production of complete clothing for XYZ",
-                "name": "Complete corporate clothing",
-                "year": "2023"
+                "body": "The ideal partner for our brand – they handled everything from A to Z at a professional level.",
+                "name": "Brunch Box",
+                "year": "2025"
             },
             {
-                "body": "Production of trousers for XYZ",
-                "name": "Work trousers",
-                "year": "2023"
+                "body": "Excellent quality, speed, and smooth communication with every order.",
+                "name": "Hudobná skupina BASIX",
+                "year": "2025"
             },
             {
-                "body": "Production of jackets for company XYZ",
-                "name": "Corporate jackets",
-                "year": "2023"
+                "body": "An excellent balance of price, quality, and fast delivery for high-volume orders.",
+                "name": "Športový klub SEVERAN",
+                "year": "2025"
+            },
+            {
+                "body": "High-quality materials, flawless sewing, and a great approach.",
+                "name": "HUBIO",
+                "year": "2025"
             }
         ]
     },
@@ -123,9 +128,9 @@
         "logoAlt": "BrandBear partner"
     },
     "about": {
-        "title": "Partner for promotional clothing",
+        "title": "A partner for promotional clothing",
         "subtitle": "About BrandBear",
-        "text": "We help companies, events and sports teams create high-quality clothing with custom printing or embroidery. From the first design to final production, we focus on quality workmanship, a professional look and simple communication.",
+        "text": "We help companies, events, and sports teams create high-quality clothing with custom printing or embroidery. From the first design to final production, we focus on quality workmanship, a professional look, and simple communication.",
         "button": "Price quote",
         "counters": {
             "experience": {
@@ -135,19 +140,19 @@
             },
             "orders": {
                 "value": "50",
-                "title": "Completed orders",
-                "text": "From smaller series to larger corporate orders."
+                "title": "Number of orders",
+                "text": "From smaller batches to larger corporate orders."
             },
             "satisfaction": {
                 "value": "98",
                 "title": "Customer satisfaction",
-                "text": "Quality, reliable communication and satisfaction."
+                "text": "Quality, reliable communication, and satisfaction."
             }
         }
     },
     "pricing": {
         "title": "Cooperation packages",
-        "subtitle": "We prepare the price according to the specific order",
+        "subtitle": "We prepare the price based on the specific order",
         "choose": "Choose",
         "packages": {
             "small": {
@@ -160,11 +165,11 @@
                 ]
             },
             "company": {
-                "title": "Corporate series",
+                "title": "Corporate batch",
                 "price": "Most common",
                 "features": [
                     "Clothing for teams and employees",
-                    "Unified professional appearance",
+                    "A consistent professional look",
                     "Simple communication by email"
                 ]
             },
@@ -172,9 +177,9 @@
                 "title": "Event / team",
                 "price": "Individual",
                 "features": [
-                    "Larger series for events and clubs",
-                    "Physical sample possible by agreement",
-                    "Handling of express orders"
+                    "Larger batches for events and clubs",
+                    "Physical sample available by agreement",
+                    "Express order solutions"
                 ]
             }
         }
@@ -182,7 +187,7 @@
     "contact": {
         "title": "Request a price quote",
         "subtitle": "Tell us what you need produced",
-        "text": "Send us the clothing type, quantity, printing or embroidery idea and contact details. You can also add information to the form about whether you already have a graphic design prepared.",
+        "text": "Send us the type of clothing, number of pieces, your idea for printing or embroidery, and your contact details. You can also add information about whether you already have a graphic design prepared.",
         "address": {
             "label": "Address",
             "value": "Jamník 69, 053 22 Jamník, Slovakia"
@@ -201,15 +206,15 @@
             "emailPlaceholder": "Email *",
             "companyPlaceholder": "Company name / Company ID",
             "phonePlaceholder": "Phone number",
-            "packagePlaceholder": "Choose cooperation type *",
+            "packagePlaceholder": "Select cooperation type *",
             "imagesButton": "Attach images",
-            "imagesNote": "You can attach JPG, PNG or WEBP files. Maximum 5 images.",
+            "imagesNote": "You can attach JPG, PNG, or WEBP files. Maximum 5 images.",
             "messagePlaceholder": "What do you need produced? Please include the quantity and whether you already have a graphic design prepared. *",
             "submit": "Send inquiry"
         }
     },
     "footer": {
-        "text": "Printing and embroidery for promotional textiles for companies, events and sports teams.",
+        "text": "Printing and embroidery of promotional textiles for companies, events, and sports teams.",
         "email": "info@brandbear.sk",
         "phone": "+420 602 750 173",
         "copyright": "&copy; 2026 BrandBear. All rights reserved."
@@ -220,6 +225,6 @@
         "email": "Email"
     },
     "language": {
-        "toggleTitle": "Choose language"
+        "toggleTitle": "Select language"
     }
 }
