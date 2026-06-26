@@ -491,3 +491,40 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 });
+
+(function () {
+    const themeToggle = document.getElementById("bb-theme-toggle");
+
+    if (!themeToggle) {
+        return;
+    }
+
+    const themeIcon = themeToggle.querySelector(".bb-theme-icon");
+    const savedTheme = localStorage.getItem("bb-theme");
+
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches
+        ? "light"
+        : "dark";
+
+    const currentTheme = savedTheme || preferredTheme;
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("bb-theme", theme);
+
+        if (theme === "light") {
+            themeToggle.setAttribute("aria-label", "Prepnúť tmavý režim");
+        } else {
+            themeToggle.setAttribute("aria-label", "Prepnúť svetlý režim");
+        }
+    }
+
+    applyTheme(currentTheme);
+
+    themeToggle.addEventListener("click", function () {
+        const activeTheme = document.documentElement.getAttribute("data-theme");
+        const nextTheme = activeTheme === "light" ? "dark" : "light";
+
+        applyTheme(nextTheme);
+    });
+})();

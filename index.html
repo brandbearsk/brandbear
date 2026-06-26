@@ -70,10 +70,29 @@
                                 </span>
                             </a>
                         </li>
-                        <li class="single-icon d-none d-lg-block">
-                            <a href="#kontakt" class="no-link-effect" title="" data-i18n-title="nav.quote">
-                                <span class="fa fa-envelope"></span>
-                            </a>
+                        <li class="bb-theme-switcher">
+                            <button
+                                type="button"
+                                class="bb-theme-toggle"
+                                id="bb-theme-toggle"
+                                aria-label="Prepnúť svetlý režim"
+                            >
+                                <svg class="bb-theme-svg bb-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                    <path d="M12 2v2"></path>
+                                    <path d="M12 20v2"></path>
+                                    <path d="M4.93 4.93l1.41 1.41"></path>
+                                    <path d="M17.66 17.66l1.41 1.41"></path>
+                                    <path d="M2 12h2"></path>
+                                    <path d="M20 12h2"></path>
+                                    <path d="M4.93 19.07l1.41-1.41"></path>
+                                    <path d="M17.66 6.34l1.41-1.41"></path>
+                                </svg>
+
+                                <svg class="bb-theme-svg bb-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3a7 7 0 1 0 11.5 11.5z"></path>
+                                </svg>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -250,67 +269,164 @@
         <!-- START: Process / Team Members -->
         <section id="proces" class="nk-box">
             <div class="nk-gap-5"></div>
+
             <div class="container text-center">
                 <h2 class="nk-title h1" data-i18n="process.title"></h2>
                 <h3 class="nk-sub-title" data-i18n="process.subtitle"></h3>
             </div>
+
             <div class="nk-gap-3"></div>
+
             <div class="container">
                 <div class="row lg-gap vertical-gap">
+
+                    <!-- Step 1: Form -->
                     <div class="col-lg-6">
-                        <div class="nk-team-member" data-mouse-parallax-z="5">
-                            <div class="nk-team-member-photo">
-                                <a href="#kontakt"><img src="assets/images/production.webp" alt="" data-i18n-alt="process.steps.form.imageAlt"></a>
+                        <div class="nk-team-member bb-process-card bb-process-card-form" data-mouse-parallax-z="5">
+                            <div class="nk-team-member-photo bb-process-photo">
+                                <a href="#kontakt" class="bb-process-animation-link" aria-label="Form">
+                                    <div class="bb-process-animation bb-process-animation-form" aria-hidden="true">
+                                        <span class="bb-process-number">01</span>
+
+                                        <div class="bb-form-sheet">
+                                            <span class="bb-form-line bb-form-line-1"></span>
+                                            <span class="bb-form-line bb-form-line-2"></span>
+                                            <span class="bb-form-line bb-form-line-3"></span>
+                                            <span class="bb-form-field bb-form-field-1"></span>
+                                            <span class="bb-form-field bb-form-field-2"></span>
+                                            <span class="bb-form-check"></span>
+                                        </div>
+
+                                        <span class="bb-process-orbit bb-process-orbit-1"></span>
+                                        <span class="bb-process-orbit bb-process-orbit-2"></span>
+                                    </div>
+                                </a>
                             </div>
+
                             <div class="nk-team-member-info">
                                 <div data-mouse-parallax-z="2">
-                                    <h3 class="nk-title h2"><a href="#kontakt" data-i18n="process.steps.form.title"></a></h3>
+                                    <h3 class="nk-title h2">
+                                        <a href="#kontakt" data-i18n="process.steps.form.title"></a>
+                                    </h3>
                                     <div data-i18n="process.steps.form.text"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Step 2: Design and price -->
                     <div class="col-lg-6">
-                        <div class="nk-team-member nk-team-member-revert" data-mouse-parallax-z="5">
-                            <div class="nk-team-member-photo">
-                                <a href="#kontakt"><img src="assets/images/price_proposal.webp" alt="" data-i18n-alt="process.steps.design.imageAlt"></a>
+                        <div class="nk-team-member nk-team-member-revert bb-process-card bb-process-card-design" data-mouse-parallax-z="5">
+                            <div class="nk-team-member-photo bb-process-photo">
+                                <a href="#kontakt" class="bb-process-animation-link" aria-label="Design and price">
+                                    <div class="bb-process-animation bb-process-animation-design" aria-hidden="true">
+                                        <span class="bb-process-number">02</span>
+
+                                        <div class="bb-design-board">
+                                            <span class="bb-shirt-shape"></span>
+                                            <span class="bb-shirt-collar"></span>
+                                            <span class="bb-shirt-print"></span>
+                                            <span class="bb-design-pencil"></span>
+
+                                            <div class="bb-price-tag">
+                                                <span class="bb-price-dot"></span>
+                                                <span class="bb-price-line bb-price-line-1"></span>
+                                                <span class="bb-price-line bb-price-line-2"></span>
+                                            </div>
+                                        </div>
+
+                                        <span class="bb-process-orbit bb-process-orbit-1"></span>
+                                        <span class="bb-process-orbit bb-process-orbit-2"></span>
+                                    </div>
+                                </a>
                             </div>
+
                             <div class="nk-team-member-info nk-team-member-info-bottom">
                                 <div data-mouse-parallax-z="2">
-                                    <h3 class="nk-title h2"><a href="#kontakt" data-i18n="process.steps.design.title"></a></h3>
+                                    <h3 class="nk-title h2">
+                                        <a href="#kontakt" data-i18n="process.steps.design.title"></a>
+                                    </h3>
                                     <div data-i18n="process.steps.design.text"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Step 3: Approval -->
                     <div class="col-lg-6">
-                        <div class="nk-team-member" data-mouse-parallax-z="5">
-                            <div class="nk-team-member-photo">
-                                <a href="#kontakt"><img src="assets/images/approval.webp" alt="" data-i18n-alt="process.steps.approval.imageAlt"></a>
+                        <div class="nk-team-member bb-process-card bb-process-card-approval" data-mouse-parallax-z="5">
+                            <div class="nk-team-member-photo bb-process-photo">
+                                <a href="#kontakt" class="bb-process-animation-link" aria-label="Approval">
+                                    <div class="bb-process-animation bb-process-animation-approval" aria-hidden="true">
+                                        <span class="bb-process-number">03</span>
+
+                                        <div class="bb-approval-badge">
+                                            <span class="bb-approval-ring"></span>
+                                            <span class="bb-approval-check"></span>
+                                        </div>
+
+                                        <div class="bb-approval-document">
+                                            <span class="bb-approval-line bb-approval-line-1"></span>
+                                            <span class="bb-approval-line bb-approval-line-2"></span>
+                                            <span class="bb-approval-signature"></span>
+                                        </div>
+
+                                        <span class="bb-process-orbit bb-process-orbit-1"></span>
+                                        <span class="bb-process-orbit bb-process-orbit-2"></span>
+                                    </div>
+                                </a>
                             </div>
+
                             <div class="nk-team-member-info">
                                 <div data-mouse-parallax-z="2">
-                                    <h3 class="nk-title h2"><a href="#kontakt" data-i18n="process.steps.approval.title"></a></h3>
+                                    <h3 class="nk-title h2">
+                                        <a href="#kontakt" data-i18n="process.steps.approval.title"></a>
+                                    </h3>
                                     <div data-i18n="process.steps.approval.text"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Step 4: Manufacture -->
                     <div class="col-lg-6">
-                        <div class="nk-team-member nk-team-member-revert" data-mouse-parallax-z="5">
-                            <div class="nk-team-member-photo">
-                                <a href="#kontakt"><img src="assets/images/manufacture.webp" alt="" data-i18n-alt="process.steps.production.imageAlt"></a>
+                        <div class="nk-team-member nk-team-member-revert bb-process-card bb-process-card-production" data-mouse-parallax-z="5">
+                            <div class="nk-team-member-photo bb-process-photo">
+                                <a href="#kontakt" class="bb-process-animation-link" aria-label="Manufacture">
+                                    <div class="bb-process-animation bb-process-animation-production" aria-hidden="true">
+                                        <span class="bb-process-number">04</span>
+
+                                        <div class="bb-machine">
+                                            <span class="bb-machine-body"></span>
+                                            <span class="bb-machine-arm"></span>
+                                            <span class="bb-machine-needle"></span>
+                                            <span class="bb-machine-thread"></span>
+                                            <span class="bb-fabric"></span>
+                                            <span class="bb-fabric-stitch bb-fabric-stitch-1"></span>
+                                            <span class="bb-fabric-stitch bb-fabric-stitch-2"></span>
+                                            <span class="bb-fabric-stitch bb-fabric-stitch-3"></span>
+                                        </div>
+
+                                        <span class="bb-process-orbit bb-process-orbit-1"></span>
+                                        <span class="bb-process-orbit bb-process-orbit-2"></span>
+                                    </div>
+                                </a>
                             </div>
+
                             <div class="nk-team-member-info nk-team-member-info-bottom">
                                 <div data-mouse-parallax-z="2">
-                                    <h3 class="nk-title h2"><a href="#kontakt" data-i18n="process.steps.production.title"></a></h3>
+                                    <h3 class="nk-title h2">
+                                        <a href="#kontakt" data-i18n="process.steps.production.title"></a>
+                                    </h3>
                                     <div data-i18n="process.steps.production.text"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+
             <div class="nk-gap-5"></div>
         </section>
         <!-- END: Process / Team Members -->
@@ -375,26 +491,26 @@
                             <div class="bb-logo-item"><img src="assets/images/dftransport.png" alt="" data-i18n-alt="partners.logoAlt"></div>
                             <div class="bb-logo-item"><img src="assets/images/hubio.png" alt="" data-i18n-alt="partners.logoAlt"></div>
                             <div class="bb-logo-item"><img src="assets/images/severan.png" alt="" data-i18n-alt="partners.logoAlt"></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/dftransport.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/hubio.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/severan.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/dftransport.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/hubio.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/severan.png" alt="" data-i18n-alt="partners.logoAlt"></div>
+                            <div class="bb-logo-item"><img src="assets/images/hubio.png" alt="" data-i18n-alt="partners.logoAlt"></div>
                         </div>
 
                         <div class="bb-logo-marquee-row" aria-hidden="true">
                             <div class="bb-logo-item"><img src="assets/images/dftransport.png" alt=""></div>
                             <div class="bb-logo-item"><img src="assets/images/hubio.png" alt=""></div>
                             <div class="bb-logo-item"><img src="assets/images/severan.png" alt=""></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
-                            <div class="bb-logo-item"><img src="assets/images/brandbear.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/dftransport.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/hubio.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/severan.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/dftransport.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/hubio.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/severan.png" alt=""></div>
+                            <div class="bb-logo-item"><img src="assets/images/hubio.png" alt=""></div>
                         </div>
 
                     </div>
