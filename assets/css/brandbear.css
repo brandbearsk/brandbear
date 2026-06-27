@@ -254,6 +254,30 @@ html[data-theme="light"] .bb-icon-moon {
 }
 
 /* ==============================
+   Theme images
+   ============================== */
+
+img.light,
+.bg-image > .light {
+    display: none !important;
+}
+
+img.dark,
+.bg-image > .dark {
+    display: block !important;
+}
+
+html[data-theme="light"] img.light,
+html[data-theme="light"] .bg-image > .light {
+    display: block !important;
+}
+
+html[data-theme="light"] img.dark,
+html[data-theme="light"] .bg-image > .dark {
+    display: none !important;
+}
+
+/* ==============================
    Buttons
    ============================== */
 

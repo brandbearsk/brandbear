@@ -7792,6 +7792,13 @@ body.nk-body-overflow .nk-share-buttons {
     cursor: url("../images/cursor.png") 64 64, pointer !important;
 }
 
+html[data-theme="light"] #portfolio .bb-product-card,
+html[data-theme="light"] #portfolio .bb-product-card *,
+html[data-theme="light"] #portfolio .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down,
+html[data-theme="light"] #portfolio .flickity-enabled.is-draggable .flickity-viewport.is-dragging {
+    cursor: url("../images/cursor_light.png") 64 64, pointer !important;
+}
+
 /* Style 1 */
 .nk-carousel .flickity-slider > div > div {
     width: 50%;
