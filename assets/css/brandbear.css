@@ -776,10 +776,33 @@ html[data-theme="light"] #preco-my .nk-box-3:hover {
     left: 39px;
     top: 50px;
     width: 56px;
-    height: 29px;
-    border-left: 7px solid var(--bb-gold-light);
-    border-bottom: 7px solid var(--bb-gold-light);
-    transform: rotate(-45deg);
+    height: 35px;
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: bb-draw-check-loop 3s ease-in-out infinite;
+}
+
+@keyframes bb-draw-check-loop {
+    0%, 15% {
+        stroke-dashoffset: 80;
+        opacity: 0;
+    }
+    35% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+    65% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+    85% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+    }
+    100% {
+        stroke-dashoffset: 80;
+        opacity: 0;
+    }
 }
 
 .bb-approval-document {
@@ -804,82 +827,63 @@ html[data-theme="light"] #preco-my .nk-box-3:hover {
     position: absolute;
     inset: 0;
     z-index: 3;
-    animation: bb-float-soft 5s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Ihla - elegantná, tenká, otočená šikmo */
-.bb-machine-body {
-    position: absolute;
-    left: 105px;
-    top: 50px;
-    width: 3px;
-    height: 100px;
-    background: var(--bb-gold-light);
-    transform: rotate(25deg);
-    transform-origin: bottom center;
-    border: 0 !important; /* Rušíme staré rámy stroja */
-    border-radius: 99px;
-    animation: bb-needle-work 2.5s ease-in-out infinite;
-}
-
-/* Uško ihly (otvor v hornej časti) */
-.bb-machine-body::before {
-    content: "";
-    position: absolute;
-    left: -2px;
-    top: 12px;
-    width: 5px;
-    height: 20px;
-    border: 2px solid var(--bb-gold-light);
-    border-radius: 50%;
-    background: transparent;
-}
-
-/* Špička ihly v spodnej časti */
-.bb-machine-body::after {
-    content: "";
-    position: absolute;
-    left: -1px;
-    bottom: -10px;
-    width: 0;
-    height: 0;
-    border-top: 12px solid var(--bb-gold-light);
-    border-right: 2px solid transparent;
-    border-left: 2px solid transparent;
-}
-
-/* Niť prechádzajúca cez uško ihly */
-.bb-machine-needle {
-    position: absolute;
-    left: 70px;
-    top: 45px;
-    width: 80px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid rgba(211, 168, 79, 0.6);
-    border-bottom: 0;
-    border-radius: 40px 40px 0 0;
-    transform: rotate(-15deg);
-    animation: bb-thread-pulse 2.5s ease-in-out infinite;
-}
-
-/* Vlnovka nite pod ihlou (výšivka) */
-.bb-fabric {
-    position: absolute;
-    left: 55px;
-    top: 145px;
+.bb-draw-hammer {
     width: 110px;
-    height: 25px;
-    background: transparent;
-    border: 0 !important; /* Rušíme starú látku */
-    border-bottom: 2px dashed rgba(211, 168, 79, 0.75);
-    border-radius: 0 0 50% 50%;
-    animation: bb-stitch-wave 2.5s ease-in-out infinite;
+    height: 110px;
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
+    animation: bb-draw-line 2.5s ease-out forwards;
 }
 
-/* Skrytie starých nepotrebných elementov, ak zostali v HTML */
-.bb-fabric::before {
-    display: none !important;
+.bb-hammer-fill {
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    animation: bb-fill-gold 2.5s ease-out forwards;
+}
+
+.bb-hammer-moving-part {
+    transform-origin: 45px 35px;
+    animation: bb-hammer-swing 2s cubic-bezier(0.25, 1, 0.2, 1) infinite;
+    animation-delay: 2.5s;
+}
+
+@keyframes bb-draw-line {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes bb-fill-gold {
+    50% {
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill: var(--bb-gold-light);
+    }
+}
+
+@keyframes bb-hammer-swing {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-35deg);
+    }
+    35% {
+        transform: rotate(3deg);
+    }
+    45% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 
@@ -1588,4 +1592,17 @@ html[data-theme="light"] #proces .nk-team-member-info,
 html[data-theme="light"] #proces .nk-team-member-info a,
 html[data-theme="light"] #proces .nk-team-member-info .nk-title {
     color: var(--bb-gold-light) !important;
+}
+
+.bb-main-nav .nk-nav > li.active > a,
+.bb-main-nav .nk-nav > li > a.active,
+.bb-main-nav .nk-nav > li.current > a {
+    color: var(--bb-gold-light) !important;
+    opacity: 1;
+}
+
+.bb-main-nav .nk-nav > li.active > a::after,
+.bb-main-nav .nk-nav > li > a.active::after,
+.bb-main-nav .nk-nav > li.current > a::after {
+    width: calc(100% - 40px);
 }
