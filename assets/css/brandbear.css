@@ -1563,6 +1563,18 @@ select.form-control option,
         font-size: 1.25rem;
     }
 
+    #home .nk-btn {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    #home .nk-btn-color-main-1 {
+        margin-bottom: 18px;
+    }
+
     .bb-map-wrap {
         height: 320px;
     }
