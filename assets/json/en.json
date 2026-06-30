@@ -54,12 +54,12 @@
         "subtitle": "Portfolio",
         "note": "Your reliable production partner – we offer batch clothing production for fashion brands with an uncompromising focus on quality and detail.",
         "products": {
-            "jackets": "Sweatshirts",
-            "shorts": "Shorts",
-            "pants": "Pants",
-            "caps": "Caps",
-            "hoodies": "Hoodies",
-            "tshirts": "T-shirts"
+            "tshirts1": "T-shirts",
+            "joggers1": "Joggers",
+            "tshirts2": "T-shirts",
+            "hoodies1": "Hoodies",
+            "tshirts3": "T-shirts",
+            "hoodies2": "Hoodies"
         }
     },
     "cta": {

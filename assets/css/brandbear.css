@@ -498,27 +498,23 @@ html[data-theme="light"] #home .bg-image::after {
     display: block;
     position: relative;
     overflow: hidden;
-    background: var(--bb-dark-3);
+    background: transparent !important;
 }
 
 .bb-product-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.04));
-    z-index: 1;
+    display: none !important;
+    content: none !important;
 }
 
 .bb-product-card img {
     width: 100%;
-    opacity: 0.72;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    opacity: 1 !important;
+    transition: transform 0.25s ease;
 }
 
 .bb-product-card:hover img,
 .bb-product-card:focus img {
-    opacity: 0.95;
+    opacity: 1 !important;
     transform: scale(1.035);
 }
 
@@ -531,6 +527,11 @@ html[data-theme="light"] #home .bg-image::after {
     font-size: 1.55rem;
     color: var(--bb-on-image);
     text-shadow: 0 2px 14px var(--bb-image-shadow);
+}
+
+html[data-theme="light"] .bb-product-card span {
+    color: #1D1811 !important;
+    text-shadow: none !important;
 }
 
 /* ==============================
@@ -548,7 +549,6 @@ html[data-theme="light"] #home .bg-image::after {
 #preco-my .nk-box-3:hover {
     background-color: #0B0B0D !important;
     transform: translateY(-6px);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
 
 #preco-my .nk-box-3:hover .nk-ibox-icon {
@@ -557,11 +557,29 @@ html[data-theme="light"] #home .bg-image::after {
 
 html[data-theme="light"] #preco-my .nk-box-3 {
     background-color: var(--bb-dark-2) !important;
+    box-shadow: 0 24px 70px rgba(70, 50, 25, 0.22);
 }
 
 html[data-theme="light"] #preco-my .nk-box-3:hover {
     background-color: #CFC0AA !important;
-    box-shadow: 0 18px 45px rgba(70, 50, 25, 0.18);
+    box-shadow: 0 34px 90px rgba(70, 50, 25, 0.30);
+}
+
+@media (min-width: 992px) {
+    #preco-my .row.no-gutters.vertical-gap {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 30px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    #preco-my .row.no-gutters.vertical-gap > [class*="col-"] {
+        flex: 0 0 calc((100% - 60px) / 3);
+        max-width: calc((100% - 60px) / 3);
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
 /* ==============================
@@ -1007,19 +1025,55 @@ html[data-theme="light"] #preco-my .nk-box-3:hover {
    Cta
    ============================== */
 
-/* Light mode: jemnejšia hnedá pre hlavné tlačidlá */
+/* Light mode: hlavné tlačidlá */
 
 html[data-theme="light"] {
-    --bb-light-button-bg: #A9824A;
-    --bb-light-button-border: #8F6B36;
+    --bb-light-button-bg: #E6C280;
+    --bb-light-button-border: #E6C280;
     --bb-light-button-text: #0F0C07;
 }
 
+/* Normálny stav tlačidiel v light režime */
 html[data-theme="light"] .nk-btn-color-main-1,
 html[data-theme="light"] .bb-package-btn-active {
     background-color: var(--bb-light-button-bg) !important;
     border-color: var(--bb-light-button-border) !important;
     color: var(--bb-light-button-text) !important;
+}
+
+/* Rámiky Godlike tlačidiel */
+html[data-theme="light"] .nk-btn-color-main-1::before,
+html[data-theme="light"] .nk-btn-color-main-1::after,
+html[data-theme="light"] #baliky .bb-package-btn::before,
+html[data-theme="light"] #baliky .bb-package-btn::after,
+html[data-theme="light"] .bb-package-btn-active::before,
+html[data-theme="light"] .bb-package-btn-active::after {
+    border-color: var(--bb-light-button-border) !important;
+}
+
+/* Hover stav v light režime */
+html[data-theme="light"] .nk-btn-color-main-1:hover,
+html[data-theme="light"] .nk-btn-color-main-1:focus,
+html[data-theme="light"] #baliky .bb-package-btn:hover,
+html[data-theme="light"] #baliky .bb-package-btn:focus,
+html[data-theme="light"] .bb-package-btn-active:hover,
+html[data-theme="light"] .bb-package-btn-active:focus {
+    background-color: #E6C280 !important;
+    border-color: #E6C280 !important;
+    color: #0F0C07 !important;
+    box-shadow: 0 10px 28px rgba(75, 52, 25, 0.22);
+}
+
+/* Hover rámiky */
+html[data-theme="light"] .nk-btn-color-main-1:hover::before,
+html[data-theme="light"] .nk-btn-color-main-1:hover::after,
+html[data-theme="light"] .nk-btn-color-main-1:focus::before,
+html[data-theme="light"] .nk-btn-color-main-1:focus::after,
+html[data-theme="light"] #baliky .bb-package-btn:hover::before,
+html[data-theme="light"] #baliky .bb-package-btn:hover::after,
+html[data-theme="light"] #baliky .bb-package-btn:focus::before,
+html[data-theme="light"] #baliky .bb-package-btn:focus::after {
+    border-color: #E6C280 !important;
 }
 
 /* Hero sekundárne tlačidlo: Pozrieť portfólio */
