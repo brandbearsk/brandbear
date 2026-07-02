@@ -1,7 +1,26 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="sk" data-theme="light">
 <head>
     <meta charset="utf-8">
+    
+    <script>
+    (function () {
+        var loaderKey = "bb_loader_seen_v1";
+        var savedTheme = localStorage.getItem("bb-theme");
+        var theme = savedTheme || "light";
+
+        document.documentElement.setAttribute("data-theme", theme);
+
+        try {
+        if (!localStorage.getItem(loaderKey)) {
+            document.documentElement.classList.add("bb-show-loader");
+        }
+        } catch (error) {
+        document.documentElement.classList.add("bb-show-loader");
+        }
+    })();
+    </script>
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="" data-i18n-content="meta.description">
@@ -40,6 +59,13 @@
     <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
+
+    <div class="loader-container">
+    <svg class="shirt-loader" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Path trička (line-art) -->
+        <path class="shirt-path" d="M 30,20 L 40,20 Q 50,28 60,20 L 70,20 L 85,35 L 75,45 L 70,42 L 70,85 L 30,85 L 30,42 L 25,45 L 15,35 Z" />
+    </svg>
+    </div>
 
     <!-- START: Header -->
     <header class="nk-header nk-header-opaque">

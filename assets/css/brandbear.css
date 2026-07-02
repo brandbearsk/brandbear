@@ -1,3 +1,94 @@
+/* ==============================
+   BrandBear Loader
+   ============================== */
+
+/* Loader je defaultne skrytý */
+.loader-container {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 100dvh;
+
+  background:
+    radial-gradient(circle at center, var(--bb-dark-1) 0%, var(--bb-body) 72%);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+/* Zobrazí sa iba keď JS v <head> pridá triedu */
+html.bb-show-loader .loader-container {
+  display: flex;
+}
+
+/* Po načítaní sa stratí */
+html.bb-loader-finished .loader-container {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Počas loadera nezobrazuj scroll */
+html.bb-show-loader body {
+  overflow: hidden;
+}
+
+/* Veľké tričko */
+.shirt-loader {
+  width: clamp(150px, 16vw, 220px);
+  height: clamp(150px, 16vw, 220px);
+  filter: drop-shadow(0 18px 35px rgba(75, 52, 25, 0.18));
+}
+
+/* Line-art tričko */
+.shirt-path {
+  fill: transparent;
+  stroke: var(--bb-gold-light);
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+
+  animation: drawShirt 1s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
+}
+
+/* Rýchle vykreslenie iba 1x */
+@keyframes drawShirt {
+  0% {
+    stroke-dashoffset: 260;
+    fill: transparent;
+    opacity: 0.35;
+    transform: scale(0.94);
+  }
+
+  72% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    fill: rgba(184, 134, 43, 0.12);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* ==========================================================
    BrandBear CSS
    Načítaj až po godlike.css.
@@ -1103,8 +1194,7 @@ html[data-theme="light"] #baliky .bb-package-btn:focus::after {
 #baliky .nk-pricing {
     color: var(--bb-text);
     background-color: var(--bb-dark-2);
-    box-shadow: 0 14px 34px var(--bb-shadow-soft);
-    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 #baliky .nk-pricing .nk-pricing-title,
@@ -1127,7 +1217,6 @@ html[data-theme="light"] #baliky .bb-package-btn:focus::after {
     color: var(--bb-on-gold);
     background-color: var(--bb-gold);
     transform: translateY(-8px);
-    box-shadow: 0 22px 55px var(--bb-shadow-strong);
 }
 
 #baliky .nk-pricing .nk-btn {

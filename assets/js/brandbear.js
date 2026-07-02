@@ -501,12 +501,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const themeIcon = themeToggle.querySelector(".bb-theme-icon");
     const savedTheme = localStorage.getItem("bb-theme");
-
-    const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches
-        ? "light"
-        : "dark";
-
-    const currentTheme = savedTheme || preferredTheme;
+    const currentTheme = savedTheme || "light";
 
     function applyTheme(theme) {
         document.documentElement.setAttribute("data-theme", theme);
@@ -527,4 +522,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
         applyTheme(nextTheme);
     });
+})();
+
+(function () {
+    var loaderKey = "bb_loader_seen_v1";
+    var minLoaderTime = 1100;
+    var loaderStart = Date.now();
+
+    function finishLoader() {
+        var root = document.documentElement;
+        var loader = document.getElementById("bb-loader");
+        var elapsed = Date.now() - loaderStart;
+        var remaining = Math.max(0, minLoaderTime - elapsed);
+
+        setTimeout(function () {
+            try {
+              localStorage.setItem(loaderKey, "1");
+            } catch (error) {}
+
+            if (root.classList.contains("bb-show-loader")) {
+                root.classList.add("bb-loader-finished");
+
+                setTimeout(function () {
+                    root.classList.remove("bb-show-loader");
+                    root.classList.remove("bb-loader-finished");
+
+                    if (loader) {
+                        loader.remove();
+                    }
+                }, 500);
+            } else if (loader) {
+                loader.remove();
+            }
+        }, remaining);
+    }
+
+    window.addEventListener("load", finishLoader);
 })();
