@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="sk" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandBear — textil s vaším motívom na mieru</title>
+<meta name="description" content="DTF potlač, výšivka a sublimácia na tričkách, mikinách, pracovných odevoch aj darčekových predmetoch. Pre firmy, tímy, oslavy aj rozlúčky so slobodou. Jamník, Slovensko.">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#E8E2D0;
+    --cream-soft:#F1ECDE;
+    --ink:#211D18;
+    --ink-soft:#4A443A;
+    --pine:#2F4030;
+    --pine-dark:#1C2A1D;
+    --rust:#AF4E2B;
+    --rust-dark:#8E3D22;
+    --mustard:#C99A3E;
+    --stone:#D8CFB6;
+    --line:rgba(33,29,24,0.16);
+    --grain:rgba(33,29,24,0.035);
+    --max:1180px;
+    --radius:3px;
+  }
+
+  html[data-theme="dark"]{
+    --cream:#1B1712;
+    --cream-soft:#242019;
+    --ink:#ECE5D3;
+    --ink-soft:#BAB29B;
+    --pine:#4C6B4E;
+    --pine-dark:#3A5539;
+    --rust:#D2673D;
+    --rust-dark:#B5502D;
+    --mustard:#D8AE55;
+    --stone:#332C22;
+    --line:rgba(236,229,211,0.16);
+    --grain:rgba(236,229,211,0.045);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  body{
+    margin:0;
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background-color:var(--cream);
+    background-image:
+      repeating-linear-gradient(0deg, var(--grain) 0 1px, transparent 1px 5px),
+      repeating-linear-gradient(90deg, var(--grain) 0 1px, transparent 1px 5px);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    transition:background-color 0.2s ease, color 0.2s ease;
+  }
+
+  h1,h2,h3{
+    font-family:'Big Shoulders Display', sans-serif;
+    font-weight:800;
+    line-height:0.98;
+    margin:0 0 0.4em 0;
+    color:var(--ink);
+    letter-spacing:0.2px;
+  }
+
+  p{margin:0 0 1em 0; max-width:60ch; color:var(--ink);}
+  a{color:inherit;}
+  img,svg{max-width:100%; display:block;}
+
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+    outline:3px solid var(--mustard);
+    outline-offset:3px;
+  }
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* ---------- NAV (always pine, so the logo never blends into it) ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:var(--pine);
+    border-bottom:1px solid var(--pine-dark);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:12px 28px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brand-mark{width:44px; height:auto; flex:none; color:#F1ECDE;}
+  .brand-word{
+    font-family:'Big Shoulders Display', sans-serif;
+    font-weight:800; font-size:1.5rem; letter-spacing:0.3px;
+    color:#F1ECDE;
+  }
+  .brand-word .b2{color:var(--rust);}
+
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  nav.links{display:flex; align-items:center; gap:22px;}
+  nav.links a{
+    text-decoration:none; font-weight:600; font-size:0.93rem; color:#F1ECDE;
+    padding:4px 2px; border-bottom:2px solid transparent; white-space:nowrap;
+  }
+  nav.links a:hover{border-bottom-color:var(--rust);}
+
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--rust);
+    color:#F6F1E4;
+    font-weight:700;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:7px;
+    border:1px solid var(--rust-dark);
+    font-size:0.95rem;
+    transition:background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    cursor:pointer;
+  }
+  .cta:hover{background:var(--rust-dark); transform:translateY(-1px); box-shadow:0 6px 18px rgba(142,61,34,0.32);}
+  .cta.ghost{background:transparent; color:var(--ink); border:1px solid var(--ink); box-shadow:none;}
+  .cta.ghost:hover{background:var(--ink); color:var(--cream-soft); box-shadow:none;}
+  .cta.small{padding:9px 16px; font-size:0.85rem;}
+  .cta.cta-folie{background:#15181D; border-color:#15181D;}
+  .cta.cta-folie:hover{background:#D6006E; border-color:#D6006E; box-shadow:0 6px 18px rgba(214,0,110,0.32);}
+  nav.links .cta{padding:10px 20px; font-size:0.9rem;}
+
+  .lang-switch{
+    border:1px solid var(--ink); background:var(--cream); color:var(--ink);
+    border-radius:20px; padding:8px 14px 8px 12px; font-weight:700; font-size:0.8rem;
+    cursor:pointer; font-family:inherit; letter-spacing:0.4px;
+  }
+
+  .theme-toggle{
+    width:40px; height:40px; border-radius:50%;
+    border:1px solid var(--ink); background:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; flex:none; transition:background 0.2s ease;
+  }
+  .theme-toggle:hover{background:var(--stone);}
+  .theme-toggle.spin{animation:togglespin 0.5s ease;}
+  @keyframes togglespin{
+    0%{transform:rotate(0deg) scale(1);}
+    45%{transform:rotate(190deg) scale(0.8);}
+    100%{transform:rotate(360deg) scale(1);}
+  }
+  .theme-toggle svg{width:18px; height:18px; stroke:var(--ink); fill:none; stroke-width:2;}
+  .theme-toggle .icon-sun{display:none;}
+  html[data-theme="dark"] .theme-toggle .icon-moon{display:none;}
+  html[data-theme="dark"] .theme-toggle .icon-sun{display:block;}
+
+  .nav-toggle{display:none; background:none; border:1px solid #F1ECDE; border-radius:var(--radius); padding:8px 10px; font-size:1rem; cursor:pointer; color:#F1ECDE;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:64px 0 48px; position:relative;}
+  .hero .wrap{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:stretch;}
+  .hero-text{display:flex; flex-direction:column;}
+  .hero h1{font-size:clamp(2.4rem, 4.6vw, 4rem);}
+  .hero .lede{font-size:1.1rem; color:var(--ink-soft); max-width:48ch; margin:0;}
+  .hero-mid, .hero-folie-mid{flex:1; display:flex; align-items:center;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-top:22px;}
+
+  .patch-visual{position:relative;}
+  .hero-folie{
+    background:#EFF1F3; border:none; border-left:2px solid #15181D;
+    padding:36px 64px 48px; font-family:'IBM Plex Mono', monospace;
+    display:flex; flex-direction:column; justify-content:flex-start;
+    position:absolute; top:0; bottom:0; right:0; width:50%; margin:0;
+  }
+  .hero-folie-colorbar{display:flex; gap:6px; margin-bottom:14px;}
+  .hero-folie-colorbar span{width:14px; height:14px; border-radius:50%; display:inline-block;}
+  .hero-folie h2{font-family:'Big Shoulders Display', sans-serif; color:#15181D; font-size:clamp(2.4rem, 4.6vw, 4rem); line-height:0.98; margin-bottom:0;}
+  .hero-folie p{color:#565C66; font-family:'Work Sans', sans-serif; font-size:1.1rem; max-width:44ch; margin:0;}
+  .hero-folie-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-top:22px;}
+  .hero-folie-ctas .cta{font-family:'Work Sans', sans-serif;}
+  .hero-folie .cta.ghost{color:#15181D; border-color:#15181D;}
+  .hero-folie .cta.ghost:hover{background:#15181D; color:#fff;}
+  .patch{background:var(--pine); border:3px solid var(--pine-dark); border-radius:14px; padding:32px; position:relative;}
+  .patch::before{content:""; position:absolute; inset:10px; border:2px dashed rgba(241,236,222,0.5); border-radius:8px; pointer-events:none;}
+  .patch-logo{width:100%; height:auto; display:block; color:#F1ECDE;}
+  .thread-row{display:flex; gap:10px; justify-content:center; margin-top:18px;}
+  .spool{width:20px; height:20px; border-radius:50%; border:2px solid #211D18;}
+
+  /* ---------- TRUSTED MARQUEE ---------- */
+  .trusted {
+    padding: 30px 0; 
+    border-top: 1px solid var(--line); 
+    border-bottom: 1px solid var(--line); 
+    background: var(--cream-soft);
+  }
+  .trusted .wrap {
+    display: flex; 
+    flex-direction: column; 
+    gap: 14px;
+  }
+  .trusted .label {
+    font-weight: 600; 
+    color: var(--ink-soft); 
+    font-size: 0.9rem;
+  }
+
+  .marquee {
+    overflow: hidden; 
+    width: 100%; 
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); 
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+
+  .marquee-track {
+    display: flex; 
+    align-items: center; 
+    width: max-content; 
+    animation: marquee-scroll 26s linear infinite;
+  }
+
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* ODKAZ PRE LOGÁ: Dôležitá zmena - gap sme presunuli na margin-right */
+  .marquee-track img {
+    height: 34px; 
+    width: auto; 
+    border-radius: 2px; 
+    filter: grayscale(1); 
+    opacity: 0.8; 
+    transition: filter 0.15s ease, opacity 0.15s ease;
+    margin-right: 52px; /* <-- TOTO JE KĽÚČ k plynulému prechodu bez skokov! */
+  }
+
+  .marquee-track img:hover {
+    filter: grayscale(0); 
+    opacity: 1;
+  }
+
+  @keyframes marquee-scroll { 
+    from { transform: translateX(0); } 
+    to { transform: translateX(-50%); } 
+  }
+
+  /* ---------- BENEFITS STRIP ---------- */
+  .benefits{padding:48px 0; border-bottom:1px solid var(--line);}
+  .benefits .wrap{display:grid; grid-template-columns:repeat(3,1fr); gap:0;}
+  .benefit{padding:0 28px; border-left:1px solid var(--line);}
+  .benefit:first-child{border-left:none; padding-left:0;}
+  .benefit h3{font-size:1.1rem; margin-bottom:6px;}
+  .benefit p{font-size:0.92rem; color:var(--ink-soft); margin-bottom:0;}
+
+  /* ---------- QUICK ORDER: two side-by-side blocks ---------- */
+  .quick-split{display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .quick-block{padding:44px 40px;}
+  .quick-block h2{font-size:1.6rem; margin-bottom:6px;}
+  .quick-block > p{margin-bottom:22px; font-size:0.95rem;}
+  .quick-block-textil{background:var(--pine);}
+  .quick-block-textil h2{color:#F1ECDE;}
+  .quick-block-textil > p{color:rgba(241,236,222,0.75);}
+  .quick-block-textil label{color:#F1ECDE;}
+  .quick-cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:6px;}
+  .quick-block-textil .cta.ghost{color:#F1ECDE; border-color:#F1ECDE;}
+  .quick-block-textil .cta.ghost:hover{background:#F1ECDE; color:var(--pine);}
+  .quick-block-folie{background:#EFF1F3; font-family:'IBM Plex Mono', monospace;}
+  .quick-block-folie h2{font-family:'Big Shoulders Display', sans-serif; color:#15181D;}
+  .quick-block-folie > p{color:#565C66; font-family:'Work Sans', sans-serif;}
+  .quick-block-folie label{color:#565C66; font-size:0.76rem;}
+  .quick-color-bar{display:flex; gap:6px; margin-bottom:14px;}
+  .quick-color-bar span{width:14px; height:14px; border-radius:50%; display:inline-block;}
+
+  .quick-fields{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .quick-fields .full{grid-column:1 / -1;}
+  .quick-fields input, .quick-fields textarea, .quick-fields select{
+    width:100%; font-family:inherit; font-size:0.95rem; padding:11px 12px;
+    border:2px solid transparent; border-radius:var(--radius);
+    background:#FFFFFF; color:var(--ink);
+  }
+  .quick-block-folie .quick-fields input, .quick-block-folie .quick-fields select{
+    border:2px solid #15181D; font-family:'Work Sans', sans-serif;
+  }
+  .quick-fields textarea{min-height:52px; resize:vertical;}
+  .quick-fields label{display:block; font-size:0.78rem; font-weight:600; margin-bottom:4px;}
+  .quick-submit-row{grid-column:1/-1; display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+  .quick-confirm{display:none; font-weight:600; font-size:0.9rem;}
+  .quick-block-textil .quick-confirm{color:#F1ECDE;}
+  .quick-block-folie .quick-confirm{color:#15181D;}
+  .quick-confirm.show{display:inline;}
+  .quick-block-textil .quick-fields input[type="file"]{background:transparent; border:2px dashed rgba(241,236,222,0.5); color:#F1ECDE; padding:9px 12px;}
+  .quick-block-folie .quick-fields input[type="file"]{background:transparent; border:2px dashed #15181D; color:#15181D; padding:9px 12px;}
+
+  /* ---------- SECTION HEADS ---------- */
+  section{padding:76px 0;}
+  .section-head{max-width:620px; margin-bottom:40px;}
+  .section-head h2{font-size:clamp(1.9rem, 3.2vw, 2.7rem);}
+  .section-head p{margin-bottom:0;}
+
+  /* ---------- PRODUCT TAGS ---------- */
+  .tag-cloud{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px;}
+  .tag-pill{
+    padding:8px 16px; border:1px solid var(--ink); border-radius:20px;
+    font-size:0.88rem; font-weight:600; background:var(--cream-soft);
+  }
+  .tag-note{font-size:0.85rem; color:var(--ink-soft); max-width:70ch;}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--line); border:1px solid var(--line); margin-top:36px;}
+  .service{background:var(--cream-soft); padding:28px; border-left:6px solid var(--rust);}
+  .service:nth-child(2){border-left-color:var(--mustard);}
+  .service:nth-child(3){border-left-color:var(--pine);}
+  .service:nth-child(4){border-left-color:var(--ink-soft);}
+  .service h3{font-size:1.35rem; margin-bottom:8px;}
+  .service p{margin-bottom:0; font-size:0.94rem;}
+
+  /* ---------- PROCESS ---------- */
+  .process-list{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; border-top:2px solid var(--ink); padding-top:24px;}
+  .step-num{font-family:'Big Shoulders Display', sans-serif; font-weight:900; font-size:2.1rem; color:var(--rust); display:block; margin-bottom:6px;}
+  .process-step h3{font-size:1.08rem; margin-bottom:6px;}
+  .process-step p{font-size:0.9rem; color:var(--ink-soft); margin-bottom:0;}
+  .process-note{margin-top:26px; padding:16px 18px; border:1px dashed var(--ink); font-size:0.88rem; color:var(--ink-soft); max-width:80ch;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  .gallery-item{position:relative; overflow:hidden; border:1px solid var(--line); aspect-ratio:4/5; background:var(--cream-soft);}
+  .gallery-item img{width:100%; height:100%; object-fit:cover; display:block; transition:filter 0.2s ease;}
+  .gallery-item:hover img{filter:brightness(0.88);}
+  .gallery-caption{
+    position:absolute; left:0; right:0; bottom:0;
+    background:linear-gradient(0deg, rgba(0,0,0,0.72), rgba(0,0,0,0));
+    color:#F1ECDE; padding:22px 12px 10px;
+    font-size:0.82rem;
+  }
+  .gallery-caption strong{display:block; font-family:'Big Shoulders Display', sans-serif; font-size:1.05rem; font-weight:700;}
+
+  /* ---------- CONTACT ---------- */
+  #kontakt{background:var(--cream-soft); border-top:1px solid var(--line);}
+  .contact-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:52px;}
+  .contact-info h3{font-size:1.2rem; margin-bottom:10px;}
+  .contact-line{margin-bottom:14px; font-size:1rem;}
+  .contact-line a{text-decoration:underline; text-decoration-color:var(--rust);}
+  .social-row{display:flex; gap:12px; margin-top:20px;}
+  .social-row a{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--ink);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .social-row svg{width:19px; height:19px; stroke:var(--ink); fill:none; stroke-width:1.7;}
+  .social-row a.disabled{opacity:0.35; cursor:default; pointer-events:none;}
+
+  form{display:grid; gap:16px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  label{display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px; color:var(--ink-soft);}
+  input, select, textarea{
+    width:100%; font-family:inherit; font-size:1rem; padding:11px 12px;
+    border:2px solid var(--pine); border-radius:var(--radius);
+    background:#FFFFFF; color:var(--ink);
+  }
+  select option{ color:#111111; background:#ffffff; }
+  input:focus, select:focus, textarea:focus{border-color:var(--rust);}
+  input[type="file"]{padding:9px 12px; cursor:pointer; border-style:dashed;}
+  textarea{min-height:100px; resize:vertical;}
+  .file-field{border:1px dashed var(--ink); border-radius:var(--radius); padding:16px; background:var(--cream);}
+  .file-field label{margin-bottom:8px;}
+  .file-hint{font-size:0.8rem; color:var(--ink-soft); margin-top:6px; margin-bottom:0;}
+  .submit-row{display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+  button.submit{
+    font-family:inherit; font-size:1rem; font-weight:700;
+    background:var(--rust); color:#F6F1E4; border:1px solid var(--rust-dark);
+    padding:13px 26px; border-radius:7px; cursor:pointer;
+    transition:background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  button.submit:hover{background:var(--rust-dark); transform:translateY(-1px); box-shadow:0 6px 18px rgba(142,61,34,0.32);}
+  .form-note{font-size:0.85rem; color:var(--ink-soft);}
+  .confirm{display:none; padding:14px 16px; border:1px solid var(--pine); background:rgba(47,64,48,0.1); border-radius:var(--radius); font-weight:600;}
+  .confirm.show{display:block;}
+
+  /* ---------- FOIL SHOP (distinct theme) ---------- */
+  .print-lab{
+    --pl-bg:#EFF1F3;
+    --pl-bg2:#FFFFFF;
+    --pl-ink:#15181D;
+    --pl-sub:#565C66;
+    --pl-line:rgba(21,24,29,0.18);
+    --pl-cyan:#0093C9;
+    --pl-magenta:#D6006E;
+    --pl-yellow:#E0B400;
+    background:var(--pl-bg);
+    color:var(--pl-ink);
+    font-family:'IBM Plex Mono', monospace;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(21,24,29,0.07) 0 1px, transparent 1px 36px),
+      repeating-linear-gradient(90deg, rgba(21,24,29,0.07) 0 1px, transparent 1px 36px);
+    border-top:1px solid var(--pl-line);
+    border-bottom:1px solid var(--pl-line);
+  }
+  .print-lab h2, .print-lab h3{font-family:'Big Shoulders Display', sans-serif; color:var(--pl-ink);}
+  .print-lab .section-head p{color:var(--pl-sub); font-family:'Work Sans', sans-serif;}
+  .color-bar{display:flex; gap:6px; margin-bottom:16px;}
+  .color-bar span{width:16px; height:16px; border-radius:50%; display:inline-block;}
+  .foil-cards{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:40px;}
+  .foil-card{background:var(--pl-bg2); border:2px solid var(--pl-ink); padding:26px;}
+  .foil-card h3{font-size:1.3rem; margin-bottom:6px;}
+  .foil-card .spec{font-size:0.82rem; color:var(--pl-sub); margin-bottom:14px;}
+  .foil-price{font-size:2.1rem; font-weight:700; margin-bottom:4px;}
+  .foil-price span{font-size:1rem; font-weight:500; color:var(--pl-sub);}
+  .foil-card p.desc{font-size:0.88rem; color:var(--pl-sub); font-family:'Work Sans', sans-serif; margin-bottom:0;}
+  .print-lab .print-note{font-size:0.82rem; color:var(--pl-sub); max-width:80ch; margin-bottom:40px; font-family:'Work Sans', sans-serif;}
+  .print-lab form{background:var(--pl-bg2); border:2px solid var(--pl-ink); padding:28px;}
+  .print-lab label{color:var(--pl-sub); font-family:'IBM Plex Mono', monospace; font-size:0.78rem;}
+  .print-lab input, .print-lab select, .print-lab textarea{
+    border:2px solid var(--pl-ink); background:#fff; font-family:'Work Sans', sans-serif;
+  }
+  .print-lab input:focus, .print-lab select:focus, .print-lab textarea:focus{border-color:var(--pl-magenta);}
+  .print-lab button.submit{
+    background:var(--pl-ink); border-color:var(--pl-ink); color:#fff; font-family:'IBM Plex Mono', monospace;
+  }
+  .print-lab button.submit:hover{background:var(--pl-magenta); border-color:var(--pl-magenta);}
+  .print-lab .confirm{border-color:var(--pl-ink); background:rgba(21,24,29,0.06); font-family:'Work Sans', sans-serif;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#211D18; color:#F1ECDE; padding:44px 0 26px;}
+  .footer-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px; padding-bottom:24px; border-bottom:1px solid rgba(241,236,222,0.2);}
+  footer .brand-word{color:#F1ECDE;}
+  footer nav.links a{color:rgba(241,236,222,0.85); font-size:0.9rem;}
+  footer nav.links{gap:20px; flex-wrap:wrap;}
+  footer .social-row a{border-color:rgba(241,236,222,0.4);}
+  footer .social-row svg{stroke:#F1ECDE;}
+  .footer-legal{padding-top:18px; font-size:0.82rem; color:rgba(241,236,222,0.6); line-height:1.7;}
+  .footer-bottom{padding-top:14px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.8rem; color:rgba(241,236,222,0.5);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-folie{position:static; width:auto; border-left:none; border:2px solid #15181D; padding:24px; margin-top:8px;}
+    .benefits .wrap{grid-template-columns:1fr; gap:22px;}
+    .benefit{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:20px;}
+    .benefit:first-child{border-top:none; padding-top:0;}
+    .quick-split{grid-template-columns:1fr;}
+    .quick-fields{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr;}
+    .process-list{grid-template-columns:1fr 1fr; gap:24px;}
+    .gallery-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .foil-cards{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    nav.links{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      background:var(--pine); border-bottom:1px solid var(--pine-dark);
+      flex-direction:column; align-items:flex-start; padding:18px 28px; gap:16px;
+    }
+    nav.links.open{display:flex;}
+    .nav-toggle{display:inline-block;}
+    .process-list{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr;}
+    section{padding:56px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#hero">
+      <img class="brand-mark" src="assets/logo-icon.png" alt="BrandBear" width="400" height="336">
+      <span class="brand-word">Brand<span class="b2">Bear</span></span>
+    </a>
+    <div class="nav-right">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <nav class="links" id="navLinks">
+        <a href="#ponuka" data-i18n="nav_ponuka">Ponuka</a>
+        <a href="#proces" data-i18n="nav_proces">Proces</a>
+        <a href="#realizacie" data-i18n="nav_realizacie">Realizácie</a>
+        <a href="#folie" data-i18n="nav_folie">Fólie</a>
+        <a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a>
+        <a class="cta" href="#dopyt-hore" data-i18n="k_poslat_dopyt">Poslať dopyt</a>
+      </nav>
+      <select class="lang-switch" id="langSwitch" aria-label="Jazyk / Language">
+        <option value="sk">SK</option>
+        <option value="en">EN</option>
+        <option value="de">DE</option>
+        <option value="pl">PL</option>
+        <option value="cs">CS</option>
+        <option value="hu">HU</option>
+      </select>
+      <button class="theme-toggle" id="themeToggle" aria-label="Prepnúť tmavý režim">
+        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.5A8.5 8.5 0 1 1 11.5 3 7 7 0 0 0 21 12.5z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M4.2 4.2l2 2M17.8 17.8l2 2M2 12h3M19 12h3M4.2 19.8l2-2M17.8 6.2l2-2"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <h1 data-i18n="hero_h1">Potlačíme a vyšijeme váš dizajn.</h1>
+        <div class="hero-mid">
+          <p class="lede" data-i18n="hero_lede">Pripravíme firemný merch pre váš tím, oblečenie na rozlúčku so slobodou, oslavu, krstiny či festival. Motív umiestnime na tričkách, mikinách, pracovnom oblečení aj darčekových predmetoch — po kuse aj vo veľkých sériách.</p>
+        </div>
+        <div class="hero-ctas">
+          <a class="cta" href="#dopyt-hore" data-i18n="k_poslat_dopyt">Poslať dopyt</a>
+          <a class="cta ghost" href="#proces" data-i18n="hero_cta2">Ako to funguje</a>
+        </div>
+      </div>
+      <div class="hero-folie">
+        <div class="hero-folie-colorbar" aria-hidden="true">
+          <span style="background:#0093C9"></span>
+          <span style="background:#D6006E"></span>
+          <span style="background:#E0B400"></span>
+        </div>
+        <h2 data-i18n="hero_folie_h2">Potrebujete len fóliu?</h2>
+        <div class="hero-folie-mid">
+          <p data-i18n="hero_folie_p">Nažehľujete si potlač sami? Objednajte si len samostatnú DTF alebo sublimačnú fóliu podľa vlastnej grafiky, bez nutnosti objednávať celý odev. Vhodné pre menšie zákazky, vlastné projekty aj vyskúšanie dizajnu pred veľkou sériou.</p>
+        </div>
+        <div class="hero-folie-ctas">
+          <a class="cta cta-folie" href="#dopyt-folie" data-i18n="k_poslat_dopyt">Poslať dopyt</a>
+          <a class="cta ghost hero-folie-ghost" href="#folie" data-i18n="hero_folie_more">Zistiť viac</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trusted">
+    <div class="wrap">
+      <span class="label" data-i18n="trusted_label">Robili sme textil pre</span>
+      <div class="marquee">
+        <div class="marquee-track">
+          <!-- 1. SADA (6 log) -->
+          <img src="assets/hubio.png" alt="Renovi" width="550" height="500" loading="lazy" decoding="async">
+          <img src="assets/dftransport.png" alt="DF Transport" width="800" height="630" loading="lazy" decoding="async">
+          <img src="assets/severan.png" alt="Severan Športový klub" width="670" height="570" loading="lazy" decoding="async">
+          <img src="assets/hubio.png" alt="Hubio" width="1110" height="440" loading="lazy" decoding="async">
+          <img src="assets/dftransport.png" alt="Brunch Box" width="340" height="220" loading="lazy" decoding="async">
+          <img src="assets/severan.png" alt="Basix" width="990" height="400" loading="lazy" decoding="async">
+
+          <!-- 2. SADA (6 log) -->
+          <img src="assets/hubio.png" alt="Renovi" width="550" height="500" loading="lazy" decoding="async">
+          <img src="assets/dftransport.png" alt="DF Transport" width="800" height="630" loading="lazy" decoding="async">
+          <img src="assets/severan.png" alt="Severan Športový klub" width="670" height="570" loading="lazy" decoding="async">
+          <img src="assets/hubio.png" alt="Hubio" width="1110" height="440" loading="lazy" decoding="async">
+          <img src="assets/dftransport.png" alt="Brunch Box" width="340" height="220" loading="lazy" decoding="async">
+          <img src="assets/severan.png" alt="Basix" width="990" height="400" loading="lazy" decoding="async">
+
+          <!-- 3. SADA (6 log) -->
+          <img src="assets/hubio.png" alt="Renovi" width="550" height="500" loading="lazy" decoding="async">
+          <img src="assets/dftransport.png" alt="DF Transport" width="800" height="630" loading="lazy" decoding="async">
+          <img src="assets/severan.png" alt="Severan Športový klub" width="670" height="570" loading="lazy" decoding="async">
+          <img src="assets/hubio.png" alt="Hubio" width="1110" height="440" loading="lazy" decoding="async">
+          <img src="assets/dftransport.png" alt="Brunch Box" width="340" height="220" loading="lazy" decoding="async">
+          <img src="assets/severan.png" alt="Basix" width="990" height="400" loading="lazy" decoding="async">
+
+          <!-- 4. SADA (6 log) -->
+          <img src="assets/hubio.png" alt="Renovi" width="550" height="500" loading="lazy" decoding="async">
+          <img src="assets/dftransport.png" alt="DF Transport" width="800" height="630" loading="lazy" decoding="async">
+          <img src="assets/severan.png" alt="Severan Športový klub" width="670" height="570" loading="lazy" decoding="async">
+          <img src="assets/hubio.png" alt="Hubio" width="1110" height="440" loading="lazy" decoding="async">
+          <img src="assets/dftransport.png" alt="Brunch Box" width="340" height="220" loading="lazy" decoding="async">
+          <img src="assets/severan.png" alt="Basix" width="990" height="400" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="wrap">
+      <div class="benefit">
+        <h3 data-i18n="benefit1_h">Návrh pred výrobou</h3>
+        <p data-i18n="benefit1_p">Než čokoľvek vyrobíme, pošleme vám fotku vzorky s motívom presne na mieste, kde ho chcete mať.</p>
+      </div>
+      <div class="benefit">
+        <h3 data-i18n="benefit2_h">Vlastný aj váš textil</h3>
+        <p data-i18n="benefit2_p">Vyberiete si z nášho katalógu, alebo nám pošlete oblečenie či predmety, ktoré chcete len doplniť o motív.</p>
+      </div>
+      <div class="benefit">
+        <h3 data-i18n="benefit3_h">Pre firmy aj súkromné akcie</h3>
+        <p data-i18n="benefit3_p">Firemný tím, rozlúčka so slobodou, oslava, krstiny či festival — množstvo prispôsobíme tomu, čo práve potrebujete.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-split" id="dopyt-hore">
+    <div class="quick-block quick-block-textil">
+      <h2 data-i18n="quick_h2">Rýchly dopyt</h2>
+      <p data-i18n="quick_p">Napíšte pár slov o tom, čo potrebujete, priložte logo alebo fotku a ozveme sa s návrhom aj cenou.</p>
+      <form class="quick-fields" id="quickForm">
+        <div>
+          <label for="qmeno" data-i18n="k_meno">Meno</label>
+          <input type="text" id="qmeno" name="meno" required>
+        </div>
+        <div>
+          <label for="qkontakt" data-i18n="k_email_telefon">E-mail alebo telefón</label>
+          <input type="text" id="qkontakt" name="kontakt" required>
+        </div>
+        <div class="full">
+          <label for="qsprava" data-i18n="lbl_co_potrebujete">Čo potrebujete</label>
+          <textarea id="qsprava" name="sprava" data-i18n-ph="ph_co_potrebujete" placeholder="Napr. 15 mikín s vyšívaným logom na teambuilding v októbri"></textarea>
+        </div>
+        <div class="full">
+          <label for="qsubor" data-i18n="lbl_logo_grafika">Logo alebo grafika</label>
+          <input type="file" id="qsubor" name="subor" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg">
+        </div>
+        <div class="quick-submit-row">
+          <button type="submit" class="cta" data-i18n="k_poslat_dopyt">Poslať dopyt</button>
+          <span class="quick-confirm" id="quickConfirm" data-i18n="confirm_quick">Ďakujeme! Ozveme sa čo najskôr.</span>
+        </div>
+      </form>
+    </div>
+    <div class="quick-block quick-block-folie" id="dopyt-folie">
+      <div class="quick-color-bar" aria-hidden="true">
+        <span style="background:#0093C9"></span>
+        <span style="background:#D6006E"></span>
+        <span style="background:#E0B400"></span>
+      </div>
+      <h2 data-i18n="quick_folie_h2">Objednávka fólie</h2>
+      <p data-i18n="quick_folie_p">Chcete len fóliu na nažehlenie? Napíšte typ, počet kusov a priložte grafiku — pripravíme cenu.</p>
+      <form class="quick-fields" id="quickFolieForm">
+        <div>
+          <label for="qfmeno" data-i18n="k_meno">Meno</label>
+          <input type="text" id="qfmeno" name="meno" required>
+        </div>
+        <div>
+          <label for="qfkontakt" data-i18n="k_email_telefon">E-mail alebo telefón</label>
+          <input type="text" id="qfkontakt" name="kontakt" required>
+        </div>
+        <div>
+          <label for="qftyp" data-i18n="lbl_typ_folie">Typ fólie</label>
+          <select id="qftyp" name="typ">
+            <option data-i18n="opt_dtf">DTF fólia (do 29 × 39 cm)</option>
+            <option data-i18n="opt_sub">Sublimačná fólia (A4)</option>
+            <option data-i18n="opt_neviem">Neviem, poraďte mi</option>
+          </select>
+        </div>
+        <div>
+          <label for="qfpocet" data-i18n="lbl_pocet">Počet kusov</label>
+          <input type="text" id="qfpocet" name="pocet" data-i18n-ph="ph_pocet5" placeholder="napr. 5">
+        </div>
+        <div class="full">
+          <label for="qfsubor" data-i18n="lbl_grafika_potlac">Grafika na potlač</label>
+          <input type="file" id="qfsubor" name="subor" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg">
+        </div>
+        <div class="quick-submit-row">
+          <button type="submit" class="cta cta-folie" data-i18n="btn_objednat_foliu">Objednať fóliu</button>
+          <span class="quick-confirm" id="quickFolieConfirm" data-i18n="confirm_quick">Ďakujeme! Ozveme sa čo najskôr.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="ponuka">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="ponuka_h2">Čo potlačíme</h2>
+        <p data-i18n="ponuka_p">Textil aj predmety obstarávame od overených dodávateľov a podľa vášho zadania ich potlačíme alebo vyšijeme. Rovnako radi doplníme motívom oblečenie, ktoré nám sami pošlete.</p>
+      </div>
+      <div class="tag-cloud">
+        <span class="tag-pill" data-i18n="tag1">Tričká</span>
+        <span class="tag-pill" data-i18n="tag2">Polokošele</span>
+        <span class="tag-pill" data-i18n="tag3">Mikiny</span>
+        <span class="tag-pill" data-i18n="tag4">Bundy a vetrovky</span>
+        <span class="tag-pill" data-i18n="tag5">Pracovné nohavice</span>
+        <span class="tag-pill" data-i18n="tag6">Kraťasy</span>
+        <span class="tag-pill" data-i18n="tag8">Teplaky</span>
+        <span class="tag-pill" data-i18n="tag10">Batohy</span>
+        <span class="tag-pill" data-i18n="tag11">Tašky</span>
+        <span class="tag-pill" data-i18n="tag12">Peňaženky</span>
+        <span class="tag-pill" data-i18n="tag13">Šiltovky</span>
+        <span class="tag-pill" data-i18n="tag14">Klobúky</span>
+        <span class="tag-pill" data-i18n="tag16">Vaše vlastné predmety</span>
+      </div>
+      <p class="tag-note" data-i18n="tag_note">Nie každá technológia sa hodí na každý materiál — vhodnú kombináciu vám navrhneme v odpovedi na dopyt.</p>
+
+      <div class="services-grid">
+        <div class="service">
+          <h3 data-i18n="svc1_h">Výšivka</h3>
+          <p data-i18n="svc1_p">Motív všijeme priamo do vlákna. Vznikne plastický, odolný povrch, ktorý nepraská ani nebledne pri praní.</p>
+        </div>
+        <div class="service">
+          <h3 data-i18n="svc2_h">DTF potlač</h3>
+          <p data-i18n="svc2_p">Digitálna farebná potlač, ktorá drží aj na tmavom alebo nerovnom povrchu — vhodná na detailné a viacfarebné motívy.</p>
+        </div>
+        <div class="service">
+          <h3 data-i18n="svc3_h">Sublimačná potlač</h3>
+          <p data-i18n="svc3_p">Farba sa vsiakne priamo do vlákna funkčného textilu, takže nepraská ani pri pohybe — vhodné pre športové tímy, dresy aj fotomotívy.</p>
+        </div>
+        <div class="service">
+          <h3 data-i18n="svc4_h">DTF a sublimačné fólie</h3>
+          <p data-i18n="svc4_p">Hotovú potlačenú fóliu na nažehlenie si môžete objednať aj samostatne, bez objednávania celého odevu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proces">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="proces_h2">Ako prebieha objednávka</h2>
+        <p data-i18n="proces_p">Od prvého dopytu po hotový textil pred vašimi dverami.</p>
+      </div>
+      <div class="process-list">
+        <div class="process-step">
+          <span class="step-num">1</span>
+          <h3 data-i18n="step1_h">Zadanie</h3>
+          <p data-i18n="step1_p">Vo formulári necháte telefón a e-mail, opíšete svoju predstavu a priložíte súbor alebo fotku loga či grafiky.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-num">2</span>
+          <h3 data-i18n="step2_h">Návrh a cena</h3>
+          <p data-i18n="step2_p">Pripravíme grafický návrh na fotke vzorky a e-mailom pošleme cenu podľa cenníka. Pri neštandardných požiadavkách ju stanovíme individuálne.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-num">3</span>
+          <h3 data-i18n="step3_h">Potvrdenie a platba</h3>
+          <p data-i18n="step3_p">Po schválení návrhu zaplatíte pred začatím výroby. Pri nejasnom zadaní alebo expresnej zákazke vás radšej zavoláme.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-num">4</span>
+          <h3 data-i18n="step4_h">Výroba a doručenie</h3>
+          <p data-i18n="step4_p">Bežná výroba trvá 2 – 3 pracovné dni od schválenia, pri vlastných či nedostupných produktoch od ich doručenia. Posielame cez Packetu.</p>
+        </div>
+      </div>
+      <div class="process-note" data-i18n="process_note">
+        Pri produktoch skladom vieme za príplatok zabezpečiť expresnú výrobu do jedného pracovného dňa. Dĺžka doručenia sa líši podľa krajiny. Pri väčších objednávkach vieme po úhrade poslať aj fyzickú vzorku vopred.
+      </div>
+    </div>
+  </section>
+
+  <section id="realizacie">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="realizacie_h2">Naše realizácie</h2>
+        <p data-i18n="realizacie_p">Výber z toho, čo sme v poslednom čase vyšili a potlačili — pre firmy aj na súkromné akcie.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/g-renovi.jpg" alt="Tričká Renovi" width="1200" height="1388" loading="lazy" decoding="async">
+          <div class="gallery-caption"><strong>Renovi</strong><span data-i18n="gal1">DTF potlač, tričká</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/g-dftransport.jpg" alt="Mikina DF Transport" width="1200" height="1617" loading="lazy" decoding="async">
+          <div class="gallery-caption"><strong>DF Transport</strong><span data-i18n="gal2">DTF potlač, mikina</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/g-severan.jpg" alt="Bunda Severan Športový klub" width="1200" height="1408" loading="lazy" decoding="async">
+          <div class="gallery-caption"><strong>Severan</strong><span data-i18n="gal3">Výšivka, softshell bunda</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/g-basix.jpg" alt="Tričko hudobná skupina Basix" width="1200" height="1628" loading="lazy" decoding="async">
+          <div class="gallery-caption"><strong>Basix</strong><span data-i18n="gal4">Výšivka, tričko pre kapelu</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/g-sheyaid.jpg" alt="Tričká na rozlúčku so slobodou" width="1200" height="1413" loading="lazy" decoding="async">
+          <div class="gallery-caption"><strong data-i18n="gal_rozlucka">Rozlúčka so slobodou</strong><span data-i18n="gal5">DTF potlač, tričká</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/g-brunchbox.jpg" alt="Mikina Brunch Box" width="1200" height="1599" loading="lazy" decoding="async">
+          <div class="gallery-caption"><strong>Brunch Box</strong><span data-i18n="gal6">Výšivka a DTF potlač</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/g-hubio.jpg" alt="Mikina Hubio" width="1200" height="1892" loading="lazy" decoding="async">
+          <div class="gallery-caption"><strong>Hubio</strong><span data-i18n="gal7">DTF potlač, mikina</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/g-agonny.jpg" alt="Mikina vlastnej značky Agonny" width="1200" height="1385" loading="lazy" decoding="async">
+          <div class="gallery-caption"><strong>Agonny</strong><span data-i18n="gal8">Vlastná značka, DTF potlač</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="folie" class="print-lab">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="color-bar" aria-hidden="true">
+          <span style="background:var(--pl-cyan)"></span>
+          <span style="background:var(--pl-magenta)"></span>
+          <span style="background:var(--pl-yellow)"></span>
+          <span style="background:var(--pl-ink)"></span>
+        </div>
+        <h2 data-i18n="folie_h2">Fólie na vlastné nažehlenie</h2>
+        <p data-i18n="folie_p">Ak si potlač nažehlíte sami, pripravíme vám aj len samotnú DTF alebo sublimačnú fóliu podľa vašej grafiky, bez objednávania celého odevu.</p>
+      </div>
+
+      <div class="foil-cards">
+        <div class="foil-card">
+          <h3 data-i18n="foil1_h">DTF fólia</h3>
+          <div class="spec" data-i18n="foil1_spec">max. rozmer 29 × 39 cm</div>
+          <div class="foil-price">od 3,90 € <span>/ ks</span></div>
+          <p class="desc" data-i18n="foil1_desc">Farebná potlač na nažehlenie takmer na akýkoľvek textil vrátane tmavých a nerovných povrchov.</p>
+        </div>
+        <div class="foil-card">
+          <h3 data-i18n="foil2_h">Sublimačná fólia</h3>
+          <div class="spec" data-i18n="foil2_spec">formát A4</div>
+          <div class="foil-price">od 3,50 € <span>/ ks</span></div>
+          <p class="desc" data-i18n="foil2_desc">Vhodná na svetlý polyesterový textil, farba sa stane súčasťou vlákna a nepraská.</p>
+        </div>
+      </div>
+
+      <p class="print-note" data-i18n="print_note">Orientačná cena platí pre bežnú grafiku. Pri odbere 10 a viac kusov cena klesá, pri veľmi náročnej alebo celoplošnej grafike sa môže zvýšiť až o 25 % za list fólie — presnú cenu potvrdíme podľa vašej grafiky.</p>
+
+      <form id="folieForm">
+        <div class="form-row">
+          <div>
+            <label for="fmeno" data-i18n="k_meno">Meno</label>
+            <input type="text" id="fmeno" name="meno" required>
+          </div>
+          <div>
+            <label for="fkontakt" data-i18n="k_email_telefon">E-mail alebo telefón</label>
+            <input type="text" id="fkontakt" name="kontakt" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="ftyp" data-i18n="lbl_typ_folie">Typ fólie</label>
+            <select id="ftyp" name="typ">
+              <option data-i18n="opt_dtf">DTF fólia (do 29 × 39 cm)</option>
+              <option data-i18n="opt_sub">Sublimačná fólia (A4)</option>
+              <option data-i18n="opt_neviem">Neviem, poraďte mi</option>
+            </select>
+          </div>
+          <div>
+            <label for="fpocet" data-i18n="lbl_pocet">Počet kusov</label>
+            <input type="text" id="fpocet" name="pocet" data-i18n-ph="ph_pocet5" placeholder="napr. 5">
+          </div>
+        </div>
+        <div class="file-field">
+          <label for="fsubor" data-i18n="lbl_grafika_potlac">Grafika na potlač</label>
+          <input type="file" id="fsubor" name="subor" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg">
+          <p class="file-hint" data-i18n="file_hint_short">PNG, JPG, PDF, AI, EPS alebo SVG.</p>
+        </div>
+        <div class="submit-row">
+          <button type="submit" class="submit" data-i18n="btn_odoslat_objednavku_folie">Odoslať objednávku fólie</button>
+          <span class="form-note"><span data-i18n="form_note_alebo">alebo napíšte priamo na</span> <a href="mailto:brandbearsk@gmail.com">brandbearsk@gmail.com</a></span>
+        </div>
+        <div class="confirm" id="folieConfirm" data-i18n="confirm_folie">Ďakujeme za objednávku. Cenu a termín potvrdíme e-mailom.</div>
+      </form>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="kontakt_h2">Pošlite nám zadanie</h2>
+        <p data-i18n="kontakt_p">Vyplňte formulár a priložte súbor s logom alebo grafikou — na jeho základe pripravíme návrh a cenovú ponuku.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 data-i18n="kontakt_heading">Kontakt</h3>
+          <p class="contact-line">Jamník 69<br>053 22 Jamník, Slovensko</p>
+          <p class="contact-line">E-mail: <a href="mailto:brandbearsk@gmail.com">brandbearsk@gmail.com</a></p>
+          <div class="social-row">
+            <a href="https://www.instagram.com/brandbear.sk/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="var(--ink)" stroke="none"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61594263054091" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M14,20 V13 H16.4 L16.8,10.3 H14 V8.6 c0-.85.23-1.4,1.45-1.4 H16.9 V4.9 C16.55,4.85,15.75,4.8,14.85,4.8 12.85,4.8,11.5,6,11.5,8.15 V10.3 H9.3 v2.7 h2.2 V20"/></svg>
+            </a>
+            <a href="mailto:brandbearsk@gmail.com" aria-label="E-mail">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 6.5 12 13 20 6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <form id="dopytForm">
+            <div class="form-row">
+              <div>
+                <label for="meno" data-i18n="lbl_meno_priezvisko">Meno a priezvisko</label>
+                <input type="text" id="meno" name="meno" required>
+              </div>
+              <div>
+                <label for="firma" data-i18n="lbl_firma">Firma</label>
+                <input type="text" id="firma" name="firma">
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="email" data-i18n="lbl_email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div>
+                <label for="telefon" data-i18n="lbl_telefon">Telefón</label>
+                <input type="tel" id="telefon" name="telefon">
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="typ" data-i18n="lbl_typ_textilu">Typ textilu</label>
+                <select id="typ" name="typ">
+                  <option data-i18n="tag1">Tričká</option>
+                  <option data-i18n="tag2">Polokošele</option>
+                  <option data-i18n="tag3">Mikiny</option>
+                  <option data-i18n="opt_bundy">Bundy / vetrovky</option>
+                  <option data-i18n="opt_nohavice">Pracovné nohavice / kraťasy</option>
+                  <option data-i18n="tag8">Teplaky</option>
+                  <option data-i18n="opt_batohy">Batohy / tašky / peňaženky</option>
+                  <option data-i18n="opt_siltovky">Šiltovky / klobúky</option>
+                  <option data-i18n="opt_vlastny">Vlastný predmet</option>
+                  <option data-i18n="opt_ine">Iné</option>
+                </select>
+              </div>
+              <div>
+                <label for="pocet" data-i18n="lbl_priblizny_pocet">Približný počet kusov</label>
+                <input type="text" id="pocet" name="pocet" data-i18n-ph="ph_pocet20" placeholder="napr. 20">
+              </div>
+            </div>
+            <div class="file-field">
+              <label for="subor" data-i18n="lbl_logo_grafika">Logo alebo grafika</label>
+              <input type="file" id="subor" name="subor" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg" multiple>
+              <p class="file-hint" data-i18n="file_hint_long">Nahrajte súbor, na základe ktorého pripravíme návrh (PNG, JPG, PDF, AI, EPS alebo SVG).</p>
+            </div>
+            <div>
+              <label for="sprava" data-i18n="lbl_sprava">Správa</label>
+              <textarea id="sprava" name="sprava" data-i18n-ph="ph_sprava" placeholder="Príležitosť, farby, termín, umiestnenie motívu — čokoľvek, čo nám pomôže pripraviť ponuku."></textarea>
+            </div>
+            <div class="submit-row">
+              <button type="submit" class="submit" data-i18n="k_poslat_dopyt">Poslať dopyt</button>
+              <span class="form-note"><span data-i18n="form_note_alebo">alebo napíšte priamo na</span> <a href="mailto:brandbearsk@gmail.com">brandbearsk@gmail.com</a></span>
+            </div>
+            <div class="confirm" id="confirmMsg" data-i18n="confirm_kontakt">Ďakujeme za dopyt. Ozveme sa vám čo najskôr.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#hero" style="text-decoration:none;">
+        <img class="brand-mark" src="assets/logo-icon.png" alt="BrandBear" width="400" height="336">
+        <span class="brand-word">Brand<span class="b2">Bear</span></span>
+      </a>
+      <nav class="links">
+        <a href="#ponuka" data-i18n="nav_ponuka">Ponuka</a>
+        <a href="#proces" data-i18n="nav_proces">Proces</a>
+        <a href="#realizacie" data-i18n="nav_realizacie">Realizácie</a>
+        <a href="#folie" data-i18n="nav_folie">Fólie</a>
+        <a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a>
+      </nav>
+      <div class="social-row">
+        <a href="https://www.instagram.com/brandbear.sk/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="#F1ECDE" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61594263054091" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M14,20 V13 H16.4 L16.8,10.3 H14 V8.6 c0-.85.23-1.4,1.45-1.4 H16.9 V4.9 C16.55,4.85,15.75,4.8,14.85,4.8 12.85,4.8,11.5,6,11.5,8.15 V10.3 H9.3 v2.7 h2.2 V20"/></svg>
+        </a>
+        <a href="mailto:brandbearsk@gmail.com" aria-label="E-mail">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 6.5 12 13 20 6.5"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      BrandBear je značka, ktorú prevádzkuje AGONNY, s. r. o., Jamník 69, 053 22 Jamník, Slovenská republika, IČO: 56531079, DIČ: 2122334236, IČ DPH: SK2122334236.
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BrandBear</span>
+      <span>brandbearsk@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  var themeToggle = document.getElementById('themeToggle');
+  var root = document.documentElement;
+  themeToggle.addEventListener('click', function(){
+    var isDark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    themeToggle.classList.remove('spin');
+    void themeToggle.offsetWidth;
+    themeToggle.classList.add('spin');
+  });
+
+  function wireForm(formId, confirmId){
+    var form = document.getElementById(formId);
+    var confirmEl = document.getElementById(confirmId);
+    if(!form || !confirmEl) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      confirmEl.classList.add('show');
+      form.reset();
+    });
+  }
+  wireForm('quickForm', 'quickConfirm');
+  wireForm('quickFolieForm', 'quickFolieConfirm');
+  wireForm('dopytForm', 'confirmMsg');
+  wireForm('folieForm', 'folieConfirm');
+
+  /* ---------- Translations ---------- */
+  var DICT = {
+    sk: {
+      nav_ponuka:"Ponuka", nav_proces:"Proces", nav_realizacie:"Realizácie", nav_folie:"Fólie", nav_kontakt:"Kontakt",
+      k_poslat_dopyt:"Poslať dopyt",
+      hero_h1:"Potlačíme a vyšijeme váš dizajn.",
+      hero_lede:"Pripravíme firemný merch pre váš tím, oblečenie na rozlúčku so slobodou, oslavu, krstiny či festival. Motív umiestnime na tričkách, mikinách, pracovnom oblečení aj darčekových predmetoch — po kuse aj vo veľkých sériách.",
+      hero_cta2:"Ako to funguje",
+      hero_folie_h2:"Potrebujete len fóliu?", hero_folie_p:"Nažehľujete si potlač sami? Objednajte si len samostatnú DTF alebo sublimačnú fóliu podľa vlastnej grafiky, bez nutnosti objednávať celý odev. Vhodné pre menšie zákazky, vlastné projekty aj vyskúšanie dizajnu pred veľkou sériou.", hero_folie_more:"Zistiť viac",
+      trusted_label:"Robili sme textil pre",
+      benefit1_h:"Návrh pred výrobou", benefit1_p:"Než čokoľvek vyrobíme, pošleme vám fotku vzorky s motívom presne na mieste, kde ho chcete mať.",
+      benefit2_h:"Vlastný aj váš textil", benefit2_p:"Vyberiete si z nášho katalógu, alebo nám pošlete oblečenie či predmety, ktoré chcete len doplniť o motív.",
+      benefit3_h:"Pre firmy aj súkromné akcie", benefit3_p:"Firemný tím, rozlúčka so slobodou, oslava, krstiny či festival — množstvo prispôsobíme tomu, čo práve potrebujete.",
+      quick_h2:"Rýchly dopyt", quick_p:"Napíšte pár slov o tom, čo potrebujete, priložte logo alebo fotku a ozveme sa s návrhom aj cenou.",
+      quick_folie_h2:"Objednávka fólie", quick_folie_p:"Chcete len fóliu na nažehlenie? Napíšte typ, počet kusov a priložte grafiku — pripravíme cenu.",
+      k_meno:"Meno", k_email_telefon:"E-mail alebo telefón",
+      lbl_co_potrebujete:"Čo potrebujete", ph_co_potrebujete:"Napr. 15 mikín s vyšívaným logom na teambuilding v októbri",
+      lbl_logo_grafika:"Logo alebo grafika", confirm_quick:"Ďakujeme! Ozveme sa čo najskôr.",
+      lbl_typ_folie:"Typ fólie", opt_dtf:"DTF fólia (do 29 × 39 cm)", opt_sub:"Sublimačná fólia (A4)", opt_neviem:"Neviem, poraďte mi",
+      lbl_pocet:"Počet kusov", ph_pocet5:"napr. 5", lbl_grafika_potlac:"Grafika na potlač", btn_objednat_foliu:"Objednať fóliu",
+      ponuka_h2:"Čo potlačíme", ponuka_p:"Textil aj predmety obstarávame od overených dodávateľov a podľa vášho zadania ich potlačíme alebo vyšijeme. Rovnako radi doplníme motívom oblečenie, ktoré nám sami pošlete.",
+      tag1:"Tričká", tag2:"Polokošele", tag3:"Mikiny", tag4:"Bundy a vetrovky", tag5:"Pracovné nohavice", tag6:"Kraťasy", tag8:"Teplaky", tag10:"Batohy", tag11:"Tašky", tag12:"Peňaženky", tag13:"Šiltovky", tag14:"Klobúky", tag16:"Vaše vlastné predmety",
+      tag_note:"Nie každá technológia sa hodí na každý materiál — vhodnú kombináciu vám navrhneme v odpovedi na dopyt.",
+      svc1_h:"Výšivka", svc1_p:"Motív všijeme priamo do vlákna. Vznikne plastický, odolný povrch, ktorý nepraská ani nebledne pri praní.",
+      svc2_h:"DTF potlač", svc2_p:"Digitálna farebná potlač, ktorá drží aj na tmavom alebo nerovnom povrchu — vhodná na detailné a viacfarebné motívy.",
+      svc3_h:"Sublimačná potlač", svc3_p:"Farba sa vsiakne priamo do vlákna funkčného textilu, takže nepraská ani pri pohybe — vhodné pre športové tímy, dresy aj fotomotívy.",
+      svc4_h:"DTF a sublimačné fólie", svc4_p:"Hotovú potlačenú fóliu na nažehlenie si môžete objednať aj samostatne, bez objednávania celého odevu.",
+      proces_h2:"Ako prebieha objednávka", proces_p:"Od prvého dopytu po hotový textil pred vašimi dverami.",
+      step1_h:"Zadanie", step1_p:"Vo formulári necháte telefón a e-mail, opíšete svoju predstavu a priložíte súbor alebo fotku loga či grafiky.",
+      step2_h:"Návrh a cena", step2_p:"Pripravíme grafický návrh na fotke vzorky a e-mailom pošleme cenu podľa cenníka. Pri neštandardných požiadavkách ju stanovíme individuálne.",
+      step3_h:"Potvrdenie a platba", step3_p:"Po schválení návrhu zaplatíte pred začatím výroby. Pri nejasnom zadaní alebo expresnej zákazke vás radšej zavoláme.",
+      step4_h:"Výroba a doručenie", step4_p:"Bežná výroba trvá 2 – 3 pracovné dni od schválenia, pri vlastných či nedostupných produktoch od ich doručenia. Posielame cez Packetu.",
+      process_note:"Pri produktoch skladom vieme za príplatok zabezpečiť expresnú výrobu do jedného pracovného dňa. Dĺžka doručenia sa líši podľa krajiny. Pri väčších objednávkach vieme po úhrade poslať aj fyzickú vzorku vopred.",
+      realizacie_h2:"Naše realizácie", realizacie_p:"Výber z toho, čo sme v poslednom čase vyšili a potlačili — pre firmy aj na súkromné akcie.",
+      gal1:"DTF potlač, tričká", gal2:"DTF potlač, mikina", gal3:"Výšivka, softshell bunda", gal4:"Výšivka, tričko pre kapelu", gal5:"DTF potlač, tričká", gal6:"Výšivka a DTF potlač", gal7:"DTF potlač, mikina", gal8:"Vlastná značka, DTF potlač", gal_rozlucka:"Rozlúčka so slobodou",
+      folie_h2:"Fólie na vlastné nažehlenie", folie_p:"Ak si potlač nažehlíte sami, pripravíme vám aj len samotnú DTF alebo sublimačnú fóliu podľa vašej grafiky, bez objednávania celého odevu.",
+      foil1_h:"DTF fólia", foil1_spec:"max. rozmer 29 × 39 cm", foil1_desc:"Farebná potlač na nažehlenie takmer na akýkoľvek textil vrátane tmavých a nerovných povrchov.",
+      foil2_h:"Sublimačná fólia", foil2_spec:"formát A4", foil2_desc:"Vhodná na svetlý polyesterový textil, farba sa stane súčasťou vlákna a nepraská.",
+      print_note:"Orientačná cena platí pre bežnú grafiku. Pri odbere 10 a viac kusov cena klesá, pri veľmi náročnej alebo celoplošnej grafike sa môže zvýšiť až o 25 % za list fólie — presnú cenu potvrdíme podľa vašej grafiky.",
+      file_hint_short:"PNG, JPG, PDF, AI, EPS alebo SVG.", btn_odoslat_objednavku_folie:"Odoslať objednávku fólie", form_note_alebo:"alebo napíšte priamo na", confirm_folie:"Ďakujeme za objednávku. Cenu a termín potvrdíme e-mailom.",
+      kontakt_h2:"Pošlite nám zadanie", kontakt_p:"Vyplňte formulár a priložte súbor s logom alebo grafikou — na jeho základe pripravíme návrh a cenovú ponuku.",
+      kontakt_heading:"Kontakt", lbl_meno_priezvisko:"Meno a priezvisko", lbl_firma:"Firma", lbl_email:"E-mail", lbl_telefon:"Telefón", lbl_typ_textilu:"Typ textilu",
+      opt_bundy:"Bundy / vetrovky", opt_nohavice:"Pracovné nohavice / kraťasy", opt_batohy:"Batohy / tašky / peňaženky", opt_siltovky:"Šiltovky / klobúky", opt_vlastny:"Vlastný predmet", opt_ine:"Iné",
+      lbl_priblizny_pocet:"Približný počet kusov", ph_pocet20:"napr. 20",
+      file_hint_long:"Nahrajte súbor, na základe ktorého pripravíme návrh (PNG, JPG, PDF, AI, EPS alebo SVG).",
+      lbl_sprava:"Správa", ph_sprava:"Príležitosť, farby, termín, umiestnenie motívu — čokoľvek, čo nám pomôže pripraviť ponuku.",
+      confirm_kontakt:"Ďakujeme za dopyt. Ozveme sa vám čo najskôr."
+    },
+    en: {
+      nav_ponuka:"Offer", nav_proces:"Process", nav_realizacie:"Work", nav_folie:"Transfers", nav_kontakt:"Contact",
+      k_poslat_dopyt:"Send inquiry",
+      hero_h1:"We print and embroider your design.",
+      hero_lede:"We put together company merch for your team, or outfits for a bachelorette party, birthday, christening or festival. Your motif goes on t-shirts, hoodies, workwear and gifts — single pieces or large batches.",
+      hero_cta2:"How it works",
+      hero_folie_h2:"Just need a transfer?", hero_folie_p:"Pressing the print on yourself? Order just a standalone DTF or sublimation transfer made from your own artwork, with no need to order a whole garment. Great for small runs, personal projects, or testing a design before a large batch.", hero_folie_more:"Learn more",
+      trusted_label:"We've made textiles for",
+      benefit1_h:"Approval before production", benefit1_p:"Before we make anything, we send you a mock-up photo with the motif exactly where you want it.",
+      benefit2_h:"Your items or ours", benefit2_p:"Pick from our catalogue, or send us clothing or items you'd like us to simply add a motif to.",
+      benefit3_h:"For companies and private events", benefit3_p:"A company team, a bachelorette party, a birthday, a christening or a festival — we adjust the quantity to what you actually need.",
+      quick_h2:"Quick inquiry", quick_p:"Write a few words about what you need, attach your logo or a photo, and we'll get back to you with a design and price.",
+      quick_folie_h2:"Transfer order", quick_folie_p:"Just need a transfer to press on yourself? Tell us the type, quantity and artwork — we'll work out the price.",
+      k_meno:"Name", k_email_telefon:"Email or phone",
+      lbl_co_potrebujete:"What you need", ph_co_potrebujete:"E.g. 15 embroidered hoodies for a team-building in October",
+      lbl_logo_grafika:"Logo or artwork", confirm_quick:"Thank you! We'll get back to you shortly.",
+      lbl_typ_folie:"Transfer type", opt_dtf:"DTF transfer (up to 29 × 39 cm)", opt_sub:"Sublimation transfer (A4)", opt_neviem:"Not sure, advise me",
+      lbl_pocet:"Quantity", ph_pocet5:"e.g. 5", lbl_grafika_potlac:"Artwork to print", btn_objednat_foliu:"Order transfer",
+      ponuka_h2:"What we print", ponuka_p:"We source textiles and items from trusted suppliers and print or embroider them to your brief. We're also happy to add a motif to clothing you send us yourself.",
+      tag1:"T-shirts", tag2:"Polo shirts", tag3:"Hoodies", tag4:"Jackets & windbreakers", tag5:"Work trousers", tag6:"Shorts", tag8:"Tracksuits", tag10:"Backpacks", tag11:"Bags", tag12:"Wallets", tag13:"Caps", tag14:"Hats", tag16:"Your own items",
+      tag_note:"Not every technique suits every material — we'll suggest the right combination in our reply to your inquiry.",
+      svc1_h:"Embroidery", svc1_p:"The motif is stitched directly into the fabric, giving a textured, durable finish that won't crack or fade in the wash.",
+      svc2_h:"DTF printing", svc2_p:"Digital colour printing that holds on dark or uneven surfaces — great for detailed, multicoloured designs.",
+      svc3_h:"Sublimation printing", svc3_p:"The colour becomes part of the fabric itself, so it won't crack even with movement — ideal for sports teams, jerseys and photo prints.",
+      svc4_h:"DTF and sublimation transfers", svc4_p:"You can order a ready-made printed transfer on its own, without ordering a whole garment.",
+      proces_h2:"How an order works", proces_p:"From the first inquiry to finished textiles at your door.",
+      step1_h:"Inquiry", step1_p:"In the form you leave your phone and email, describe what you have in mind and attach a file or photo of your logo or artwork.",
+      step2_h:"Design and price", step2_p:"We prepare a mock-up on a sample photo and email you a price from our price list. Non-standard requests are priced individually.",
+      step3_h:"Confirmation and payment", step3_p:"Once you approve the design, you pay before production starts. For unclear briefs or express orders, we'd rather call you.",
+      step4_h:"Production and delivery", step4_p:"Standard production takes 2–3 working days from approval, or from delivery of your own or non-stock items. We ship via Packeta.",
+      process_note:"For in-stock items we can arrange express production within one working day for a surcharge. Delivery time depends on the country. For larger orders we can also send a physical sample in advance after payment.",
+      realizacie_h2:"Our work", realizacie_p:"A selection of what we've recently embroidered and printed — for companies and private events alike.",
+      gal1:"DTF print, t-shirts", gal2:"DTF print, hoodie", gal3:"Embroidery, softshell jacket", gal4:"Embroidery, band t-shirt", gal5:"DTF print, t-shirts", gal6:"Embroidery and DTF print", gal7:"DTF print, hoodie", gal8:"Own brand, DTF print", gal_rozlucka:"Bachelorette party",
+      folie_h2:"Transfers for your own use", folie_p:"If you apply the print yourself, we can prepare just the DTF or sublimation transfer from your artwork, without ordering a whole garment.",
+      foil1_h:"DTF transfer", foil1_spec:"max. size 29 × 39 cm", foil1_desc:"Colour transfer for almost any textile, including dark or uneven surfaces.",
+      foil2_h:"Sublimation transfer", foil2_spec:"A4 format", foil2_desc:"Suited to light-coloured polyester textiles — the colour becomes part of the fibre and won't crack.",
+      print_note:"The indicative price applies to standard artwork. Orders of 10 or more pieces are cheaper per unit; very demanding or full-coverage artwork can add up to 25% per sheet — we'll confirm the exact price based on your artwork.",
+      file_hint_short:"PNG, JPG, PDF, AI, EPS or SVG.", btn_odoslat_objednavku_folie:"Send transfer order", form_note_alebo:"or write to us directly at", confirm_folie:"Thank you for your order. We'll confirm the price and timing by email.",
+      kontakt_h2:"Send us your brief", kontakt_p:"Fill in the form and attach a file with your logo or artwork — we'll use it to prepare a design and price quote.",
+      kontakt_heading:"Contact", lbl_meno_priezvisko:"Full name", lbl_firma:"Company", lbl_email:"Email", lbl_telefon:"Phone", lbl_typ_textilu:"Type of textile",
+      opt_bundy:"Jackets / windbreakers", opt_nohavice:"Work trousers / shorts", opt_batohy:"Backpacks / bags / wallets", opt_siltovky:"Caps / hats", opt_vlastny:"My own item", opt_ine:"Other",
+      lbl_priblizny_pocet:"Approximate quantity", ph_pocet20:"e.g. 20",
+      file_hint_long:"Upload the file we'll base the design on (PNG, JPG, PDF, AI, EPS or SVG).",
+      lbl_sprava:"Message", ph_sprava:"Occasion, colours, deadline, motif placement — anything that helps us prepare a quote.",
+      confirm_kontakt:"Thank you for your inquiry. We'll get back to you shortly."
+    },
+    de: {
+      nav_ponuka:"Angebot", nav_proces:"Ablauf", nav_realizacie:"Referenzen", nav_folie:"Folien", nav_kontakt:"Kontakt",
+      k_poslat_dopyt:"Anfrage senden",
+      hero_h1:"Wir bedrucken und besticken Ihr Design.",
+      hero_lede:"Wir gestalten Firmen-Merch für Ihr Team oder Kleidung für Junggesellinnenabschied, Geburtstag, Taufe oder Festival. Ihr Motiv kommt auf T-Shirts, Hoodies, Arbeitskleidung und Geschenkartikel — als Einzelstück oder in großer Serie.",
+      hero_cta2:"So funktioniert's",
+      hero_folie_h2:"Nur eine Folie nötig?", hero_folie_p:"Bügeln Sie den Druck selbst auf? Bestellen Sie einfach eine eigenständige DTF- oder Sublimationsfolie nach Ihrer eigenen Grafik, ohne ein ganzes Kleidungsstück bestellen zu müssen. Ideal für kleine Mengen, eigene Projekte oder zum Testen eines Designs vor einer großen Serie.", hero_folie_more:"Mehr erfahren",
+      trusted_label:"Textilien gefertigt für",
+      benefit1_h:"Entwurf vor der Produktion", benefit1_p:"Bevor wir produzieren, schicken wir Ihnen ein Musterfoto mit dem Motiv genau an der gewünschten Stelle.",
+      benefit2_h:"Eigenes oder Ihr Textil", benefit2_p:"Wählen Sie aus unserem Sortiment, oder schicken Sie uns Kleidung bzw. Artikel, die wir nur mit einem Motiv versehen sollen.",
+      benefit3_h:"Für Firmen und private Feiern", benefit3_p:"Firmenteam, Junggesellinnenabschied, Feier, Taufe oder Festival — die Menge passen wir genau an Ihren Bedarf an.",
+      quick_h2:"Schnellanfrage", quick_p:"Schreiben Sie kurz, was Sie brauchen, fügen Sie Logo oder Foto bei — wir melden uns mit Entwurf und Preis.",
+      quick_folie_h2:"Folienbestellung", quick_folie_p:"Brauchen Sie nur eine Bügelfolie? Nennen Sie Typ, Stückzahl und Grafik — wir berechnen den Preis.",
+      k_meno:"Name", k_email_telefon:"E-Mail oder Telefon",
+      lbl_co_potrebujete:"Was Sie brauchen", ph_co_potrebujete:"Z. B. 15 bestickte Hoodies für ein Teambuilding im Oktober",
+      lbl_logo_grafika:"Logo oder Grafik", confirm_quick:"Danke! Wir melden uns bald.",
+      lbl_typ_folie:"Folientyp", opt_dtf:"DTF-Folie (bis 29 × 39 cm)", opt_sub:"Sublimationsfolie (A4)", opt_neviem:"Weiß nicht, bitte beraten",
+      lbl_pocet:"Stückzahl", ph_pocet5:"z. B. 5", lbl_grafika_potlac:"Grafik für den Druck", btn_objednat_foliu:"Folie bestellen",
+      ponuka_h2:"Was wir bedrucken", ponuka_p:"Textilien und Artikel beziehen wir von bewährten Lieferanten und bedrucken oder besticken sie nach Ihren Wünschen. Ebenso gern versehen wir Kleidung, die Sie uns selbst schicken, mit einem Motiv.",
+      tag1:"T-Shirts", tag2:"Polohemden", tag3:"Hoodies", tag4:"Jacken & Windjacken", tag5:"Arbeitshosen", tag6:"Shorts", tag8:"Jogginganzüge", tag10:"Rucksäcke", tag11:"Taschen", tag12:"Geldbörsen", tag13:"Caps", tag14:"Hüte", tag16:"Ihre eigenen Artikel",
+      tag_note:"Nicht jede Technik eignet sich für jedes Material — die passende Kombination schlagen wir Ihnen in der Antwort auf Ihre Anfrage vor.",
+      svc1_h:"Stickerei", svc1_p:"Das Motiv wird direkt in die Faser eingestickt — ein plastisches, robustes Ergebnis, das beim Waschen weder reißt noch verblasst.",
+      svc2_h:"DTF-Druck", svc2_p:"Digitaler Farbdruck, der auch auf dunklen oder unebenen Oberflächen hält — ideal für detaillierte, mehrfarbige Motive.",
+      svc3_h:"Sublimationsdruck", svc3_p:"Die Farbe wird Teil der Faser des Funktionstextils und reißt auch bei Bewegung nicht — geeignet für Sportteams, Trikots und Fotomotive.",
+      svc4_h:"DTF- und Sublimationsfolien", svc4_p:"Eine fertig bedruckte Bügelfolie können Sie auch einzeln bestellen, ohne ein ganzes Kleidungsstück zu ordern.",
+      proces_h2:"So läuft eine Bestellung ab", proces_p:"Von der ersten Anfrage bis zum fertigen Textil vor Ihrer Tür.",
+      step1_h:"Anfrage", step1_p:"Im Formular hinterlassen Sie Telefon und E-Mail, beschreiben Ihre Vorstellung und fügen eine Datei oder ein Foto von Logo bzw. Grafik bei.",
+      step2_h:"Entwurf und Preis", step2_p:"Wir erstellen einen Entwurf auf einem Musterfoto und senden per E-Mail den Preis laut Preisliste. Bei Sonderwünschen legen wir den Preis individuell fest.",
+      step3_h:"Bestätigung und Zahlung", step3_p:"Nach Freigabe des Entwurfs zahlen Sie vor Produktionsbeginn. Bei unklaren Angaben oder Express-Aufträgen rufen wir Sie lieber an.",
+      step4_h:"Produktion und Lieferung", step4_p:"Die reguläre Produktion dauert 2–3 Werktage ab Freigabe, bei eigenen oder nicht vorrätigen Artikeln ab deren Anlieferung. Versand erfolgt über Packeta.",
+      process_note:"Bei vorrätigen Artikeln ist gegen Aufpreis eine Express-Produktion innerhalb eines Werktags möglich. Die Lieferzeit hängt vom Land ab. Bei größeren Bestellungen senden wir nach Zahlung auf Wunsch vorab auch ein physisches Muster.",
+      realizacie_h2:"Unsere Referenzen", realizacie_p:"Eine Auswahl dessen, was wir zuletzt bestickt und bedruckt haben — für Firmen ebenso wie für private Feiern.",
+      gal1:"DTF-Druck, T-Shirts", gal2:"DTF-Druck, Hoodie", gal3:"Stickerei, Softshelljacke", gal4:"Stickerei, Band-T-Shirt", gal5:"DTF-Druck, T-Shirts", gal6:"Stickerei und DTF-Druck", gal7:"DTF-Druck, Hoodie", gal8:"Eigene Marke, DTF-Druck", gal_rozlucka:"Junggesellinnenabschied",
+      folie_h2:"Folien zum Selbstaufbügeln", folie_p:"Wenn Sie den Druck selbst aufbügeln, fertigen wir für Sie auch nur die DTF- oder Sublimationsfolie nach Ihrer Grafik — ohne ein ganzes Kleidungsstück zu bestellen.",
+      foil1_h:"DTF-Folie", foil1_spec:"max. Größe 29 × 39 cm", foil1_desc:"Farbiger Transferdruck für nahezu jedes Textil, auch auf dunklen oder unebenen Oberflächen.",
+      foil2_h:"Sublimationsfolie", foil2_spec:"Format A4", foil2_desc:"Geeignet für helle Polyestertextilien — die Farbe wird Teil der Faser und reißt nicht.",
+      print_note:"Der Richtpreis gilt für eine übliche Grafik. Ab 10 Stück sinkt der Preis, bei sehr aufwendiger oder vollflächiger Grafik kann er um bis zu 25 % pro Bogen steigen — den genauen Preis bestätigen wir anhand Ihrer Grafik.",
+      file_hint_short:"PNG, JPG, PDF, AI, EPS oder SVG.", btn_odoslat_objednavku_folie:"Folienbestellung senden", form_note_alebo:"oder schreiben Sie direkt an", confirm_folie:"Danke für Ihre Bestellung. Preis und Termin bestätigen wir per E-Mail.",
+      kontakt_h2:"Schicken Sie uns Ihre Anfrage", kontakt_p:"Füllen Sie das Formular aus und fügen Sie eine Datei mit Logo oder Grafik bei — darauf basiert unser Entwurf und Angebot.",
+      kontakt_heading:"Kontakt", lbl_meno_priezvisko:"Vor- und Nachname", lbl_firma:"Firma", lbl_email:"E-Mail", lbl_telefon:"Telefon", lbl_typ_textilu:"Art des Textils",
+      opt_bundy:"Jacken / Windjacken", opt_nohavice:"Arbeitshosen / Shorts", opt_batohy:"Rucksäcke / Taschen / Geldbörsen", opt_siltovky:"Caps / Hüte", opt_vlastny:"Eigener Artikel", opt_ine:"Sonstiges",
+      lbl_priblizny_pocet:"Ungefähre Stückzahl", ph_pocet20:"z. B. 20",
+      file_hint_long:"Laden Sie die Datei hoch, auf deren Basis wir den Entwurf erstellen (PNG, JPG, PDF, AI, EPS oder SVG).",
+      lbl_sprava:"Nachricht", ph_sprava:"Anlass, Farben, Termin, Platzierung des Motivs — alles, was uns beim Angebot hilft.",
+      confirm_kontakt:"Danke für Ihre Anfrage. Wir melden uns so schnell wie möglich."
+    },
+    pl: {
+      nav_ponuka:"Oferta", nav_proces:"Proces", nav_realizacie:"Realizacje", nav_folie:"Folie", nav_kontakt:"Kontakt",
+      k_poslat_dopyt:"Wyślij zapytanie",
+      hero_h1:"Nadrukujemy i wyhaftujemy Wasz projekt.",
+      hero_lede:"Przygotujemy odzież firmową dla Waszego zespołu albo ubrania na wieczór panieński, urodziny, chrzciny czy festiwal. Motyw umieścimy na koszulkach, bluzach, odzieży roboczej i upominkach — pojedynczo lub w dużej serii.",
+      hero_cta2:"Jak to działa",
+      hero_folie_h2:"Potrzebujecie tylko folii?", hero_folie_p:"Sami naprasowujecie nadruk? Zamówcie samą folię DTF lub sublimacyjną według własnej grafiki, bez konieczności zamawiania całej odzieży. Świetne rozwiązanie dla małych ilości, własnych projektów czy przetestowania wzoru przed dużą serią.", hero_folie_more:"Dowiedz się więcej",
+      trusted_label:"Robiliśmy tekstylia dla",
+      benefit1_h:"Projekt przed produkcją", benefit1_p:"Zanim cokolwiek wyprodukujemy, wyślemy Wam zdjęcie wzoru z motywem dokładnie tam, gdzie ma być.",
+      benefit2_h:"Wasze lub nasze tekstylia", benefit2_p:"Wybierzcie coś z naszego katalogu albo wyślijcie nam odzież czy przedmioty, które chcecie tylko oznaczyć motywem.",
+      benefit3_h:"Dla firm i prywatnych okazji", benefit3_p:"Zespół firmowy, wieczór panieński, impreza, chrzciny czy festiwal — ilość dopasujemy do tego, czego naprawdę potrzebujecie.",
+      quick_h2:"Szybkie zapytanie", quick_p:"Napiszcie kilka słów o tym, czego potrzebujecie, dołączcie logo lub zdjęcie — odezwiemy się z projektem i ceną.",
+      quick_folie_h2:"Zamówienie folii", quick_folie_p:"Potrzebujecie tylko folii do naprasowania? Podajcie typ, liczbę sztuk i grafikę — wycenimy.",
+      k_meno:"Imię", k_email_telefon:"E-mail lub telefon",
+      lbl_co_potrebujete:"Czego potrzebujecie", ph_co_potrebujete:"Np. 15 bluz z haftowanym logo na integrację w październiku",
+      lbl_logo_grafika:"Logo lub grafika", confirm_quick:"Dziękujemy! Odezwiemy się wkrótce.",
+      lbl_typ_folie:"Typ folii", opt_dtf:"Folia DTF (do 29 × 39 cm)", opt_sub:"Folia sublimacyjna (A4)", opt_neviem:"Nie wiem, doradźcie",
+      lbl_pocet:"Liczba sztuk", ph_pocet5:"np. 5", lbl_grafika_potlac:"Grafika do nadruku", btn_objednat_foliu:"Zamów folię",
+      ponuka_h2:"Co nadrukujemy", ponuka_p:"Tekstylia i przedmioty pozyskujemy od sprawdzonych dostawców i nadrukowujemy je lub haftujemy zgodnie z Waszym zleceniem. Równie chętnie naniesiemy motyw na odzież, którą sami nam wyślecie.",
+      tag1:"Koszulki", tag2:"Polówki", tag3:"Bluzy", tag4:"Kurtki i wiatrówki", tag5:"Spodnie robocze", tag6:"Spodenki", tag8:"Dresy", tag10:"Plecaki", tag11:"Torby", tag12:"Portfele", tag13:"Czapki z daszkiem", tag14:"Kapelusze", tag16:"Wasze własne przedmioty",
+      tag_note:"Nie każda technika pasuje do każdego materiału — odpowiednią kombinację zaproponujemy w odpowiedzi na zapytanie.",
+      svc1_h:"Haft", svc1_p:"Motyw wszywamy bezpośrednio we włókno — powstaje plastyczna, trwała powierzchnia, która nie pęka ani nie blaknie podczas prania.",
+      svc2_h:"Nadruk DTF", svc2_p:"Cyfrowy nadruk kolorowy, który trzyma się także na ciemnej lub nierównej powierzchni — świetny do detali i wielobarwnych motywów.",
+      svc3_h:"Nadruk sublimacyjny", svc3_p:"Kolor wnika bezpośrednio we włókno tkaniny funkcyjnej, więc nie pęka nawet przy ruchu — dla zespołów sportowych, strojów i motywów fotograficznych.",
+      svc4_h:"Folie DTF i sublimacyjne", svc4_p:"Gotową, zadrukowaną folię do nadruku możecie zamówić także osobno, bez zamawiania całej odzieży.",
+      proces_h2:"Jak przebiega zamówienie", proces_p:"Od pierwszego zapytania po gotowe tekstylia pod Waszymi drzwiami.",
+      step1_h:"Zapytanie", step1_p:"W formularzu zostawiacie telefon i e-mail, opisujecie swoją wizję i dołączacie plik lub zdjęcie logo czy grafiki.",
+      step2_h:"Projekt i cena", step2_p:"Przygotujemy projekt graficzny na zdjęciu wzoru i wyślemy e-mailem cenę zgodną z cennikiem. Przy nietypowych wymaganiach ustalamy ją indywidualnie.",
+      step3_h:"Potwierdzenie i płatność", step3_p:"Po akceptacji projektu płacicie przed rozpoczęciem produkcji. Przy niejasnym zleceniu lub zamówieniu ekspresowym wolimy zadzwonić.",
+      step4_h:"Produkcja i dostawa", step4_p:"Standardowa produkcja trwa 2–3 dni robocze od zatwierdzenia, a przy własnych lub niedostępnych produktach — od ich dostarczenia. Wysyłamy przez Paczkomaty/Packetę.",
+      process_note:"Przy produktach dostępnych od ręki możemy za dopłatą zapewnić produkcję ekspresową w ciągu jednego dnia roboczego. Czas dostawy zależy od kraju. Przy większych zamówieniach po wpłacie możemy też wcześniej wysłać fizyczną próbkę.",
+      realizacie_h2:"Nasze realizacje", realizacie_p:"Wybór tego, co ostatnio wyhaftowaliśmy i nadrukowaliśmy — dla firm i na prywatne okazje.",
+      gal1:"Nadruk DTF, koszulki", gal2:"Nadruk DTF, bluza", gal3:"Haft, kurtka softshell", gal4:"Haft, koszulka zespołu", gal5:"Nadruk DTF, koszulki", gal6:"Haft i nadruk DTF", gal7:"Nadruk DTF, bluza", gal8:"Własna marka, nadruk DTF", gal_rozlucka:"Wieczór panieński",
+      folie_h2:"Folie do samodzielnego naprasowania", folie_p:"Jeśli sami naprasowujecie nadruk, przygotujemy dla Was samą folię DTF lub sublimacyjną według Waszej grafiki, bez zamawiania całej odzieży.",
+      foil1_h:"Folia DTF", foil1_spec:"maks. rozmiar 29 × 39 cm", foil1_desc:"Kolorowy nadruk do naprasowania niemal na każdy tekstyl, także na ciemne lub nierówne powierzchnie.",
+      foil2_h:"Folia sublimacyjna", foil2_spec:"format A4", foil2_desc:"Odpowiednia na jasny tekstyl poliestrowy — kolor staje się częścią włókna i nie pęka.",
+      print_note:"Cena orientacyjna dotyczy standardowej grafiki. Przy zamówieniu 10 i więcej sztuk cena spada, przy bardzo wymagającej lub pełnopowierzchniowej grafice może wzrosnąć nawet o 25% za arkusz — dokładną cenę potwierdzimy na podstawie Waszej grafiki.",
+      file_hint_short:"PNG, JPG, PDF, AI, EPS lub SVG.", btn_odoslat_objednavku_folie:"Wyślij zamówienie folii", form_note_alebo:"albo napiszcie bezpośrednio na", confirm_folie:"Dziękujemy za zamówienie. Cenę i termin potwierdzimy e-mailem.",
+      kontakt_h2:"Wyślijcie nam zlecenie", kontakt_p:"Wypełnijcie formularz i dołączcie plik z logo lub grafiką — na jego podstawie przygotujemy projekt i wycenę.",
+      kontakt_heading:"Kontakt", lbl_meno_priezvisko:"Imię i nazwisko", lbl_firma:"Firma", lbl_email:"E-mail", lbl_telefon:"Telefon", lbl_typ_textilu:"Rodzaj tekstyliów",
+      opt_bundy:"Kurtki / wiatrówki", opt_nohavice:"Spodnie robocze / spodenki", opt_batohy:"Plecaki / torby / portfele", opt_siltovky:"Czapki / kapelusze", opt_vlastny:"Własny przedmiot", opt_ine:"Inne",
+      lbl_priblizny_pocet:"Przybliżona liczba sztuk", ph_pocet20:"np. 20",
+      file_hint_long:"Prześlijcie plik, na podstawie którego przygotujemy projekt (PNG, JPG, PDF, AI, EPS lub SVG).",
+      lbl_sprava:"Wiadomość", ph_sprava:"Okazja, kolory, termin, umiejscowienie motywu — wszystko, co pomoże nam przygotować wycenę.",
+      confirm_kontakt:"Dziękujemy za zapytanie. Odezwiemy się jak najszybciej."
+    },
+    cs: {
+      nav_ponuka:"Nabídka", nav_proces:"Proces", nav_realizacie:"Realizace", nav_folie:"Fólie", nav_kontakt:"Kontakt",
+      k_poslat_dopyt:"Poslat poptávku",
+      hero_h1:"Potiskneme a vyšijeme váš design.",
+      hero_lede:"Připravíme firemní merch pro váš tým, oblečení na rozlučku se svobodou, oslavu, křtiny nebo festival. Motiv umístíme na trička, mikiny, pracovní oděvy i dárkové předměty — po kuse i ve velkých sériích.",
+      hero_cta2:"Jak to funguje",
+      hero_folie_h2:"Potřebujete jen fólii?", hero_folie_p:"Nažehlujete si potisk sami? Objednejte si jen samostatnou DTF nebo sublimační fólii podle vlastní grafiky, bez nutnosti objednávat celý oděv. Vhodné pro menší zakázky, vlastní projekty i vyzkoušení designu před velkou sérií.", hero_folie_more:"Zjistit více",
+      trusted_label:"Dělali jsme textil pro",
+      benefit1_h:"Návrh před výrobou", benefit1_p:"Než cokoliv vyrobíme, pošleme vám fotku vzorku s motivem přesně tam, kde ho chcete mít.",
+      benefit2_h:"Váš i vlastní textil", benefit2_p:"Vyberete si z našeho katalogu, nebo nám pošlete oblečení či předměty, které chcete jen doplnit o motiv.",
+      benefit3_h:"Pro firmy i soukromé akce", benefit3_p:"Firemní tým, rozlučka se svobodou, oslava, křtiny nebo festival — množství přizpůsobíme tomu, co právě potřebujete.",
+      quick_h2:"Rychlá poptávka", quick_p:"Napište pár slov o tom, co potřebujete, přiložte logo nebo fotku a ozveme se s návrhem i cenou.",
+      quick_folie_h2:"Objednávka fólie", quick_folie_p:"Potřebujete jen fólii na nažehlení? Napište typ, počet kusů a grafiku — připravíme cenu.",
+      k_meno:"Jméno", k_email_telefon:"E-mail nebo telefon",
+      lbl_co_potrebujete:"Co potřebujete", ph_co_potrebujete:"Např. 15 mikin s vyšívaným logem na teambuilding v říjnu",
+      lbl_logo_grafika:"Logo nebo grafika", confirm_quick:"Děkujeme! Ozveme se co nejdříve.",
+      lbl_typ_folie:"Typ fólie", opt_dtf:"DTF fólie (do 29 × 39 cm)", opt_sub:"Sublimační fólie (A4)", opt_neviem:"Nevím, poraďte mi",
+      lbl_pocet:"Počet kusů", ph_pocet5:"např. 5", lbl_grafika_potlac:"Grafika k potisku", btn_objednat_foliu:"Objednat fólii",
+      ponuka_h2:"Co potiskneme", ponuka_p:"Textil i předměty pořizujeme od ověřených dodavatelů a podle vašeho zadání je potiskneme nebo vyšijeme. Stejně rádi doplníme motivem oblečení, které nám sami pošlete.",
+      tag1:"Trička", tag2:"Polokošile", tag3:"Mikiny", tag4:"Bundy a větrovky", tag5:"Pracovní kalhoty", tag6:"Kraťasy", tag8:"Teplákové soupravy", tag10:"Batohy", tag11:"Tašky", tag12:"Peněženky", tag13:"Kšiltovky", tag14:"Klobouky", tag16:"Vaše vlastní předměty",
+      tag_note:"Ne každá technologie se hodí na každý materiál — vhodnou kombinaci vám navrhneme v odpovědi na poptávku.",
+      svc1_h:"Výšivka", svc1_p:"Motiv všijeme přímo do vlákna. Vznikne plastický, odolný povrch, který nepraská ani nebledne při praní.",
+      svc2_h:"DTF potisk", svc2_p:"Digitální barevný potisk, který drží i na tmavém nebo nerovném povrchu — vhodný pro detailní a vícebarevné motivy.",
+      svc3_h:"Sublimační potisk", svc3_p:"Barva se vsákne přímo do vlákna funkčního textilu, takže nepraská ani při pohybu — vhodné pro sportovní týmy, dresy i fotomotivy.",
+      svc4_h:"DTF a sublimační fólie", svc4_p:"Hotovou potištěnou fólii na nažehlení si můžete objednat i samostatně, bez objednávání celého oděvu.",
+      proces_h2:"Jak probíhá objednávka", proces_p:"Od první poptávky po hotový textil před vašimi dveřmi.",
+      step1_h:"Zadání", step1_p:"Ve formuláři necháte telefon a e-mail, popíšete svou představu a přiložíte soubor nebo fotku loga či grafiky.",
+      step2_h:"Návrh a cena", step2_p:"Připravíme grafický návrh na fotce vzorku a e-mailem pošleme cenu podle ceníku. U nestandardních požadavků ji stanovíme individuálně.",
+      step3_h:"Potvrzení a platba", step3_p:"Po schválení návrhu zaplatíte před zahájením výroby. Při nejasném zadání nebo expresní zakázce vám raději zavoláme.",
+      step4_h:"Výroba a doručení", step4_p:"Běžná výroba trvá 2–3 pracovní dny od schválení, u vlastních či nedostupných produktů od jejich doručení. Posíláme přes Zásilkovnu/Packetu.",
+      process_note:"U produktů skladem umíme za příplatek zajistit expresní výrobu do jednoho pracovního dne. Doba doručení se liší podle země. U větších objednávek umíme po úhradě poslat i fyzický vzorek předem.",
+      realizacie_h2:"Naše realizace", realizacie_p:"Výběr z toho, co jsme v poslední době vyšili a potiskli — pro firmy i na soukromé akce.",
+      gal1:"DTF potisk, trička", gal2:"DTF potisk, mikina", gal3:"Výšivka, softshellová bunda", gal4:"Výšivka, tričko pro kapelu", gal5:"DTF potisk, trička", gal6:"Výšivka a DTF potisk", gal7:"DTF potisk, mikina", gal8:"Vlastní značka, DTF potisk", gal_rozlucka:"Rozlučka se svobodou",
+      folie_h2:"Fólie na vlastní nažehlení", folie_p:"Pokud si potisk nažehlíte sami, připravíme vám i jen samotnou DTF nebo sublimační fólii podle vaší grafiky, bez objednávání celého oděvu.",
+      foil1_h:"DTF fólie", foil1_spec:"max. rozměr 29 × 39 cm", foil1_desc:"Barevný potisk na nažehlení téměř na jakýkoli textil včetně tmavých a nerovných povrchů.",
+      foil2_h:"Sublimační fólie", foil2_spec:"formát A4", foil2_desc:"Vhodná na světlý polyesterový textil, barva se stane součástí vlákna a nepraská.",
+      print_note:"Orientační cena platí pro běžnou grafiku. Při odběru 10 a více kusů cena klesá, u velmi náročné nebo celoplošné grafiky se může zvýšit až o 25 % za list fólie — přesnou cenu potvrdíme podle vaší grafiky.",
+      file_hint_short:"PNG, JPG, PDF, AI, EPS nebo SVG.", btn_odoslat_objednavku_folie:"Odeslat objednávku fólie", form_note_alebo:"nebo napište přímo na", confirm_folie:"Děkujeme za objednávku. Cenu a termín potvrdíme e-mailem.",
+      kontakt_h2:"Pošlete nám zadání", kontakt_p:"Vyplňte formulář a přiložte soubor s logem nebo grafikou — na jeho základě připravíme návrh a cenovou nabídku.",
+      kontakt_heading:"Kontakt", lbl_meno_priezvisko:"Jméno a příjmení", lbl_firma:"Firma", lbl_email:"E-mail", lbl_telefon:"Telefon", lbl_typ_textilu:"Typ textilu",
+      opt_bundy:"Bundy / větrovky", opt_nohavice:"Pracovní kalhoty / kraťasy", opt_batohy:"Batohy / tašky / peněženky", opt_siltovky:"Kšiltovky / klobouky", opt_vlastny:"Vlastní předmět", opt_ine:"Jiné",
+      lbl_priblizny_pocet:"Přibližný počet kusů", ph_pocet20:"např. 20",
+      file_hint_long:"Nahrajte soubor, na jehož základě připravíme návrh (PNG, JPG, PDF, AI, EPS nebo SVG).",
+      lbl_sprava:"Zpráva", ph_sprava:"Příležitost, barvy, termín, umístění motivu — cokoliv, co nám pomůže připravit nabídku.",
+      confirm_kontakt:"Děkujeme za poptávku. Ozveme se vám co nejdříve."
+    },
+    hu: {
+      nav_ponuka:"Kínálat", nav_proces:"Folyamat", nav_realizacie:"Munkáink", nav_folie:"Fóliák", nav_kontakt:"Kapcsolat",
+      k_poslat_dopyt:"Ajánlatkérés küldése",
+      hero_h1:"Kinyomtatjuk és kihímezzük a designját.",
+      hero_lede:"Céges ajándéktárgyakat készítünk csapatának, vagy ruhát legénybúcsúra, születésnapra, keresztelőre, fesztiválra. A motívumot pólóra, pulóverre, munkaruhára és ajándéktárgyakra is felvisszük — akár egy darabot, akár nagy tételben.",
+      hero_cta2:"Hogyan működik",
+      hero_folie_h2:"Csak fóliára van szüksége?", hero_folie_p:"Ön vasalja fel a nyomatot? Rendeljen önálló DTF vagy szublimációs fóliát a saját grafikája alapján, anélkül hogy egész ruhadarabot kellene rendelnie. Kiváló kis mennyiségekhez, saját projektekhez vagy egy design kipróbálásához nagy tétel előtt.", hero_folie_more:"Tudjon meg többet",
+      trusted_label:"Textilt készítettünk nekik",
+      benefit1_h:"Terv a gyártás előtt", benefit1_p:"Mielőtt bármit legyártanánk, elküldjük a mintafotót a motívummal pontosan azon a helyen, ahol szeretné.",
+      benefit2_h:"Saját vagy az Ön textilje", benefit2_p:"Válasszon katalógusunkból, vagy küldje el a ruhát, tárgyat, amit csak motívummal szeretne kiegészíteni.",
+      benefit3_h:"Cégeknek és magánrendezvényekre", benefit3_p:"Céges csapat, legénybúcsú, ünnepség, keresztelő vagy fesztivál — a mennyiséget az Ön igényéhez igazítjuk.",
+      quick_h2:"Gyors ajánlatkérés", quick_p:"Írjon pár szót arról, mire van szüksége, csatolja a logót vagy egy fotót, és jelentkezünk tervvel és árral.",
+      quick_folie_h2:"Fóliarendelés", quick_folie_p:"Csak vasalható fóliára van szüksége? Írja meg a típust, a mennyiséget és a grafikát — kiszámoljuk az árat.",
+      k_meno:"Név", k_email_telefon:"E-mail vagy telefonszám",
+      lbl_co_potrebujete:"Mire van szüksége", ph_co_potrebujete:"Pl. 15 hímzett pulóver csapatépítőre októberben",
+      lbl_logo_grafika:"Logó vagy grafika", confirm_quick:"Köszönjük! Hamarosan jelentkezünk.",
+      lbl_typ_folie:"Fólia típusa", opt_dtf:"DTF fólia (max. 29 × 39 cm)", opt_sub:"Szublimációs fólia (A4)", opt_neviem:"Nem tudom, tanácsot kérek",
+      lbl_pocet:"Darabszám", ph_pocet5:"pl. 5", lbl_grafika_potlac:"Nyomtatandó grafika", btn_objednat_foliu:"Fólia megrendelése",
+      ponuka_h2:"Mit nyomtatunk", ponuka_p:"A textíliákat és tárgyakat megbízható beszállítóktól szerezzük be, és az Ön igénye szerint nyomtatjuk vagy hímezzük. Szívesen felviszünk motívumot az Ön által küldött ruhára is.",
+      tag1:"Pólók", tag2:"Galléros pólók", tag3:"Pulóverek", tag4:"Dzsekik és széldzsekik", tag5:"Munkanadrágok", tag6:"Rövidnadrágok", tag8:"Melegítők", tag10:"Hátizsákok", tag11:"Táskák", tag12:"Pénztárcák", tag13:"Baseballsapkák", tag14:"Kalapok", tag16:"Az Ön saját tárgyai",
+      tag_note:"Nem minden technológia alkalmas minden anyaghoz — a megfelelő kombinációt az ajánlatkérésre adott válaszban javasoljuk.",
+      svc1_h:"Hímzés", svc1_p:"A motívumot közvetlenül a szálba hímezzük — plasztikus, tartós felület jön létre, amely mosásnál nem reped és nem fakul.",
+      svc2_h:"DTF nyomtatás", svc2_p:"Digitális színes nyomtatás, amely sötét vagy egyenetlen felületen is megtapad — részletes, többszínű motívumokhoz ideális.",
+      svc3_h:"Szublimációs nyomtatás", svc3_p:"A szín a funkcionális textil szálának részévé válik, így mozgás közben sem reped — sportcsapatoknak, mezekhez és fotómotívumokhoz ajánlott.",
+      svc4_h:"DTF és szublimációs fóliák", svc4_p:"A kész, nyomtatott vasalható fóliát önmagában is megrendelheti, anélkül hogy egész ruhadarabot rendelne.",
+      proces_h2:"Így zajlik a megrendelés", proces_p:"Az első megkereséstől a kész textilig, egészen az Ön ajtajáig.",
+      step1_h:"Megkeresés", step1_p:"Az űrlapon megadja telefonszámát és e-mail címét, leírja elképzelését, és csatol egy fájlt vagy fotót a logóról vagy grafikáról.",
+      step2_h:"Terv és ár", step2_p:"Elkészítjük a grafikai tervet egy mintafotón, és e-mailben elküldjük az árat az árlista alapján. Egyedi igényeknél az árat egyedileg határozzuk meg.",
+      step3_h:"Visszaigazolás és fizetés", step3_p:"A terv jóváhagyása után a gyártás megkezdése előtt fizet. Bizonytalan megkeresés vagy expressz rendelés esetén inkább telefonon hívjuk.",
+      step4_h:"Gyártás és szállítás", step4_p:"A szokásos gyártás a jóváhagyástól számítva 2–3 munkanap, saját vagy raktáron nem lévő termékeknél a beérkezésüktől. A Packeta futárral szállítunk.",
+      process_note:"Raktáron lévő termékeknél felárért egy munkanapon belüli expressz gyártást is tudunk vállalni. A szállítási idő országonként eltérő. Nagyobb megrendeléseknél fizetés után kérésre fizikai mintát is küldünk előre.",
+      realizacie_h2:"Munkáink", realizacie_p:"Válogatás abból, amit mostanában hímeztünk és nyomtattunk — cégeknek és magánrendezvényekre egyaránt.",
+      gal1:"DTF nyomtatás, pólók", gal2:"DTF nyomtatás, pulóver", gal3:"Hímzés, softshell dzseki", gal4:"Hímzés, zenekari póló", gal5:"DTF nyomtatás, pólók", gal6:"Hímzés és DTF nyomtatás", gal7:"DTF nyomtatás, pulóver", gal8:"Saját márka, DTF nyomtatás", gal_rozlucka:"Legénybúcsú",
+      folie_h2:"Fóliák saját vasaláshoz", folie_p:"Ha a nyomatot Ön vasalja fel, elkészítjük Önnek csak magát a DTF vagy szublimációs fóliát is a grafikája alapján, anélkül hogy egész ruhadarabot rendelne.",
+      foil1_h:"DTF fólia", foil1_spec:"max. méret 29 × 39 cm", foil1_desc:"Színes átvihető nyomat szinte bármilyen textilhez, sötét vagy egyenetlen felülethez is.",
+      foil2_h:"Szublimációs fólia", foil2_spec:"A4 méret", foil2_desc:"Világos színű poliészter textilhez ajánlott — a szín a szál részévé válik és nem reped.",
+      print_note:"Az irányár egy szokásos grafikára vonatkozik. 10 darabtól kedvezőbb az egységár, nagyon igényes vagy teljes felületű grafikánál akár 25%-kal is nőhet ívenként — a pontos árat a grafika alapján igazoljuk vissza.",
+      file_hint_short:"PNG, JPG, PDF, AI, EPS vagy SVG.", btn_odoslat_objednavku_folie:"Fóliarendelés elküldése", form_note_alebo:"vagy írjon közvetlenül ide:", confirm_folie:"Köszönjük a rendelést. Az árat és a határidőt e-mailben visszaigazoljuk.",
+      kontakt_h2:"Küldje el megkeresését", kontakt_p:"Töltse ki az űrlapot, és csatolja a logót vagy grafikát tartalmazó fájlt — ez alapján készítjük el a tervet és az árajánlatot.",
+      kontakt_heading:"Kapcsolat", lbl_meno_priezvisko:"Teljes név", lbl_firma:"Cég", lbl_email:"E-mail", lbl_telefon:"Telefonszám", lbl_typ_textilu:"Textil típusa",
+      opt_bundy:"Dzsekik / széldzsekik", opt_nohavice:"Munkanadrágok / rövidnadrágok", opt_batohy:"Hátizsákok / táskák / pénztárcák", opt_siltovky:"Sapkák / kalapok", opt_vlastny:"Saját tárgy", opt_ine:"Egyéb",
+      lbl_priblizny_pocet:"Hozzávetőleges darabszám", ph_pocet20:"pl. 20",
+      file_hint_long:"Töltse fel a fájlt, amely alapján elkészítjük a tervet (PNG, JPG, PDF, AI, EPS vagy SVG).",
+      lbl_sprava:"Üzenet", ph_sprava:"Alkalom, színek, határidő, motívum elhelyezése — bármi, ami segít az árajánlat elkészítésében.",
+      confirm_kontakt:"Köszönjük megkeresését. Hamarosan jelentkezünk."
+    }
+  };
+
+  function applyLang(lang){
+    var dict = DICT[lang] || DICT.sk;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-ph');
+      if(dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+    });
+    document.documentElement.setAttribute('lang', lang);
+  }
+  document.getElementById('langSwitch').addEventListener('change', function(e){
+    applyLang(e.target.value);
+  });
+
+  /* Auto-detect language from the browser; fall back to English outside our list */
+  (function(){
+    var supported = ['sk','en','de','pl','cs','hu'];
+    var browserLangs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+    var chosen = 'en';
+    for (var i=0; i<browserLangs.length; i++){
+      var code = (browserLangs[i] || '').slice(0,2).toLowerCase();
+      if (supported.indexOf(code) !== -1){ chosen = code; break; }
+    }
+    var select = document.getElementById('langSwitch');
+    select.value = chosen;
+    applyLang(chosen);
+  })();
+
+  // 1. Inicializácia Supabase
+const SUPABASE_URL = 'https://uhwcwvzacknidptbclgg.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_hRuOSCEKPmzNn-dLsFppCQ_ek6Hix6Z';
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// Pomocná funkcia na nahrávanie súboru do Storage
+async function uploadFile(fileInput) {
+  if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
+    return null;
+  }
+  
+  const file = fileInput.files[0];
+  const fileExt = file.name.split('.').pop();
+  const fileName = `${Date.now()}_${Math.random().toString(36).substring(2, 7)}.${fileExt}`;
+  
+  const { data, error } = await supabaseClient
+    .storage
+    .from('uploads')
+    .upload(fileName, file);
+
+  if (error) {
+    console.error('Chyba pri nahrávaní súboru:', error);
+    return null;
+  }
+
+  // Získanie verejnej URL adresy súboru
+  const { data: publicUrlData } = supabaseClient
+    .storage
+    .from('uploads')
+    .getPublicUrl(fileName);
+
+  return publicUrlData.publicUrl;
+}
+
+// -------------------------------------------------------------
+// FORMULÁR 1: Rýchly dopyt (quickForm)
+// -------------------------------------------------------------
+const quickForm = document.getElementById('quickForm');
+if (quickForm) {
+  quickForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const confirmEl = document.getElementById('quickConfirm');
+    
+    // Upload súboru (ak existuje)
+    const fileUrl = await uploadFile(document.getElementById('qsubor'));
+
+    const { error } = await supabaseClient.from('contact_messages').insert({
+      form_type: 'quick_textil',
+      name: document.getElementById('qmeno').value,
+      contact: document.getElementById('qkontakt').value,
+      message: document.getElementById('qsprava').value,
+      file_url: fileUrl
+    });
+
+    if (!error) {
+      quickForm.reset();
+      if (confirmEl) confirmEl.style.display = 'inline-block';
+    } else {
+      alert('Nastala chybu pri odosielaní: ' + error.message);
+    }
+  });
+}
+
+// -------------------------------------------------------------
+// FORMULÁR 2: Objednávka fólie - Rýchla (quickFolieForm)
+// -------------------------------------------------------------
+const quickFolieForm = document.getElementById('quickFolieForm');
+if (quickFolieForm) {
+  quickFolieForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const confirmEl = document.getElementById('quickFolieConfirm');
+
+    const fileUrl = await uploadFile(document.getElementById('qfsubor'));
+
+    const { error } = await supabaseClient.from('contact_messages').insert({
+      form_type: 'quick_folie',
+      name: document.getElementById('qfmeno').value,
+      contact: document.getElementById('qfkontakt').value,
+      foil_type: document.getElementById('qftyp').value,
+      quantity: document.getElementById('qfpocet').value,
+      file_url: fileUrl
+    });
+
+    if (!error) {
+      quickFolieForm.reset();
+      if (confirmEl) confirmEl.style.display = 'inline-block';
+    } else {
+      alert('Nastala chyba pri odosielaní: ' + error.message);
+    }
+  });
+}
+
+// -------------------------------------------------------------
+// FORMULÁR 3: Fólie na vlastné nažehlenie - Detailná (folieForm)
+// -------------------------------------------------------------
+const folieForm = document.getElementById('folieForm');
+if (folieForm) {
+  folieForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const confirmEl = document.getElementById('folieConfirm');
+
+    const fileUrl = await uploadFile(document.getElementById('fsubor'));
+
+    const { error } = await supabaseClient.from('contact_messages').insert({
+      form_type: 'folie_detail',
+      name: document.getElementById('fmeno').value,
+      contact: document.getElementById('fkontakt').value,
+      foil_type: document.getElementById('ftyp').value,
+      quantity: document.getElementById('fpocet').value,
+      file_url: fileUrl
+    });
+
+    if (!error) {
+      folieForm.reset();
+      if (confirmEl) confirmEl.style.display = 'block';
+    } else {
+      alert('Nastala chyba pri odosielaní: ' + error.message);
+    }
+  });
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</body>
+</html>
