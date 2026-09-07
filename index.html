@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   :root{
     --cream:#E8E2D0;
@@ -83,6 +84,35 @@
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
     outline:3px solid var(--mustard);
     outline-offset:3px;
+  }
+  
+  /* Vstupné polia budú mať VŽDY tmavý text aj v dark mode */
+  input, select, textarea {
+    color: #211D18 !important;              /* Natvrdo tmavý text */
+    background-color: #F1ECDE !important;   /* Svetlé krémové pozadie */
+    border: 1px solid rgba(33, 29, 24, 0.3) !important;
+  }
+
+  /* Aj nevypísaný text (placeholder) zostane tmavší/čitateľný */
+  input::placeholder,
+  textarea::placeholder {
+    color: #4A443A !important;
+    opacity: 0.8 !important;
+  }
+
+  /* Odstránenie modrého podfarbenia pri automatickom dopĺňaní (Autofill) */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #211D18 !important;
+    -webkit-box-shadow: 0 0 0px 1000px #F1ECDE inset !important;
+    transition: background-color 5000s ease-in-out 0s;
   }
 
   .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
@@ -590,32 +620,35 @@
   </section>
 
   <section class="quick-split" id="dopyt-hore">
+    <!-- FORMULÁR 1: Rýchly dopyt textil -->
     <div class="quick-block quick-block-textil">
       <h2 data-i18n="quick_h2">Rýchly dopyt</h2>
       <p data-i18n="quick_p">Napíšte pár slov o tom, čo potrebujete, priložte logo alebo fotku a ozveme sa s návrhom aj cenou.</p>
-      <form class="quick-fields" id="quickForm">
+      <form class="quick-fields" id="form-textil">
         <div>
-          <label for="qmeno" data-i18n="k_meno">Meno</label>
-          <input type="text" id="qmeno" name="meno" required>
+          <label for="textil-meno" data-i18n="k_meno">Meno</label>
+          <input type="text" id="textil-meno" name="meno" required>
         </div>
         <div>
-          <label for="qkontakt" data-i18n="k_email_telefon">E-mail alebo telefón</label>
-          <input type="text" id="qkontakt" name="kontakt" required>
+          <label for="textil-kontakt" data-i18n="k_email_telefon">E-mail alebo telefón</label>
+          <input type="text" id="textil-kontakt" name="kontakt" required>
         </div>
         <div class="full">
-          <label for="qsprava" data-i18n="lbl_co_potrebujete">Čo potrebujete</label>
-          <textarea id="qsprava" name="sprava" data-i18n-ph="ph_co_potrebujete" placeholder="Napr. 15 mikín s vyšívaným logom na teambuilding v októbri"></textarea>
+          <label for="textil-sprava" data-i18n="lbl_co_potrebujete">Čo potrebujete</label>
+          <textarea id="textil-sprava" name="sprava" data-i18n-ph="ph_co_potrebujete" placeholder="Napr. 15 mikín s vyšívaným logom na teambuilding v októbri"></textarea>
         </div>
         <div class="full">
-          <label for="qsubor" data-i18n="lbl_logo_grafika">Logo alebo grafika</label>
-          <input type="file" id="qsubor" name="subor" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg">
+          <label for="textil-subor" data-i18n="lbl_logo_grafika">Logo alebo grafika</label>
+          <input type="file" id="textil-subor" name="subor" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg">
         </div>
         <div class="quick-submit-row">
           <button type="submit" class="cta" data-i18n="k_poslat_dopyt">Poslať dopyt</button>
-          <span class="quick-confirm" id="quickConfirm" data-i18n="confirm_quick">Ďakujeme! Ozveme sa čo najskôr.</span>
+          <span class="quick-confirm" id="textil-potvrdenie" data-i18n="confirm_quick">Ďakujeme! Ozveme sa čo najskôr.</span>
         </div>
       </form>
     </div>
+
+    <!-- FORMULÁR 2: Objednávka fólie -->
     <div class="quick-block quick-block-folie" id="dopyt-folie">
       <div class="quick-color-bar" aria-hidden="true">
         <span style="background:#0093C9"></span>
@@ -624,34 +657,34 @@
       </div>
       <h2 data-i18n="quick_folie_h2">Objednávka fólie</h2>
       <p data-i18n="quick_folie_p">Chcete len fóliu na nažehlenie? Napíšte typ, počet kusov a priložte grafiku — pripravíme cenu.</p>
-      <form class="quick-fields" id="quickFolieForm">
+      <form class="quick-fields" id="form-folie-rychla">
         <div>
-          <label for="qfmeno" data-i18n="k_meno">Meno</label>
-          <input type="text" id="qfmeno" name="meno" required>
+          <label for="folie-meno" data-i18n="k_meno">Meno</label>
+          <input type="text" id="folie-meno" name="meno" required>
         </div>
         <div>
-          <label for="qfkontakt" data-i18n="k_email_telefon">E-mail alebo telefón</label>
-          <input type="text" id="qfkontakt" name="kontakt" required>
+          <label for="folie-kontakt" data-i18n="k_email_telefon">E-mail alebo telefón</label>
+          <input type="text" id="folie-kontakt" name="kontakt" required>
         </div>
         <div>
-          <label for="qftyp" data-i18n="lbl_typ_folie">Typ fólie</label>
-          <select id="qftyp" name="typ">
+          <label for="folie-typ" data-i18n="lbl_typ_folie">Typ fólie</label>
+          <select id="folie-typ" name="typ">
             <option data-i18n="opt_dtf">DTF fólia (do 29 × 39 cm)</option>
             <option data-i18n="opt_sub">Sublimačná fólia (A4)</option>
             <option data-i18n="opt_neviem">Neviem, poraďte mi</option>
           </select>
         </div>
         <div>
-          <label for="qfpocet" data-i18n="lbl_pocet">Počet kusov</label>
-          <input type="text" id="qfpocet" name="pocet" data-i18n-ph="ph_pocet5" placeholder="napr. 5">
+          <label for="folie-pocet" data-i18n="lbl_pocet">Počet kusov</label>
+          <input type="text" id="folie-pocet" name="pocet" data-i18n-ph="ph_pocet5" placeholder="napr. 5">
         </div>
         <div class="full">
-          <label for="qfsubor" data-i18n="lbl_grafika_potlac">Grafika na potlač</label>
-          <input type="file" id="qfsubor" name="subor" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg">
+          <label for="folie-subor" data-i18n="lbl_grafika_potlac">Grafika na potlač</label>
+          <input type="file" id="folie-subor" name="subor" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg">
         </div>
         <div class="quick-submit-row">
           <button type="submit" class="cta cta-folie" data-i18n="btn_objednat_foliu">Objednať fóliu</button>
-          <span class="quick-confirm" id="quickFolieConfirm" data-i18n="confirm_quick">Ďakujeme! Ozveme sa čo najskôr.</span>
+          <span class="quick-confirm" id="folie-potvrdenie" data-i18n="confirm_quick">Ďakujeme! Ozveme sa čo najskôr.</span>
         </div>
       </form>
     </div>
@@ -808,41 +841,41 @@
 
       <p class="print-note" data-i18n="print_note">Orientačná cena platí pre bežnú grafiku. Pri odbere 10 a viac kusov cena klesá, pri veľmi náročnej alebo celoplošnej grafike sa môže zvýšiť až o 25 % za list fólie — presnú cenu potvrdíme podľa vašej grafiky.</p>
 
-      <form id="folieForm">
+      <form id="form-folie-detail">
         <div class="form-row">
           <div>
-            <label for="fmeno" data-i18n="k_meno">Meno</label>
-            <input type="text" id="fmeno" name="meno" required>
+            <label for="detail-folie-meno" data-i18n="k_meno">Meno</label>
+            <input type="text" id="detail-folie-meno" name="meno" required>
           </div>
           <div>
-            <label for="fkontakt" data-i18n="k_email_telefon">E-mail alebo telefón</label>
-            <input type="text" id="fkontakt" name="kontakt" required>
+            <label for="detail-folie-kontakt" data-i18n="k_email_telefon">E-mail alebo telefón</label>
+            <input type="text" id="detail-folie-kontakt" name="kontakt" required>
           </div>
         </div>
         <div class="form-row">
           <div>
-            <label for="ftyp" data-i18n="lbl_typ_folie">Typ fólie</label>
-            <select id="ftyp" name="typ">
+            <label for="detail-folie-typ" data-i18n="lbl_typ_folie">Typ fólie</label>
+            <select id="detail-folie-typ" name="typ">
               <option data-i18n="opt_dtf">DTF fólia (do 29 × 39 cm)</option>
               <option data-i18n="opt_sub">Sublimačná fólia (A4)</option>
               <option data-i18n="opt_neviem">Neviem, poraďte mi</option>
             </select>
           </div>
           <div>
-            <label for="fpocet" data-i18n="lbl_pocet">Počet kusov</label>
-            <input type="text" id="fpocet" name="pocet" data-i18n-ph="ph_pocet5" placeholder="napr. 5">
+            <label for="detail-folie-pocet" data-i18n="lbl_pocet">Počet kusov</label>
+            <input type="text" id="detail-folie-pocet" name="pocet" data-i18n-ph="ph_pocet5" placeholder="napr. 5">
           </div>
         </div>
         <div class="file-field">
-          <label for="fsubor" data-i18n="lbl_grafika_potlac">Grafika na potlač</label>
-          <input type="file" id="fsubor" name="subor" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg">
+          <label for="detail-folie-subor" data-i18n="lbl_grafika_potlac">Grafika na potlač</label>
+          <input type="file" id="detail-folie-subor" name="subor" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg">
           <p class="file-hint" data-i18n="file_hint_short">PNG, JPG, PDF, AI, EPS alebo SVG.</p>
         </div>
         <div class="submit-row">
           <button type="submit" class="submit" data-i18n="btn_odoslat_objednavku_folie">Odoslať objednávku fólie</button>
           <span class="form-note"><span data-i18n="form_note_alebo">alebo napíšte priamo na</span> <a href="mailto:brandbearsk@gmail.com">brandbearsk@gmail.com</a></span>
         </div>
-        <div class="confirm" id="folieConfirm" data-i18n="confirm_folie">Ďakujeme za objednávku. Cenu a termín potvrdíme e-mailom.</div>
+        <div class="confirm" id="detail-folie-potvrdenie" data-i18n="confirm_folie">Ďakujeme za objednávku. Cenu a termín potvrdíme e-mailom.</div>
       </form>
     </div>
   </section>
@@ -995,20 +1028,36 @@
     themeToggle.classList.add('spin');
   });
 
+  // NOVÝ, OPRAVENÝ KÓD:
   function wireForm(formId, confirmId){
     var form = document.getElementById(formId);
     var confirmEl = document.getElementById(confirmId);
     if(!form || !confirmEl) return;
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
+
+      // 1. Skontroluje platnosť IBA aktuálne odosielaného formulára
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // 2. Zobrazí potvrdzovaciu správu prislúchajúcu len tomuto formuláru
       confirmEl.classList.add('show');
+
+      // 3. Vyčistí iba polia aktuálneho formulára
       form.reset();
     });
   }
-  wireForm('quickForm', 'quickConfirm');
-  wireForm('quickFolieForm', 'quickFolieConfirm');
-  wireForm('dopytForm', 'confirmMsg');
-  wireForm('folieForm', 'folieConfirm');
+
+  // Inicializácia jednotlivých formulárov nezávisle od seba
+  ['quickForm', 'quickFolieForm', 'dopytForm', 'folieForm'].forEach(function(id){
+    var confirmId = id === 'quickForm' ? 'quickConfirm' : 
+                    id === 'quickFolieForm' ? 'quickFolieConfirm' : 
+                    id === 'dopytForm' ? 'confirmMsg' : 'folieConfirm';
+    wireForm(id, confirmId);
+  });
 
   /* ---------- Translations ---------- */
   var DICT = {
@@ -1320,129 +1369,147 @@
     applyLang(chosen);
   })();
 
-  // 1. Inicializácia Supabase
+// 1. Inicializácia Supabase
 const SUPABASE_URL = 'https://uhwcwvzacknidptbclgg.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_hRuOSCEKPmzNn-dLsFppCQ_ek6Hix6Z';
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// Pomocná funkcia na nahrávanie súboru do Storage
-async function uploadFile(fileInput) {
-  if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
-    return null;
-  }
-  
-  const file = fileInput.files[0];
-  const fileExt = file.name.split('.').pop();
-  const fileName = `${Date.now()}_${Math.random().toString(36).substring(2, 7)}.${fileExt}`;
-  
-  const { data, error } = await supabaseClient
-    .storage
-    .from('uploads')
-    .upload(fileName, file);
-
-  if (error) {
-    console.error('Chyba pri nahrávaní súboru:', error);
-    return null;
-  }
-
-  // Získanie verejnej URL adresy súboru
-  const { data: publicUrlData } = supabaseClient
-    .storage
-    .from('uploads')
-    .getPublicUrl(fileName);
-
-  return publicUrlData.publicUrl;
-}
+// Nastavte URL vašej Edge funkcie
+const EDGE_FUNCTION_URL = 'https://uhwcwvzacknidptbclgg.supabase.co/functions/v1/contact-form';
 
 // -------------------------------------------------------------
-// FORMULÁR 1: Rýchly dopyt (quickForm)
+// FORMULÁR 1: Rýchly dopyt textil (form-textil)
 // -------------------------------------------------------------
-const quickForm = document.getElementById('quickForm');
-if (quickForm) {
-  quickForm.addEventListener('submit', async (e) => {
+const formTextil = document.getElementById('form-textil');
+if (formTextil) {
+  formTextil.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const confirmEl = document.getElementById('quickConfirm');
-    
-    // Upload súboru (ak existuje)
-    const fileUrl = await uploadFile(document.getElementById('qsubor'));
+    const confirmEl = document.getElementById('textil-potvrdenie');
 
-    const { error } = await supabaseClient.from('contact_messages').insert({
-      form_type: 'quick_textil',
-      name: document.getElementById('qmeno').value,
-      contact: document.getElementById('qkontakt').value,
-      message: document.getElementById('qsprava').value,
-      file_url: fileUrl
-    });
+    const formData = new FormData();
+    formData.append('name', document.getElementById('textil-meno').value);
+    formData.append('email', document.getElementById('textil-kontakt').value);
+    formData.append('message', document.getElementById('textil-sprava').value);
+    formData.append('package', 'Rýchly dopyt - Textil');
 
-    if (!error) {
-      quickForm.reset();
-      if (confirmEl) confirmEl.style.display = 'inline-block';
-    } else {
-      alert('Nastala chybu pri odosielaní: ' + error.message);
+    const fileInput = document.getElementById('textil-subor');
+    if (fileInput && fileInput.files[0]) {
+      formData.append('images', fileInput.files[0]); // Edge funkcia očakáva kľúč "images"
+    }
+
+    try {
+      const res = await fetch(EDGE_FUNCTION_URL, { method: 'POST', body: formData });
+      const data = await res.json();
+
+    if (res.ok) {
+        formTextil.reset();
+        if (confirmEl) {
+          confirmEl.style.display = 'inline-block';
+          setTimeout(() => {
+            confirmEl.style.display = 'none';
+          }, 5000);
+        }
+      } else {
+        alert('Chyba: ' + (data.error || 'Odoslanie zlyhalo'));
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Chyba pripojenia k serveru.');
     }
   });
 }
 
 // -------------------------------------------------------------
-// FORMULÁR 2: Objednávka fólie - Rýchla (quickFolieForm)
+// FORMULÁR 2: Objednávka fólie - Rýchla (form-folie-rychla)
 // -------------------------------------------------------------
-const quickFolieForm = document.getElementById('quickFolieForm');
-if (quickFolieForm) {
-  quickFolieForm.addEventListener('submit', async (e) => {
+const formFolieRychla = document.getElementById('form-folie-rychla');
+if (formFolieRychla) {
+  formFolieRychla.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const confirmEl = document.getElementById('quickFolieConfirm');
+    const confirmEl = document.getElementById('folie-potvrdenie');
 
-    const fileUrl = await uploadFile(document.getElementById('qfsubor'));
+    const typ = document.getElementById('folie-typ').value;
+    const pocet = document.getElementById('folie-pocet').value;
 
-    const { error } = await supabaseClient.from('contact_messages').insert({
-      form_type: 'quick_folie',
-      name: document.getElementById('qfmeno').value,
-      contact: document.getElementById('qfkontakt').value,
-      foil_type: document.getElementById('qftyp').value,
-      quantity: document.getElementById('qfpocet').value,
-      file_url: fileUrl
-    });
+    const formData = new FormData();
+    formData.append('name', document.getElementById('folie-meno').value);
+    formData.append('email', document.getElementById('folie-kontakt').value);
+    formData.append('message', `Typ fólie: ${typ} | Počet: ${pocet}`);
+    formData.append('package', 'Rýchla objednávka fólie');
 
-    if (!error) {
-      quickFolieForm.reset();
-      if (confirmEl) confirmEl.style.display = 'inline-block';
-    } else {
-      alert('Nastala chyba pri odosielaní: ' + error.message);
+    const fileInput = document.getElementById('folie-subor');
+    if (fileInput && fileInput.files[0]) {
+      formData.append('images', fileInput.files[0]);
+    }
+
+    try {
+      const res = await fetch(EDGE_FUNCTION_URL, { method: 'POST', body: formData });
+      const data = await res.json();
+
+     if (res.ok) {
+        formFolieDetail.reset();
+        if (confirmEl) {
+          confirmEl.style.display = 'block';
+          setTimeout(() => {
+            confirmEl.style.display = 'none';
+          }, 5000);
+        }
+      } else {
+        alert('Chyba: ' + (data.error || 'Odoslanie zlyhalo'));
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Chyba pripojenia k serveru.');
     }
   });
 }
 
 // -------------------------------------------------------------
-// FORMULÁR 3: Fólie na vlastné nažehlenie - Detailná (folieForm)
+// FORMULÁR 3: Fólie - Detailná (form-folie-detail)
 // -------------------------------------------------------------
-const folieForm = document.getElementById('folieForm');
-if (folieForm) {
-  folieForm.addEventListener('submit', async (e) => {
+const formFolieDetail = document.getElementById('form-folie-detail');
+if (formFolieDetail) {
+  formFolieDetail.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const confirmEl = document.getElementById('folieConfirm');
+    const confirmEl = document.getElementById('detail-folie-potvrdenie');
 
-    const fileUrl = await uploadFile(document.getElementById('fsubor'));
+    const typ = document.getElementById('detail-folie-typ').value;
+    const pocet = document.getElementById('detail-folie-pocet').value;
 
-    const { error } = await supabaseClient.from('contact_messages').insert({
-      form_type: 'folie_detail',
-      name: document.getElementById('fmeno').value,
-      contact: document.getElementById('fkontakt').value,
-      foil_type: document.getElementById('ftyp').value,
-      quantity: document.getElementById('fpocet').value,
-      file_url: fileUrl
-    });
+    const formData = new FormData();
+    formData.append('name', document.getElementById('detail-folie-meno').value);
+    formData.append('email', document.getElementById('detail-folie-kontakt').value);
+    formData.append('message', `Typ fólie: ${typ} | Počet: ${pocet}`);
+    formData.append('package', 'Detailná objednávka fólie');
 
-    if (!error) {
-      folieForm.reset();
-      if (confirmEl) confirmEl.style.display = 'block';
-    } else {
-      alert('Nastala chyba pri odosielaní: ' + error.message);
+    const fileInput = document.getElementById('detail-folie-subor');
+    if (fileInput && fileInput.files[0]) {
+      formData.append('images', fileInput.files[0]);
+    }
+
+    try {
+      const res = await fetch(EDGE_FUNCTION_URL, { method: 'POST', body: formData });
+      const data = await res.json();
+
+    if (res.ok) {
+        formFolieRychla.reset();
+        if (confirmEl) {
+          confirmEl.style.display = 'inline-block';
+          setTimeout(() => {
+            confirmEl.style.display = 'none';
+          }, 5000);
+        }
+      } else {
+        alert('Chyba: ' + (data.error || 'Odoslanie zlyhalo'));
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Chyba pripojenia k serveru.');
     }
   });
 }
+
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 </body>
 </html>
